@@ -21,4 +21,9 @@ type Company struct {
 	Equipment []Equipment `gorm:"foreignKey:CompanyID"`
 }
 
+type RoleItem struct {
+	gorm.Model
+	Role      string
+	Equipment []Equipment `gorm:"foreignKey:RoleItemID"`
+}
 
