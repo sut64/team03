@@ -6,6 +6,12 @@ import (
 	"gorm.io/gorm"
 )
 
+type BorrowStatus struct {
+	gorm.Model
+	Status     string
+	Borrowings []Borrowing `gorm:"foreignKey:BorrowStatusID"`
+}
+
 type Borrowing struct {
 	gorm.Model
 	Borrowtime       time.Time
@@ -20,10 +26,4 @@ type Borrowing struct {
 	CustomerBorrow   User
 	StaffBorrowID    *uint
 	StaffBorrow      User
-}
-
-type BorrowStatus struct {
-	gorm.Model
-	Status     string
-	Borrowings []Borrowing `gorm:"foreignKey:BorrowStatusID"`
 }
