@@ -18,6 +18,6 @@ func SetupDatabase() {
 	}
 
 	// Migrate the schema
-	database.AutoMigrate(&User{})
+	database.AutoMigrate(&User{}, &BorrowStatus{}, &Borrowing{})
 	db = database
 }
