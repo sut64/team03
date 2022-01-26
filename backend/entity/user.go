@@ -17,6 +17,12 @@ type User struct {
 
 	// Facility []Facility `gorm:"foreignKey:UserID"`
 
-	// RoleID *uint
-	// Role Role
+	RoleID *uint
+	Role Role
+}
+
+type Role struct {
+	gorm.Model
+	Name string
+	User []User `gorm:"foreignKey:RoleID"`
 }
