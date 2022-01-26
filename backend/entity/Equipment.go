@@ -27,3 +27,24 @@ type RoleItem struct {
 	Equipment []Equipment `gorm:"foreignKey:RoleItemID"`
 }
 
+type Equipment struct {
+	gorm.Model
+
+	Name      string `gorm:"uniqueIndex"`
+	InputDate time.Time
+	Quantity  uint
+
+	SportTypeID *uint
+	SportType   SportType	
+
+	CompanyID *uint
+	Company   Company 
+
+	RoleItemID *uint
+	RoleItem   RoleItem 
+
+	UserID *uint
+	User   User
+}
+
+
