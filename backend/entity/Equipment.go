@@ -13,4 +13,12 @@ type SportType struct {
 	Equipment []Equipment `gorm:"foreignKey:SportTypeID"`
 }
 
+type Company struct {
+	gorm.Model
+	Company   string
+	Tel       string
+	About     string
+	Equipment []Equipment `gorm:"foreignKey:CompanyID"`
+}
+
 
