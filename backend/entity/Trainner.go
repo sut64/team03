@@ -15,5 +15,6 @@ type Trainner struct {
 	Tel        string
 	Experience string
 
-	Events []Event `gorm:"foreignKey:TrainnerID"`
+	Events    []Event    `gorm:"foreignKey:TrainnerID"`
+	Facilitys []Facility `gorm:"foreignKey:TrainnerID"`
 }

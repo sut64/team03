@@ -2,16 +2,15 @@ package entity
 
 import (
 	"time"
+
 	"gorm.io/gorm"
 )
 
 type Package struct {
 	gorm.Model
-	Name string
+	Name     string
 	Facility []Facility `gorm:"foreignKey:PackageID"`
-
 }
-
 
 type Facility struct {
 	gorm.Model
@@ -27,6 +26,6 @@ type Facility struct {
 	PackageID *uint
 	Package   Package
 
-	// TrainnerID *uint
-	// Trainner   Trainner
+	TrainnerID *uint
+	Trainner   Trainner
 }
