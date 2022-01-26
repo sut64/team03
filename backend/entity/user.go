@@ -18,7 +18,10 @@ type User struct {
 	// Facility []Facility `gorm:"foreignKey:UserID"`
 
 	RoleID *uint
-	Role Role
+	Role   Role
+
+	CustomerBorrows []Borrowing `gorm:"foreignKey:CustomerBorrowID"`
+	StaffBorrows    []Borrowing `gorm:"foreignKey:StaffBorrowID"`
 }
 
 type Role struct {

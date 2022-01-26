@@ -6,7 +6,6 @@ import (
 	"gorm.io/gorm"
 )
 
-
 type SportType struct {
 	gorm.Model
 	Type      string
@@ -35,16 +34,16 @@ type Equipment struct {
 	Quantity  uint
 
 	SportTypeID *uint
-	SportType   SportType	
+	SportType   SportType
 
 	CompanyID *uint
-	Company   Company 
+	Company   Company
 
 	RoleItemID *uint
-	RoleItem   RoleItem 
+	RoleItem   RoleItem
 
 	UserID *uint
 	User   User
+
+	Borrowings []Borrowing `gorm:"foreignKey:EquipmentID"`
 }
-
-
