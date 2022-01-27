@@ -45,6 +45,7 @@ func CreateEquipment(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "role item not found"})
 		return
 	}
+	
 
 	// : สร้าง Equipment
 	equip := entity.Equipment{
