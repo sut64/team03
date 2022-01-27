@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+
+import SignIn from "./components/SignIn";
+import Navbar from "./components/Navbar";
+
+
+
+
+export default function App() {
+  const [token, setToken] = useState<string>("");
+  const [role, setRole] = useState<string>("");
+
+  useEffect(() => {
+    const getToken = localStorage.getItem("token");
+    if (getToken) {
+      setToken(getToken);
+      setRole(localStorage.getItem("role") || "");
+    } 
+  }, []);
+
+  if (!token) {
+    return <SignIn />
+  }
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {
+        token && (
+          <Fragment>
+            <Navbar/>
+            <Routes>
+              
+              
+            </Routes>
+           
+          </Fragment>
+        )
+      }
+      
+    </Router>
   );
 }
-
-export default App;

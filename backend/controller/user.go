@@ -37,14 +37,22 @@ func GetUser(c *gin.Context) {
 
 // GET /users
 
-func ListUsers(c *gin.Context) {
-	var users []entity.User
-	if err := entity.DB().Raw("SELECT * FROM users").Scan(&users).Error; err != nil {
+func ListUserMember(c *gin.Context) {
+	var User []entity.User
+	if err := entity.DB().Preload("Role").Raw("SELECT * FROM users WHERE role_id = 1 ").Find(&User).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
+	c.JSON(http.StatusOK, gin.H{"data": User})
+}
 
-	c.JSON(http.StatusOK, gin.H{"data": users})
+func ListUserAdmin(c *gin.Context) {
+	var User []entity.User
+	if err := entity.DB().Preload("Role").Raw("SELECT * FROM users WHERE role_id = 2 ").Find(&User).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": User})
 }
 
 // DELETE /users/:id
