@@ -1,10 +1,10 @@
 package main
 
 import (
+	"github.com/gin-gonic/gin"
 	"github.com/sut64/team03/backend/controller"
 	"github.com/sut64/team03/backend/entity"
 	"github.com/sut64/team03/backend/middlewares"
-	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 			protected.GET("/package", controller.ListPackage)
 			protected.GET("/trainner", controller.ListTrainner)
 			protected.POST("/facilitycreate", controller.CreateFacility)
-
+			protected.GET("/getfacility", controller.ListFacility)
 		}
 	}
 	//Get func login/Actor
