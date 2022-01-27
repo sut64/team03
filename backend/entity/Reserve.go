@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+
 type BookingTime struct {
 	gorm.Model
 	Name   string
@@ -42,12 +43,6 @@ type Reserve struct {
 	UserID uint
 	User   User
 
-	ZoneID uint
-	Zone   Zone
-
-	CourtID uint
-	Court   Court
-
 	BookingTimeID uint
 	BookingTime   BookingTime
 }
@@ -58,6 +53,5 @@ type Zone struct {
 	gorm.Model
 	Name   string
 
-	Reserve  []Reserve  `gorm:"foreignKey:ZoneID"`
 	Court    []Court  `gorm:"foreignKey:ZoneID"`
 }
