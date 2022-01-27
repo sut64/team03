@@ -42,8 +42,8 @@ type Equipment struct {
 	RoleItemID *uint
 	RoleItem   RoleItem
 
-	UserID *uint
-	User   User
+	EquipmentStaffID *uint
+	EquipmentStaff   User
 
 	Borrowings []Borrowing `gorm:"foreignKey:EquipmentID"`
 }
