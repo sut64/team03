@@ -9,6 +9,11 @@ import HistoryFacility from "./components/HistotyFacility";
 
 import CreateEvent from "./components/CreateEvent";
 import HistoryEvent from "./components/HistoryEvent";
+
+import BorrowingCreate from "./components/BorrowingCreate";
+import Borrowing from "./components/Borrowing";
+
+import Welcome from "./components/Welcome";
 import { UserInterface, UserloginInterface, RoleloginInterface } from "./model/UserUI";
 import { json } from "stream/consumers";
 
@@ -40,12 +45,15 @@ export default function App() {
           <Fragment>
             <Navbar/>
             <Routes>
-              <Route path="/" element={<HistoryEvent />} />
+              <Route path="/" element={<Welcome />} />
 
               {role === "admin" && user?.Role.Name === role && ( <>
               <Route path="/CreateFacility" element={<CreateFacility />} />
               <Route path="/HistoryFacility" element={<HistoryFacility />} />
               <Route path="/CreateEvent" element={<CreateEvent/>} />
+              <Route path="/HistoryEvent" element={<HistoryEvent/>} />
+              <Route path="/BorrowingCreate" element={<BorrowingCreate/>} />
+              <Route path="/Borrowing" element={<Borrowing/>} />
               </>
               )}
 
