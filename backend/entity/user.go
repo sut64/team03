@@ -22,6 +22,8 @@ type User struct {
 
 	CustomerBorrows []Borrowing `gorm:"foreignKey:CustomerBorrowID"`
 	StaffBorrows    []Borrowing `gorm:"foreignKey:StaffBorrowID"`
+
+	Equipment 		[]Equipment `gorm:"foreignKey:UserID"`
 }
 
 type Role struct {
