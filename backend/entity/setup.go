@@ -416,7 +416,7 @@ func SetupDatabase() {
 		SportType: SportType5,
 		Company:   Company1,
 		RoleItem:  RoleItem1,
-		User:      User3,
+		EquipmentStaff:      User3,
 		InputDate: time.Now(),
 	}
 	db.Model(&Equipment{}).Create(&Equipment1)
@@ -427,7 +427,7 @@ func SetupDatabase() {
 		SportType: SportType3,
 		Company:   Company1,
 		RoleItem:  RoleItem1,
-		User:      User3,
+		EquipmentStaff:      User3,
 		InputDate: time.Now(),
 	}
 	db.Model(&Equipment{}).Create(&Equipment2)
@@ -438,7 +438,7 @@ func SetupDatabase() {
 		SportTypeID: &SportType9.ID,
 		CompanyID:   &Company2.ID,
 		RoleItemID:  &RoleItem1.ID,
-		User:        User3,
+		EquipmentStaff:        User3,
 		InputDate:   time.Now(),
 	}
 	db.Model(&Equipment{}).Create(&Equipment3)
@@ -449,7 +449,7 @@ func SetupDatabase() {
 		SportTypeID: &SportType10.ID,
 		CompanyID:   &Company3.ID,
 		RoleItemID:  &RoleItem2.ID,
-		User:        User3,
+		EquipmentStaff:        User3,
 		InputDate:   time.Now(),
 	}
 	db.Model(&Equipment{}).Create(&Equipment4)

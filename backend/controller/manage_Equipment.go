@@ -14,7 +14,7 @@ func CreateEquipment(c *gin.Context) {
 	var SportType entity.SportType
 	var Company entity.Company
 	var RoleItem entity.RoleItem
-	var User entity.User
+	var EquipmentStaff entity.User
 	
 	// ผลลัพธ์ที่ได้จากขั้นตอนที่ 8 จะถูก bind เข้าตัวแปร Equipment
 	if err := c.ShouldBindJSON(&Equipment); err != nil {
@@ -23,7 +23,7 @@ func CreateEquipment(c *gin.Context) {
 	}
 
 	// : ค้นหา user ด้วย id
-	if tx := entity.DB().Where("id = ?", Equipment.UserID).First(&User); tx.RowsAffected == 0 {
+	if tx := entity.DB().Where("id = ?", Equipment.EquipmentStaffID).First(&EquipmentStaff); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "User not found"})
 		return
 	}
@@ -55,7 +55,7 @@ func CreateEquipment(c *gin.Context) {
 		SportType: SportType,
 		Company:   Company,
 		RoleItem:  RoleItem,
-		User:      User,
+		EquipmentStaff:      EquipmentStaff,
 	}
 
 	// : บันทึก
@@ -70,9 +70,43 @@ func CreateEquipment(c *gin.Context) {
 func ListEquipment(c *gin.Context) {
 	var Equipment []*entity.Equipment
 	if err :=
-		entity.DB().Preload("SportType").Preload("Company").Preload("RoleItem").Preload("User").Table("equipment").Find(&Equipment).Error; err != nil {
+		entity.DB().Preload("SportType").Preload("Company").Preload("RoleItem").Preload("EquipmentStaff").Table("equipment").Find(&Equipment).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{"data": Equipment})
 }
+
+
+// GET /roleitems
+func ListRoleItem(c *gin.Context) {
+	var RoleItem []entity.RoleItem
+	if err := entity.DB().Table("role_items").Find(&RoleItem).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": RoleItem})
+}
+
+
+// GET /companies
+func ListCompany(c *gin.Context) {
+	var Company []entity.Company
+	if err := entity.DB().Table("companies").Find(&Company).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": Company})
+}
+
+
+// GET /sporttypes
+func ListSportType(c *gin.Context) {
+	var SportType []entity.SportType
+	if err := entity.DB().Table("sport_types").Find(&SportType).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": SportType})
+}
+
