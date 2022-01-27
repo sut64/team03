@@ -17,6 +17,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeIcon from "@material-ui/icons/Home";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import SportsTennisIcon from '@mui/icons-material/SportsTennis';
+import TocIcon from '@mui/icons-material/Toc';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -56,7 +58,9 @@ export default function ButtonAppBar() {
     { name: "สิทธิประโยชน์สำหรับสมาชิก", icon: <AssignmentIcon  />, path: "/CreateFacility" },
     { name: "ข้อมูลสิทธิประโยชน์สำหรับสมาชิก", icon: <MenuBookIcon  />, path: "/HistoryFacility" },
     { name: "บันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/CreateEvent" },
-    { name: "ผลการบันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/" },
+    { name: "ผลการบันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/HistoryEvent" },
+    { name: "ยืมอุปกรณ์", icon: <SportsTennisIcon  />, path: "/BorrowingCreate" },
+    { name: "ประวัติการยืมอุปกรณ์", icon: <TocIcon  />, path: "/Borrowing" },
   ]
   const [openDrawer, setOpenDrawer] = useState(false);
   const toggleDrawer = (state: boolean) => (event: any) => {
@@ -109,6 +113,8 @@ export default function ButtonAppBar() {
           <Typography variant="h4"  className={classes.title}>
             
           </Typography>
+
+          
           <Button onClick={SignOut} color="inherit" className={classes.small} >Logout</Button>
           
         </Toolbar>

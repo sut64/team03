@@ -22,7 +22,7 @@ func SetupDatabase() {
 
 	database.AutoMigrate(
 		&User{}, &Package{}, &Trainner{}, &Facility{}, &Room{}, &TypeEvent{}, &Event{}, &BookingTime{}, &Equipment{}, &Payment{}, &Reserve{},
-		&SportType{}, &Company{}, &RoleItem{}, &BookingTime{}, &Court{}, &Zone{}, &BorrowStatus{}, &PaymentMethod{},
+		&SportType{}, &Company{}, &RoleItem{}, &BookingTime{}, &Court{}, &Zone{}, &BorrowStatus{}, &PaymentMethod{}, Borrowing{},
 	)
 
 	db = database
@@ -408,7 +408,7 @@ func SetupDatabase() {
 		TypeEvent: TypeEvent1,
 		Room:      Room1,
 	}
-	db.Model(&Facility{}).Create(&Event1)
+	db.Model(&Event{}).Create(&Event1)
 
 	//Equipment
 	Equipment1 := Equipment{
