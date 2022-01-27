@@ -22,6 +22,12 @@ func main() {
 			protected.GET("/trainner", controller.ListTrainner)
 			protected.POST("/facilitycreate", controller.CreateFacility)
 			protected.GET("/getfacility", controller.ListFacility)
+
+			protected.GET("/ListTrainner", controller.ListTrainner)
+			protected.GET("/ListTypeEvent", controller.ListTypeEvent)
+			protected.GET("/ListRoom", controller.ListRoom)
+			protected.GET("/ListEvent", controller.ListEvent)
+			protected.POST("/CreateEvent", controller.CreateEvent)
 		}
 	}
 	//Get func login/Actor

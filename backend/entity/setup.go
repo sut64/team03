@@ -21,7 +21,8 @@ func SetupDatabase() {
 	}
 
 	database.AutoMigrate(
-		&User{}, &Package{}, &Trainner{}, Facility{},
+		&User{}, &Package{}, &Trainner{}, &Facility{}, &Room{}, &TypeEvent{}, &Event{}, &BookingTime{}, &Equipment{}, &Payment{}, &Reserve{},
+		&SportType{}, &Company{}, &RoleItem{}, &BookingTime{}, &Court{}, &Zone{}, &BorrowStatus{}, &PaymentMethod{},
 	)
 
 	db = database
@@ -411,46 +412,46 @@ func SetupDatabase() {
 
 	//Equipment
 	Equipment1 := Equipment{
-		Name:      "ลูกบาส01",
-		Quantity:  50,
-		SportType: SportType5,
-		Company:   Company1,
-		RoleItem:  RoleItem1,
-		EquipmentStaff:      User3,
-		InputDate: time.Now(),
+		Name:           "ลูกบาส01",
+		Quantity:       50,
+		SportType:      SportType5,
+		Company:        Company1,
+		RoleItem:       RoleItem1,
+		EquipmentStaff: User3,
+		InputDate:      time.Now(),
 	}
 	db.Model(&Equipment{}).Create(&Equipment1)
 
 	Equipment2 := Equipment{
-		Name:      "ลูกแบต01",
-		Quantity:  40,
-		SportType: SportType3,
-		Company:   Company1,
-		RoleItem:  RoleItem1,
-		EquipmentStaff:      User3,
-		InputDate: time.Now(),
+		Name:           "ลูกแบต01",
+		Quantity:       40,
+		SportType:      SportType3,
+		Company:        Company1,
+		RoleItem:       RoleItem1,
+		EquipmentStaff: User3,
+		InputDate:      time.Now(),
 	}
 	db.Model(&Equipment{}).Create(&Equipment2)
 
 	Equipment3 := Equipment{
-		Name:        "ชุดว่ายน้ำ ชาย01",
-		Quantity:    30,
-		SportTypeID: &SportType9.ID,
-		CompanyID:   &Company2.ID,
-		RoleItemID:  &RoleItem1.ID,
-		EquipmentStaff:        User3,
-		InputDate:   time.Now(),
+		Name:           "ชุดว่ายน้ำ ชาย01",
+		Quantity:       30,
+		SportTypeID:    &SportType9.ID,
+		CompanyID:      &Company2.ID,
+		RoleItemID:     &RoleItem1.ID,
+		EquipmentStaff: User3,
+		InputDate:      time.Now(),
 	}
 	db.Model(&Equipment{}).Create(&Equipment3)
 
 	Equipment4 := Equipment{
-		Name:        "ลู่วิ่ง01",
-		Quantity:    20,
-		SportTypeID: &SportType10.ID,
-		CompanyID:   &Company3.ID,
-		RoleItemID:  &RoleItem2.ID,
-		EquipmentStaff:        User3,
-		InputDate:   time.Now(),
+		Name:           "ลู่วิ่ง01",
+		Quantity:       20,
+		SportTypeID:    &SportType10.ID,
+		CompanyID:      &Company3.ID,
+		RoleItemID:     &RoleItem2.ID,
+		EquipmentStaff: User3,
+		InputDate:      time.Now(),
 	}
 	db.Model(&Equipment{}).Create(&Equipment4)
 

@@ -53,8 +53,10 @@ export default function ButtonAppBar() {
     window.location.href = "/";
   }
   const menu = [
-    { name: "ผลการทดลอง", icon: <AssignmentIcon  />, path: "/History" },
-    { name: "บันทึกผลการทดลอง", icon: <MenuBookIcon  />, path: "/link/body" },
+    { name: "สิทธิประโยชน์สำหรับสมาชิก", icon: <AssignmentIcon  />, path: "/CreateFacility" },
+    { name: "ข้อมูลสิทธิประโยชน์สำหรับสมาชิก", icon: <MenuBookIcon  />, path: "/HistoryFacility" },
+    { name: "บันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/CreateEvent" },
+    { name: "ผลการบันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/" },
   ]
   const [openDrawer, setOpenDrawer] = useState(false);
   const toggleDrawer = (state: boolean) => (event: any) => {
@@ -93,6 +95,7 @@ export default function ButtonAppBar() {
                 <ListItem key={index} button component={RouterLink} to={item.path}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText>{item.name}</ListItemText>
+
                 </ListItem>
               ))}
               <ListItem button onClick={SignOut}>
