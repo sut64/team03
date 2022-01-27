@@ -66,8 +66,8 @@ func SetupDatabase() {
 		Name:     "Gnnim",
 		Password: string(PasswordUser3),
 		Email:    "Gnnim@gmail.com",
-		Tel:      "Female",
-		Gender:   "045-XXXXXXX",
+		Tel:      "045-XXXXXXX",
+		Gender:   "Female",
 		Brithday: time.Now().AddDate(-21, -11, 5),
 		Role:     Role2,
 	}
@@ -78,9 +78,9 @@ func SetupDatabase() {
 		Name:     "Faii",
 		Password: string(PasswordUser4),
 		Email:    "Faii@gmail.com",
-		Tel:      "Female",
-		Gender:   "054-XXXXXXX",
-		Brithday: time.Now().AddDate(-21, -11, 5),
+		Tel:      "054-XXXXXXX",
+		Gender:   "Female",
+		Brithday: time.Now().AddDate(-21, -4, 5),
 		Role:     Role2,
 	}
 	db.Model(&User{}).Create(&User4)
@@ -90,9 +90,9 @@ func SetupDatabase() {
 		Name:     "Oeng",
 		Password: string(PasswordUser5),
 		Email:    "Oeng@gmail.com",
-		Tel:      "Female",
-		Gender:   "074-XXXXXXX",
-		Brithday: time.Now().AddDate(-21, -11, 5),
+		Tel:      "074-XXXXXXX",
+		Gender:   "Female",
+		Brithday: time.Now().AddDate(-21, -4, 5),
 		Role:     Role2,
 	}
 	db.Model(&User{}).Create(&User5)
@@ -102,24 +102,60 @@ func SetupDatabase() {
 		Name:     "Big",
 		Password: string(PasswordUser6),
 		Email:    "Big@gmail.com",
-		Tel:      "male",
-		Gender:   "036-XXXXXXX",
-		Brithday: time.Now().AddDate(-21, -11, 5),
+		Tel:      "036-XXXXXXX",
+		Gender:   "Male",
+		Brithday: time.Now().AddDate(-21, -5, 5),
 		Role:     Role2,
 	}
 	db.Model(&User{}).Create(&User6)
 
 	PasswordUser7, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
 	User7 := User{
-		Name:     "Member",
+		Name:     "Owen",
 		Password: string(PasswordUser7),
 		Email:    "Member@gmail.com",
-		Tel:      "Female",
-		Gender:   "036-XXXXXXX",
-		Brithday: time.Now().AddDate(-1, -11, 5),
+		Tel:      "036-XXXXXXX",
+		Gender:   "Female",
+		Brithday: time.Now().AddDate(-1, -2, 5),
 		Role:     Role1,
 	}
 	db.Model(&User{}).Create(&User7)
+
+	PasswordUser8, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
+	User8 := User{
+		Name:     "Xander",
+		Password: string(PasswordUser8),
+		Email:    "Member2@gmail.com",
+		Tel:      "036-XXXXXXX",
+		Gender:   "Female",
+		Brithday: time.Now().AddDate(-1, -4, 5),
+		Role:     Role1,
+	}
+	db.Model(&User{}).Create(&User8)
+
+	PasswordUser9, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
+	User9 := User{
+		Name:     "Zayden",
+		Password: string(PasswordUser9),
+		Email:    "Member3@gmail.com",
+		Tel:      "036-XXXXXXX",
+		Gender:   "Female",
+		Brithday: time.Now().AddDate(-1, -1, 9),
+		Role:     Role1,
+	}
+	db.Model(&User{}).Create(&User9)
+
+	PasswordUser10, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
+	User10 := User{
+		Name:     "Matteo",
+		Password: string(PasswordUser10),
+		Email:    "Member4@gmail.com",
+		Tel:      "036-XXXXXXX",
+		Gender:   "Female",
+		Brithday: time.Now().AddDate(-1, -7, 9),
+		Role:     Role1,
+	}
+	db.Model(&User{}).Create(&User10)
 
 	// setup Package -------------------------------------------------------------------
 	Package1 := Package{
