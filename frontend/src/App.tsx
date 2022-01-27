@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import SignIn from "./components/SignIn";
 import Navbar from "./components/Navbar";
+import CreateFacility from "./components/CreateFacility";
+import HistoryFacility from "./components/HistotyFacility";
 
 
 
@@ -31,8 +33,8 @@ export default function App() {
           <Fragment>
             <Navbar/>
             <Routes>
-              
-              
+              <Route path="/" element={<HistoryFacility />} />
+              <Route path="/CreateFacility" element={<CreateFacility />} />
             </Routes>
            
           </Fragment>

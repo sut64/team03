@@ -58,7 +58,7 @@ func CreateFacility(c *gin.Context) {
 
 func ListFacility(c *gin.Context) {
 	var Facility []*entity.Facility
-	if err := entity.DB().Preload("Facility").Preload("User").Preload("Package").Preload("Trainner").Table("facilities").Find(&Facility).Error; err != nil {
+	if err := entity.DB().Preload("User").Preload("Package").Preload("Trainner").Table("facilities").Find(&Facility).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
