@@ -160,12 +160,12 @@ function EquipBorrow() {
            <Typography
              className={classes.headtext}
              component="h1"
-             variant="h4"
+             variant="h5"
              color="primary"
              gutterBottom
            >
 
-             Borrowing System
+             ข้อมูลการยืมอุปกรณ์
 
            </Typography>
 
@@ -179,7 +179,7 @@ function EquipBorrow() {
              variant="contained"
            >
 
-             Borrow
+             ยืมอุปกรณ์
 
            </Button>
 

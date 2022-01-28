@@ -16,6 +16,7 @@ import Borrowing from "./components/Borrowing";
 import BorrowingforMember from "./components/BorrowingforMember";
 
 import Welcome from "./components/Welcome";
+import WelcomeMember from "./components/WelcomeMember";
 import { UserInterface, UserloginInterface, RoleloginInterface } from "./model/UserUI";
 
 import InputEquipment from './components/InputEquipment';
@@ -28,6 +29,7 @@ import HistoryPayment from "./components/HistoryPayment";
 import CreateReserve from "./components/Reserve";
 import HistoryReserve from "./components/HistoryReserve";
 import HistoryFacilityForMember from "./components/HistoryFacilityForMember";
+import ReserveAdmin from "./components/ReserveAdmin";
 
 
 
@@ -73,7 +75,8 @@ export default function App() {
               <Route path="/HistoryPayment" element={<HistoryPayment />} />
               <Route path="/PaymentCreate" element={<PaymentCreate />} />
               <Route path="/HistoryReserve" element={<HistoryReserve />} />
-
+              <Route path="/ReserveAdmin" element={<ReserveAdmin />} />
+              
               </Routes>
 
               </>
@@ -83,13 +86,14 @@ export default function App() {
 
                 <NavbarMember/>
             <Routes>
-              <Route path="/" element={<Welcome />} /> 
+              <Route path="/" element={<WelcomeMember />} /> 
               <Route path="/HistoryFacilityForMember" element={<HistoryFacilityForMember />} />
               <Route path="/CreateReserve" element={<CreateReserve />} />
               <Route path="/HistoryReserve" element={<HistoryReserve />} />
               <Route path="/HistoryEvent" element={<HistoryEvent/>} />
-              <Route path="/userEquip" element={<UserEquipment/>} />
               <Route path="/BorrowingforMember" element={<BorrowingforMember/>} /> 
+              <Route path="/UserEquipment" element={<UserEquipment/>} /> 
+              
               </Routes>
               </>
               )}

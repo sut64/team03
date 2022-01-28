@@ -214,7 +214,7 @@ export default function CreateFacility(){
         <div  >
         <ThemeProvider theme={theme}>
             <Container className='container' maxWidth="md" >
-            <Snackbar  anchorOrigin={{ vertical:"bottom", horizontal:"center" }} open={success} autoHideDuration={1000} onClose={handleClose} TransitionProps={{ onExit: () => (window.location.href = "/") }} > 
+            <Snackbar  anchorOrigin={{ vertical:"bottom", horizontal:"center" }} open={success} autoHideDuration={1000} onClose={handleClose} TransitionProps={{ onExit: () => (window.location.href = "/HistoryFacility") }} > 
               <Alert onClose={handleClose} severity="success">
                 บันทึกข้อมูลสำเร็จ
               </Alert>

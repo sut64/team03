@@ -88,7 +88,7 @@ func SetupDatabase() {
 
 	PasswordUser5, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
 	User5 := User{
-		Name:     "Oeng",
+		Name:     "Member",
 		Password: string(PasswordUser5),
 		Email:    "member@gmail.com",
 		Tel:      "074-XXXXXXX",
@@ -100,9 +100,9 @@ func SetupDatabase() {
 
 	PasswordUser6, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
 	User6 := User{
-		Name:     "Big",
+		Name:     "Admin",
 		Password: string(PasswordUser6),
-		Email:    "amin@gmail.com",
+		Email:    "admin@gmail.com",
 		Tel:      "036-XXXXXXX",
 		Gender:   "Male",
 		Brithday: time.Now().AddDate(-21, -5, 5),
@@ -441,7 +441,7 @@ func SetupDatabase() {
 
 	//Equipment
 	Equipment1 := Equipment{
-		Name:           "ลูกบาส01",
+		Name:           "ลูกบาส1",
 		Quantity:       50,
 		SportType:      SportType5,
 		Company:        Company1,
@@ -452,7 +452,7 @@ func SetupDatabase() {
 	db.Model(&Equipment{}).Create(&Equipment1)
 
 	Equipment2 := Equipment{
-		Name:           "ลูกขนไก่01",
+		Name:           "ลูกขนไก่1",
 		Quantity:       40,
 		SportType:      SportType3,
 		Company:        Company1,
@@ -463,7 +463,7 @@ func SetupDatabase() {
 	db.Model(&Equipment{}).Create(&Equipment2)
 
 	Equipment3 := Equipment{
-		Name:           "ชุดว่ายน้ำ ชาย01",
+		Name:           "ชุดว่ายน้ำ ชาย1",
 		Quantity:       30,
 		SportTypeID:    &SportType9.ID,
 		CompanyID:      &Company2.ID,
@@ -474,7 +474,7 @@ func SetupDatabase() {
 	db.Model(&Equipment{}).Create(&Equipment3)
 
 	Equipment4 := Equipment{
-		Name:           "ลู่วิ่ง01",
+		Name:           "ลู่วิ่ง1",
 		Quantity:       20,
 		SportTypeID:    &SportType10.ID,
 		CompanyID:      &Company3.ID,
