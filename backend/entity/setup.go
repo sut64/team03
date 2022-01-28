@@ -90,7 +90,7 @@ func SetupDatabase() {
 	User5 := User{
 		Name:     "Oeng",
 		Password: string(PasswordUser5),
-		Email:    "Oeng@gmail.com",
+		Email:    "member@gmail.com",
 		Tel:      "074-XXXXXXX",
 		Gender:   "Female",
 		Brithday: time.Now().AddDate(-21, -4, 5),
@@ -102,11 +102,11 @@ func SetupDatabase() {
 	User6 := User{
 		Name:     "Big",
 		Password: string(PasswordUser6),
-		Email:    "Big@gmail.com",
+		Email:    "amin@gmail.com",
 		Tel:      "036-XXXXXXX",
 		Gender:   "Male",
 		Brithday: time.Now().AddDate(-21, -5, 5),
-		Role:     Role1,
+		Role:     Role2,
 	}
 	db.Model(&User{}).Create(&User6)
 

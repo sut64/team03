@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
         container: { marginTop: theme.spacing(2) },
 
-        paper: { padding: theme.spacing(3), color: theme.palette.text.secondary },
+        paper: { padding: theme.spacing(3), color: theme.palette.text.secondary ,paddingBottom: theme.spacing(6),marginBottom: theme.spacing(2)},
 
         table: { minWidth: 20 },
 
@@ -457,12 +457,8 @@ const getBookingTime = async (CourtID : unknown) => {
                             </MuiPickersUtilsProvider>
                           </FormControl>
                     </Grid>
-
-
-                  
-
                     <Grid item xs={12}>
-                        <Button style={{ float: "right" }}
+                        <Button style={{ float: "right"  ,marginRight:"0px",marginBottom:"10px"}}
                             variant="contained"
                             color="primary"
                             onClick={submitReserve}
@@ -470,6 +466,11 @@ const getBookingTime = async (CourtID : unknown) => {
                             SUBMIT
                         </Button>
                         </Grid>
+
+
+                  
+
+                    
 
 
                     
@@ -489,6 +490,7 @@ const getBookingTime = async (CourtID : unknown) => {
 
 
           </Paper>
+         
 
         </Container>
     
