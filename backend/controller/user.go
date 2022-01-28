@@ -39,7 +39,7 @@ func GetUser(c *gin.Context) {
 
 func ListUserMember(c *gin.Context) {
 	var User []entity.User
-	if err := entity.DB().Preload("Role").Raw("SELECT * FROM users WHERE role_id = 1 ").Find(&User).Error; err != nil {
+	if err := entity.DB().Preload("Role").Raw("SELECT users.* FROM users LEFT JOIN roles ON users.role_id = roles.id WHERE roles.name = 'member';").Find(&User).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -48,7 +48,7 @@ func ListUserMember(c *gin.Context) {
 
 func ListUserAdmin(c *gin.Context) {
 	var User []entity.User
-	if err := entity.DB().Preload("Role").Raw("SELECT * FROM users WHERE role_id = 2 ").Find(&User).Error; err != nil {
+	if err := entity.DB().Preload("Role").Raw("SELECT users.* FROM users LEFT JOIN roles ON users.role_id = roles.id WHERE roles.name = 'admin';").Find(&User).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
