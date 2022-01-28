@@ -19,7 +19,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import SportsTennisIcon from '@mui/icons-material/SportsTennis';
 import TocIcon from '@mui/icons-material/Toc';
-
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -65,6 +65,9 @@ export default function ButtonAppBar() {
     { name: "อุปกรณ์ทั้งหมด", icon: <MenuBookIcon  />, path: "/equip" },
     { name: "บันทึกการชำระเงิน", icon: <MenuBookIcon />, path: "/PaymentCreate"},
     { name: "ประวัติการบันทึกการชำระเงิน", icon: <MenuBookIcon />, path: "/HistoryPayment"},
+    { name: "จองสนามกีฬา", icon: <SportsSoccerIcon />, path: "/CreateReserve"},
+    { name: "ประวัติการจองสนามกีฬา", icon: <MenuBookIcon />, path: "/HistoryReserve"},
+
   ]
   const [openDrawer, setOpenDrawer] = useState(false);
   const toggleDrawer = (state: boolean) => (event: any) => {

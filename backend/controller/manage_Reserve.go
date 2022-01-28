@@ -85,3 +85,11 @@ func ListBookingTime(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"data": BookingTime})
 }
+func ListUser(c *gin.Context) {
+	var User []entity.User
+	if err := entity.DB().Table("users").Find(&User).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": User})
+}
