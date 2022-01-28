@@ -82,7 +82,7 @@ func SetupDatabase() {
 		Tel:      "054-XXXXXXX",
 		Gender:   "Female",
 		Brithday: time.Now().AddDate(-21, -4, 5),
-		Role:     Role2,
+		Role:     Role1,
 	}
 	db.Model(&User{}).Create(&User4)
 
@@ -94,7 +94,7 @@ func SetupDatabase() {
 		Tel:      "074-XXXXXXX",
 		Gender:   "Female",
 		Brithday: time.Now().AddDate(-21, -4, 5),
-		Role:     Role2,
+		Role:     Role1,
 	}
 	db.Model(&User{}).Create(&User5)
 
@@ -106,69 +106,9 @@ func SetupDatabase() {
 		Tel:      "036-XXXXXXX",
 		Gender:   "Male",
 		Brithday: time.Now().AddDate(-21, -5, 5),
-		Role:     Role2,
+		Role:     Role1,
 	}
 	db.Model(&User{}).Create(&User6)
-
-	PasswordUser7, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
-	User7 := User{
-		Name:     "Owen",
-		Password: string(PasswordUser7),
-		Email:    "Member@gmail.com",
-		Tel:      "036-XXXXXXX",
-		Gender:   "Female",
-		Brithday: time.Now().AddDate(-1, -2, 5),
-		Role:     Role1,
-	}
-	db.Model(&User{}).Create(&User7)
-
-	PasswordUser8, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
-	User8 := User{
-		Name:     "Xander",
-		Password: string(PasswordUser8),
-		Email:    "Member2@gmail.com",
-		Tel:      "036-XXXXXXX",
-		Gender:   "Female",
-		Brithday: time.Now().AddDate(-1, -4, 5),
-		Role:     Role1,
-	}
-	db.Model(&User{}).Create(&User8)
-
-	PasswordUser9, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
-	User9 := User{
-		Name:     "Zayden",
-		Password: string(PasswordUser9),
-		Email:    "Member3@gmail.com",
-		Tel:      "036-XXXXXXX",
-		Gender:   "Female",
-		Brithday: time.Now().AddDate(-1, -1, 9),
-		Role:     Role1,
-	}
-	db.Model(&User{}).Create(&User9)
-
-	PasswordUser10, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
-	User10 := User{
-		Name:     "Matteo",
-		Password: string(PasswordUser10),
-		Email:    "Member4@gmail.com",
-		Tel:      "036-XXXXXXX",
-		Gender:   "Female",
-		Brithday: time.Now().AddDate(-1, -7, 9),
-		Role:     Role1,
-	}
-	db.Model(&User{}).Create(&User10)
-
-	PasswordUser11, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
-	User11 := User{
-		Name:     "BIG",
-		Password: string(PasswordUser11),
-		Email:    "big16635@gmail.com",
-		Tel:      "036-XXXXXXX",
-		Gender:   "male",
-		Brithday: time.Now().AddDate(-1, -9, 9),
-		Role:     Role2,
-	}
-	db.Model(&User{}).Create(&User11)
 
 	// setup Package -------------------------------------------------------------------
 	Package1 := Package{
@@ -400,7 +340,7 @@ func SetupDatabase() {
 	//Facility
 	Facility1 := Facility{
 		User:        User1,
-		No:          "A000000",
+		No:          "A000001",
 		PackageTime: time.Date(2022, 2, 23, 8, 30, 30, 30, time.Local),
 		Price:       199,
 		Confirm:     true,
@@ -408,6 +348,83 @@ func SetupDatabase() {
 		Trainner:    Trainner1,
 	}
 	db.Model(&Facility{}).Create(&Facility1)
+
+	Facility2 := Facility{
+		User:        User2,
+		No:          "A000002",
+		PackageTime: time.Date(2022, 3, 23, 8, 30, 20, 30, time.Local),
+		Price:       250,
+		Confirm:     true,
+		Package:     Package2,
+		Trainner:    Trainner3,
+	}
+	db.Model(&Facility{}).Create(&Facility2)
+
+	Facility3 := Facility{
+		User:        User3,
+		No:          "A000003",
+		PackageTime: time.Date(2021, 3, 23, 8, 30, 20, 30, time.Local),
+		Price:       1234,
+		Confirm:     true,
+		Package:     Package3,
+		Trainner:    Trainner2,
+	}
+	db.Model(&Facility{}).Create(&Facility3)
+
+	Facility4 := Facility{
+		User:        User4,
+		No:          "A000004",
+		PackageTime: time.Date(2021, 3, 23, 7, 30, 20, 30, time.Local),
+		Price:       1523,
+		Confirm:     true,
+		Package:     Package1,
+		Trainner:    Trainner2,
+	}
+	db.Model(&Facility{}).Create(&Facility4)
+
+	Facility5 := Facility{
+		User:        User5,
+		No:          "A000005",
+		PackageTime: time.Date(2021, 2, 23, 7, 30, 20, 30, time.Local),
+		Price:       1523,
+		Confirm:     true,
+		Package:     Package2,
+		Trainner:    Trainner4,
+	}
+	db.Model(&Facility{}).Create(&Facility5)
+
+	Facility6 := Facility{
+		User:        User6,
+		No:          "A000006",
+		PackageTime: time.Date(2021, 2, 2, 7, 30, 20, 30, time.Local),
+		Price:       5000,
+		Confirm:     true,
+		Package:     Package3,
+		Trainner:    Trainner4,
+	}
+	db.Model(&Facility{}).Create(&Facility6)
+
+	Facility7 := Facility{
+		User:        User1,
+		No:          "A000007",
+		PackageTime: time.Date(2021, 2, 2, 7, 30, 20, 30, time.Local),
+		Price:       5200,
+		Confirm:     true,
+		Package:     Package3,
+		Trainner:    Trainner4,
+	}
+	db.Model(&Facility{}).Create(&Facility7)
+
+	Facility8 := Facility{
+		User:        User1,
+		No:          "A000008",
+		PackageTime: time.Date(2021, 2, 2, 6, 30, 20, 30, time.Local),
+		Price:       5200,
+		Confirm:     true,
+		Package:     Package2,
+		Trainner:    Trainner1,
+	}
+	db.Model(&Facility{}).Create(&Facility8)
 
 	Event1 := Event{
 		Name:      "Yago",
@@ -475,7 +492,7 @@ func SetupDatabase() {
 		Contact:        "0908208456",
 		BorrowStatus:   BorrowStatus1,
 		Equipment:      Equipment1,
-		CustomerBorrow: User7,
+		CustomerBorrow: User2,
 		StaffBorrow:    User5,
 	}
 	db.Model(&Borrowing{}).Create(&Borrowing1)
