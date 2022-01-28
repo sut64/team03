@@ -7,7 +7,7 @@ import (
 ) 
 
 // POST /Payment
-func CreateLabResult(c *gin.Context) {
+func CreatePayment(c *gin.Context) {
 	var customerpayment entity.User
 	var staffpayment entity.User
 	var facility entity.Facility
@@ -52,6 +52,7 @@ func CreateLabResult(c *gin.Context) {
 		Discount: payment.Discount,    
 		Total: payment.Total,    
 		AddedTime: payment.AddedTime,
+		Bill: payment.Bill,
 	}
 
 	// 14: บันทึก
@@ -64,18 +65,18 @@ func CreateLabResult(c *gin.Context) {
 
 // GET: /api/ListPayment
 func ListPayment(c *gin.Context) {
-	var Payment []*entity.Payment
-	if err := entity.DB().Preload("Payment").Preload("StaffPayment").Preload("CustomerPayment").Preload("Paymentmethod").Preload("Facility").Table("payments").Find(&Payment).Error; err != nil {
+	var payment []*entity.Payment
+	if err := entity.DB().Preload("StaffPayment").Preload("CustomerPayment").Preload("PaymentMethod").Preload("Facility").Raw("SELECT * FROM payments").Find(&payment).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"data": Payment})
+	c.JSON(http.StatusOK, gin.H{"data": payment})
 }
 
 func ListPaymentMethod(c *gin.Context) {
 	var paymentmethod []entity.PaymentMethod
-	if err := entity.DB().Table("paymentmethods").Find(&paymentmethod).Error; err != nil {
+	if err := entity.DB().Table("payment_methods").Find(&paymentmethod).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

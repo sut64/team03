@@ -20,6 +20,9 @@ import { json } from "stream/consumers";
 import InputEquipment from './components/InputEquipment';
 import Equipment from "./components/Equipment";
 
+import PaymentCreate from "./components/PaymentCreate";
+import HistoryPayment from "./components/HistoryPayment";
+
 
 export default function App() {
   const [token, setToken] = useState<string>("");
@@ -59,6 +62,9 @@ export default function App() {
               <Route path="/Borrowing" element={<Borrowing/>} />
               <Route path="/equip" element={<Equipment />} />
               <Route path="/inputEquip" element={<InputEquipment/>} />
+              <Route path="/HistoryPayment" element={<HistoryPayment />} />
+              <Route path="/PaymentCreate" element={<PaymentCreate />} />
+
               </>
               )}
 

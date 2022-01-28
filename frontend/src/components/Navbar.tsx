@@ -63,6 +63,8 @@ export default function ButtonAppBar() {
     { name: "ประวัติการยืมอุปกรณ์", icon: <TocIcon  />, path: "/Borrowing" },
     { name: "เพิ่มอุปกรณ์", icon: <MenuBookIcon  />, path: "/inputEquip" },
     { name: "อุปกรณ์ทั้งหมด", icon: <MenuBookIcon  />, path: "/equip" },
+    { name: "บันทึกการชำระเงิน", icon: <MenuBookIcon />, path: "/PaymentCreate"},
+    { name: "ประวัติการบันทึกการชำระเงิน", icon: <MenuBookIcon />, path: "/HistoryPayment"},
   ]
   const [openDrawer, setOpenDrawer] = useState(false);
   const toggleDrawer = (state: boolean) => (event: any) => {
