@@ -51,9 +51,9 @@ func main() {
 			protected.GET("/api/ListBookingTime/:CourtID", controller.ListBookingTime)
 			protected.POST("/api/CreateReserve", controller.CreateReserve)
 			protected.GET("/api/ListReserve", controller.ListReserve)
-
-			//api MedicalHistory
 			protected.GET("/api/ListUser", controller.ListUser)
+			protected.GET("/api/ListFacilityZone/:UserID", controller.ListFacilityZone)
+
 
 		}
 	}

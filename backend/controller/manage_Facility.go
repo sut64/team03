@@ -2,10 +2,10 @@ package controller
 
 import (
 	"net/http"
-	"github.com/sut64/team03/backend/entity"
-	"github.com/gin-gonic/gin"
-)
 
+	"github.com/gin-gonic/gin"
+	"github.com/sut64/team03/backend/entity"
+)
 
 func CreateFacility(c *gin.Context) {
 	var User entity.User
@@ -13,31 +13,26 @@ func CreateFacility(c *gin.Context) {
 	var Trainner entity.Trainner
 	var Facility entity.Facility
 
-	
 	if err := c.ShouldBindJSON(&Facility); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	
 	if tx := entity.DB().Where("id = ?", Facility.UserID).First(&User); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "MedicalTech not found"})
 		return
 	}
 
-	
 	if tx := entity.DB().Where("id = ?", Facility.PackageID).First(&Package); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "MedicalRecord not found"})
 		return
 	}
 
-	
 	if tx := entity.DB().Where("id = ?", Facility.TrainnerID).First(&Trainner); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "LabType not found"})
 		return
 	}
 
-	
 	Fac := entity.Facility{
 		User:        User,
 		No:          Facility.No,
@@ -48,7 +43,6 @@ func CreateFacility(c *gin.Context) {
 		Trainner:    Trainner,
 	}
 
-	
 	if err := entity.DB().Create(&Fac).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -73,4 +67,14 @@ func ListPackage(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{"data": Package})
+}
+
+func ListFacilityZone(c *gin.Context) {
+	var Facility []entity.Facility
+	UserID := c.Param("UserID")
+	if err := entity.DB().Preload("Package").Raw("SELECT * FROM facilities WHERE user_id = ?", UserID).Find(&Facility).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"data": Facility})
 }

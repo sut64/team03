@@ -68,8 +68,8 @@ export default function App() {
               <Route path="/inputEquip" element={<InputEquipment/>} />
               <Route path="/HistoryPayment" element={<HistoryPayment />} />
               <Route path="/PaymentCreate" element={<PaymentCreate />} />
-              <Route path="/CreateReserve" element={<CreateReserve />} />
               <Route path="/HistoryReserve" element={<HistoryReserve />} />
+              <Route path="/CreateReserve" element={<CreateReserve />} />
 
 
 
@@ -78,6 +78,8 @@ export default function App() {
 
               {role === "member" && user?.Role.Name === role && ( <>
               <Route path="/HistoryFacility" element={<HistoryFacility />} />
+              <Route path="/CreateReserve" element={<CreateReserve />} />
+              <Route path="/HistoryReserve" element={<HistoryReserve />} />
               </>
               )}
               

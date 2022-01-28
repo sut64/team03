@@ -1,4 +1,5 @@
 import { UserInterface } from "./UserUI";
+import { FacilityInterface } from '../model/FacilityUI';
 export interface BookingTimeInterface{
     ID: number,
     Name  : string
@@ -33,5 +34,8 @@ export interface ReserveInterface{
 
 	BookingTimeID: number
 	BookingTime : BookingTimeInterface
+
+	FacilityID : number
+
 
 }

@@ -2,6 +2,7 @@
 import { Box } from '@material-ui/core';
 import * as React from 'react';
 import {BookingTimeInterface,CourtInterface,ZoneInterface,ReserveInterface} from '../model/ReserveUI';
+import { FacilityInterface, PackageInterface } from '../model/FacilityUI';
 import { UserInterface } from "../model/UserUI";
 
 //-----------------------------------------------------------------
@@ -56,15 +57,12 @@ function CreateReserve(){
   const classes = useStyles();
 
   useEffect(() => {
-      getUser();
       getZone();
       
     }, []);
 
 
     const [Reserve,setReserve] = useState<Partial<ReserveInterface>>({});
-    
-
     
     const handleChange = (event: ChangeEvent<{name?: string; value: unknown}>) => {
       const name = event.target.name as keyof typeof Reserve;
@@ -74,28 +72,47 @@ function CreateReserve(){
 
 
 //GetUser=============================================================================================
-const [User, setUser] = useState<UserInterface[]>([]);
-
-
-  const getUser = async() => {
-      const apiUrl = "http://localhost:8080/users";
-      const requestOptions = {
-        method: "GET",
-        headers: {Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-Type": "application/json",},
-      }
+const User: UserInterface = (JSON.parse(localStorage.getItem("User")|| ""));
+//   const getUser = async() => {
+//       const apiUrl = "http://localhost:8080/users";
+//       const requestOptions = {
+//         method: "GET",
+//         headers: {Authorization: `Bearer ${localStorage.getItem("token")}`,
+//         "Content-Type": "application/json",},
+//       }
   
-      fetch(apiUrl, requestOptions)
+//       fetch(apiUrl, requestOptions)
+//         .then((response) => response.json())
+//         .then((res) => {
+//           console.log(res.data);
+//           if(res.data) {
+//             setUser(res.data)
+//           } else {
+//             console.log("else")
+//           }
+//         });
+//     }
+const [Facility, setFacility] = useState<FacilityInterface[]>([]);
+//get pac
+const getFacility = async (UserID : unknown) => {
+  const apiUrl = `http://localhost:8080/api/ListFacilityZone/${User.ID}`;   //ดึง 
+  const requestOptions = {
+          method: "GET",
+          headers: {Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",},
+        }
+        fetch(apiUrl, requestOptions)
         .then((response) => response.json())
         .then((res) => {
           console.log(res.data);
           if(res.data) {
-            setUser(res.data)
+            setFacility(res.data)
           } else {
             console.log("else")
           }
         });
     }
+
 
 //Get Zone ==========================================================================================
 
@@ -113,8 +130,6 @@ const [User, setUser] = useState<UserInterface[]>([]);
   return value
  
 };
-
-
 
 const getZone = async() => {
 
@@ -215,14 +230,15 @@ const getBookingTime = async (CourtID : unknown) => {
     //==========================================================================
     const submitReserve = () => {
       let data = {
-        UserID : Reserve.UserID,
+        UserID : User.ID,
+        FacilityID : Reserve.FacilityID,
         BookingTimeID: Reserve.BookingTimeID,
         Amount:typeof Reserve.Amount =="string"?parseInt(Reserve.Amount):Reserve.Amount,
         Tel :Reserve.Tel,
         AddedTime: AddedTime
 
       };
-      
+      console.log(data)
       if(!Reserve.Amount){
         console.log("กรุณาใส่ข้อมูลให้ครบ หรือ ใส่ข้อมูลให้ถูกต้อง")
         setWarning(true)
@@ -304,21 +320,40 @@ const getBookingTime = async (CourtID : unknown) => {
 
 
 
-                <Grid item xs={6} >
+                <Grid item xs={6}>
                         <p>ชื่อคนจอง</p>
                         <Select variant="outlined"
+                           disabled
+                           defaultValue={0}
+                           style={{width:400}}
+
+                           >
+                             <MenuItem value={0}>{User.Name}</MenuItem>
+                        </Select>
+                    </Grid>        
+
+
+
+                    <Grid item xs={6} >
+                        <p>Package</p>
+                        <Select variant="outlined"
+                          
                             defaultValue={0}
-                            inputProps={{name: "UserID"}}
-                            value={Reserve.UserID}
+                            inputProps={{name: "FacilityID"}}
+                            value={Reserve.FacilityID}
+                            onOpen={() => getFacility(User.ID)}
                             onChange={handleChange}
                             style={{ width: 400 }}
-                            
+                    
+
                         >
-                            <MenuItem value={0} key={0}disabled>เลือกชื่อคนจอง</MenuItem>
-                            {User.map((item: UserInterface) => (
-                              <MenuItem value={item.ID} key={item.ID}>{item.Name}</MenuItem>))}
+                            <MenuItem value={0} key={0}disabled>Select  Pakage</MenuItem>
+                            {Facility.map((item: FacilityInterface) => (
+                              <MenuItem value={item.ID} key={item.ID}>{item.Package.Name}</MenuItem>))}
                         </Select>
-                    </Grid>           
+                    </Grid>      
+
+
 
                     
                     <Grid item xs={6} >
