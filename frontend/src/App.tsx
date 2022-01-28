@@ -26,6 +26,7 @@ import HistoryPayment from "./components/HistoryPayment";
 
 import CreateReserve from "./components/Reserve";
 import HistoryReserve from "./components/HistoryReserve";
+import HistoryFacilityForMember from "./components/HistoryFacilityForMember";
 
 
 
@@ -82,7 +83,7 @@ export default function App() {
                 <NavbarMember/>
             <Routes>
               <Route path="/" element={<Welcome />} /> 
-              <Route path="/HistoryFacility" element={<HistoryFacility />} />
+              <Route path="/HistoryFacilityForMember" element={<HistoryFacilityForMember />} />
               <Route path="/CreateReserve" element={<CreateReserve />} />
               <Route path="/HistoryReserve" element={<HistoryReserve />} />
               <Route path="/HistoryEvent" element={<HistoryEvent/>} />

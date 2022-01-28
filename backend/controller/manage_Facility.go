@@ -78,3 +78,14 @@ func ListFacilityZone(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"data": Facility})
 }
+
+func ListFacilityForMember(c *gin.Context) {
+	var Facility []*entity.Facility
+	UserID := c.Param("UserID")
+	if err := entity.DB().Preload("User").Preload("Package").Preload("Trainner").Raw("SELECT * FROM facilities WHERE user_id = ?", UserID).Find(&Facility).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": Facility})
+}
