@@ -19,17 +19,17 @@ func CreateFacility(c *gin.Context) {
 	}
 
 	if tx := entity.DB().Where("id = ?", Facility.UserID).First(&User); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "MedicalTech not found"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "User not found"})
 		return
 	}
 
 	if tx := entity.DB().Where("id = ?", Facility.PackageID).First(&Package); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "MedicalRecord not found"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Package not found"})
 		return
 	}
 
 	if tx := entity.DB().Where("id = ?", Facility.TrainnerID).First(&Trainner); tx.RowsAffected == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "LabType not found"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Trainner not found"})
 		return
 	}
 
