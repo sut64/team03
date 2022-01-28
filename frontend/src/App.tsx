@@ -20,6 +20,7 @@ import { UserInterface, UserloginInterface, RoleloginInterface } from "./model/U
 
 import InputEquipment from './components/InputEquipment';
 import Equipment from "./components/Equipment";
+import UserEquipment from "./components/UserEquipment";
 
 import PaymentCreate from "./components/PaymentCreate";
 import HistoryPayment from "./components/HistoryPayment";
@@ -87,6 +88,7 @@ export default function App() {
               <Route path="/CreateReserve" element={<CreateReserve />} />
               <Route path="/HistoryReserve" element={<HistoryReserve />} />
               <Route path="/HistoryEvent" element={<HistoryEvent/>} />
+              <Route path="/userEquip" element={<UserEquipment/>} />
               <Route path="/BorrowingforMember" element={<BorrowingforMember/>} /> 
               </Routes>
               </>
