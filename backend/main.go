@@ -17,6 +17,12 @@ func main() {
 	{
 		protected := api.Use(middlewares.Authorizes())
 		{
+			protected.GET("/listcustomer", controller.ListUserMember)
+			protected.GET("/api/listpayment", controller.ListPayment)
+			protected.GET("/listpaymentmethod", controller.ListPaymentMethod)
+			protected.GET("/listfacility", controller.ListFacility)
+			protected.POST("/paymentcreate", controller.CreatePayment)
+			
 			protected.GET("/users", controller.ListUserMember)
 			protected.GET("/package", controller.ListPackage)
 			protected.GET("/trainner", controller.ListTrainner)
