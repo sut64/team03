@@ -133,9 +133,8 @@ function PaymentCreate() {
     },
   };
 
-
-  const getFacility = async () => {
-    fetch(`${apiUrl}/listfacility`, requestOptions)
+  const getFacility = async (id : string | number | undefined |unknown) => {
+    fetch(`${apiUrl}/getfacilityformember/${id}`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
@@ -144,7 +143,9 @@ function PaymentCreate() {
           console.log("else");
         }
       });
+
   };
+
 
   const getPaymentMethod = async () => {
     fetch(`${apiUrl}/listpaymentmethod`, requestOptions)
@@ -191,6 +192,21 @@ function PaymentCreate() {
       ...payment,
       [name]: event.target.value,
     });
+  };
+
+  const handleUserChange = (
+    event: React.ChangeEvent<{ name?: string; value: unknown ;}>
+  ) => {
+    
+    const name = event.target.name as keyof typeof payment;
+    setPayment({
+      ...payment,
+      [name]: event.target.value,
+    });
+
+    const id = event.target.value;
+
+    getFacility(id);
   };
 
 
@@ -255,7 +271,6 @@ function submit() {
 }
 
   useEffect(() => {
-    getFacility();
     getPaymentMethod();
     getUser();
   }, []);
@@ -316,12 +331,11 @@ return (
 
       Customer
          <form className={classes.combobox} noValidate >
-          
-         
+            
         <Select        
                 native
                 value={payment.CustomerPaymentID}
-                onChange={handleChange}
+                onChange={handleUserChange}
                 inputProps={{
                   name: "CustomerPaymentID",
                 }}
@@ -332,7 +346,7 @@ return (
                 </option>
                 {users.map((item: UserInterface) => (
                   <option value={item.ID} key={item.ID}>
-                    {item.ID} {item.Name} {item.Role.Name}
+                    {item.Name} 
                   </option>
                 ))}
               </Select>
