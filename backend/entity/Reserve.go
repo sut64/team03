@@ -16,6 +16,7 @@ type BookingTime struct {
 	CourtID uint
 	Court   Court
 
+
 	Reserve  []Reserve  `gorm:"foreignKey:BookingTimeID"`
 
 	
@@ -45,6 +46,9 @@ type Reserve struct {
 
 	BookingTimeID uint
 	BookingTime   BookingTime
+
+	FacilityID uint
+	Facility  Facility
 }
 
 

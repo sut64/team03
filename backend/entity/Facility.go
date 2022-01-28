@@ -28,4 +28,6 @@ type Facility struct {
 
 	TrainnerID *uint
 	Trainner   Trainner
+
+	Reserve []Reserve `gorm:"foreignKey:FacilityID"`
 }

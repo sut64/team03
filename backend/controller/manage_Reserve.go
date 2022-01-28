@@ -12,6 +12,7 @@ func CreateReserve(c *gin.Context) {
 	var Reserve entity.Reserve
 	var User entity.User
 	var BookingTime entity.BookingTime
+	var Facility entity.Facility
 
 	if err := c.ShouldBindJSON(&Reserve); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
@@ -24,6 +25,11 @@ func CreateReserve(c *gin.Context) {
 		return
 	}
 
+	if tx := entity.DB().Where("id = ?", Reserve.FacilityID).First(&Facility); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Facility not found"})
+		return
+	}
+
 	if tx := entity.DB().Where("id = ?", Reserve.BookingTimeID).First(&BookingTime); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "BookingTime not found"})
 		return
@@ -32,6 +38,7 @@ func CreateReserve(c *gin.Context) {
 	// 12: สร้าง Reserve
 	rs := entity.Reserve{
 		User:        User,
+		Facility:   Facility,
 		BookingTime: BookingTime,
 		Amount:      Reserve.Amount,
 		Tel:         Reserve.Tel,
