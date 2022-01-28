@@ -17,6 +17,9 @@ import Welcome from "./components/Welcome";
 import { UserInterface, UserloginInterface, RoleloginInterface } from "./model/UserUI";
 import { json } from "stream/consumers";
 
+import InputEquipment from './components/InputEquipment';
+import Equipment from "./components/Equipment";
+
 
 export default function App() {
   const [token, setToken] = useState<string>("");
@@ -54,6 +57,8 @@ export default function App() {
               <Route path="/HistoryEvent" element={<HistoryEvent/>} />
               <Route path="/BorrowingCreate" element={<BorrowingCreate/>} />
               <Route path="/Borrowing" element={<Borrowing/>} />
+              <Route path="/equip" element={<Equipment />} />
+              <Route path="/inputEquip" element={<InputEquipment/>} />
               </>
               )}
 

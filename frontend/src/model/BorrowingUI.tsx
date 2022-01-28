@@ -1,10 +1,10 @@
-import { EquipmentInterface } from "./EquipmentUI";
+import { EquipmentsInterface } from "./EquipmentUI";
 import { UserInterface } from "./UserUI";
 
 export interface BorrowingInterface {
   ID: number,
   EquipmentID: number,
-  Equipment: EquipmentInterface,
+  Equipment: EquipmentsInterface,
   BorrowStatusID: number,
   BorrowStatus: BorrowStatusInterface,
   CustomerBorrowID: number,

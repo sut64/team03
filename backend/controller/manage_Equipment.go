@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-func CreateEquipment(c *gin.Context) {
+func InputEquipment(c *gin.Context) {
 
 	var Equipment entity.Equipment
 	var SportType entity.SportType

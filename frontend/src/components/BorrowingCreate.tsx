@@ -21,7 +21,7 @@ import {
 } from "@material-ui/pickers";
 
 import { BorrowingInterface , BorrowStatusInterface} from '../model/BorrowingUI';
-import { EquipmentInterface} from '../model/EquipmentUI';
+import { EquipmentsInterface} from '../model/EquipmentUI';
 import { UserInterface } from '../model/UserUI';
 
 
@@ -122,7 +122,7 @@ const Alert = (props: AlertProps) => {
 function EquipBorrowCreate() {
   const classes = useStyles();
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
-  const [equipments, setEquipments] = useState<EquipmentInterface[]>([]);
+  const [equipments, setEquipments] = useState<EquipmentsInterface[]>([]);
   const [users, setUsers] = useState<UserInterface[]>([]);
   const [borrowstatuses, setBorrowstatuses] = useState<BorrowStatusInterface[]>([]);
   const [borrowing, setBorrowings] = useState<Partial<BorrowingInterface>>({});
@@ -315,7 +315,7 @@ return (
                 <option aria-label="None" value="" style  = {{ minHeight : 45 }}>
                   Equipment
                 </option>
-                {equipments.map((item: EquipmentInterface) => (
+                {equipments.map((item: EquipmentsInterface) => (
                   <option value={item.ID} key={item.ID} 
                   style  = {{ minHeight : 45 , fontSize: 17 }}>
                     {item.Name} &ensp;&ensp;&ensp; remain : {item.Quantity}

@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
         marginLeft:theme.spacing(3),
     },
     colorbar:{
-        background: 'linear-gradient(45deg, #16DE9D 30%, #4BDDAD 70%, #5698F0 100%)',
+        background: 'linear-gradient(45deg, #DF1B3F 30%, #19204E 70%, #DF1B3F 100%)',
         
     },
     menuButton: { marginRight: theme.spacing(2) },
@@ -61,6 +61,8 @@ export default function ButtonAppBar() {
     { name: "ผลการบันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/HistoryEvent" },
     { name: "ยืมอุปกรณ์", icon: <SportsTennisIcon  />, path: "/BorrowingCreate" },
     { name: "ประวัติการยืมอุปกรณ์", icon: <TocIcon  />, path: "/Borrowing" },
+    { name: "เพิ่มอุปกรณ์", icon: <MenuBookIcon  />, path: "/inputEquip" },
+    { name: "อุปกรณ์ทั้งหมด", icon: <MenuBookIcon  />, path: "/equip" },
   ]
   const [openDrawer, setOpenDrawer] = useState(false);
   const toggleDrawer = (state: boolean) => (event: any) => {
