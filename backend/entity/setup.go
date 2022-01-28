@@ -427,7 +427,7 @@ func SetupDatabase() {
 	db.Model(&Facility{}).Create(&Facility8)
 
 	Event1 := Event{
-		Name:      "Yago",
+		Name:      "Yoga",
 		Details:   "Practicing yoga is the process of training the body",
 		TimeStart: time.Date(2022, 2, 7, 8, 30, 30, 30, time.Local),
 		TimeEnd:   time.Date(2022, 2, 7, 12, 0, 30, 30, time.Local),
@@ -438,6 +438,20 @@ func SetupDatabase() {
 		Room:      Room1,
 	}
 	db.Model(&Event{}).Create(&Event1)
+
+
+	Event2 := Event{
+		Name:      "Dance Class",
+		Details:   "Practicing your KPOP Dance",
+		TimeStart: time.Date(2022, 2, 7, 8, 30, 30, 30, time.Local),
+		TimeEnd:   time.Date(2022, 2, 7, 12, 0, 30, 30, time.Local),
+		Amount:    26,
+
+		Trainner:  Trainner1,
+		TypeEvent: TypeEvent3,
+		Room:      Room1,
+	}
+	db.Model(&Event{}).Create(&Event2)
 
 	//Equipment
 	Equipment1 := Equipment{
@@ -492,16 +506,28 @@ func SetupDatabase() {
 		Contact:        "0908208456",
 		BorrowStatus:   BorrowStatus1,
 		Equipment:      Equipment1,
-		CustomerBorrow: User2,
-		StaffBorrow:    User5,
+		CustomerBorrow: User4,
+		StaffBorrow:    User1,
 	}
 	db.Model(&Borrowing{}).Create(&Borrowing1)
+
+	Borrowing2 := Borrowing{
+		Borrowtime:     time.Now(),
+		Comment:        "-",
+		Quantity:       2,
+		Contact:        "0908208456",
+		BorrowStatus:   BorrowStatus1,
+		Equipment:      Equipment2,
+		CustomerBorrow: User4,
+		StaffBorrow:    User1,
+	}
+	db.Model(&Borrowing{}).Create(&Borrowing2)
 
 	//Payment
 	Payment1 := Payment{
 		Bill:            "R000001",
-		CustomerPayment: User2,
-		StaffPayment:    User1,
+		CustomerPayment: User4,
+		StaffPayment:    User2,
 		Facility:        Facility1,
 		PaymentMethod:   PaymentMethod2,
 		AddedTime:       time.Date(2022, 5, 7, 10, 29, 20, 10, time.Local),
@@ -509,6 +535,18 @@ func SetupDatabase() {
 		Total:           280,
 	}
 	db.Model(&Payment{}).Create(&Payment1)
+
+	Payment2 := Payment{
+		Bill:            "R000001",
+		CustomerPayment: User4,
+		StaffPayment:    User1,
+		Facility:        Facility2,
+		PaymentMethod:   PaymentMethod1,
+		AddedTime:       time.Date(2022, 5, 7, 10, 29, 20, 10, time.Local),
+		Discount:        10,
+		Total:           580,
+	}
+	db.Model(&Payment{}).Create(&Payment2)
 
 	///Setup reserve
 	Zone1 := Zone{
@@ -867,4 +905,25 @@ func SetupDatabase() {
 	db.Model(BookingTime{}).Create(&Booking24)
 	//-------------------------------------------------------------------------------------------------------------------------------------------------
 
+	Reserve1 := Reserve{
+		Amount   : 2,
+		Tel     :  "0854215698",
+		AddedTime : time.Now(),
+		User  :  User4,
+		BookingTime :  Booking1,
+		Facility : Facility1,
+
+	}
+	db.Model(Reserve{}).Create(&Reserve1)
+
+	Reserve2 := Reserve{
+		Amount   : 1,
+		Tel     :  "0954415798",
+		AddedTime : time.Now(),
+		User  :  User4,
+		BookingTime :  Booking15,
+		Facility : Facility2,
+
+	}
+	db.Model(Reserve{}).Create(&Reserve2)
 }
