@@ -423,7 +423,7 @@ func SetupDatabase() {
 	db.Model(&Equipment{}).Create(&Equipment1)
 
 	Equipment2 := Equipment{
-		Name:           "ลูกแบต01",
+		Name:           "ลูกขนไก่01",
 		Quantity:       40,
 		SportType:      SportType3,
 		Company:        Company1,

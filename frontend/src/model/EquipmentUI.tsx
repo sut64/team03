@@ -1,13 +1,52 @@
-export interface EquipmentInterface {
+import { UserInterface } from "./UserUI";
+
+    export interface SportTypesInterface {
+
     ID: number,
-    RoleItemID: number,
-    RoleItem: RoleItemInterface,
-    Name:string,
-    Quantity: number,
-    inputDate : Date
-  }
+   
+    Type: string,
+
+   }
+
+   export interface CompaniesInterface {
+
+    ID: number,
+   
+    Company: string,
+
+    Tel: string,
+
+    About: string,
+
+   }
+
+   export interface RoleItemsInterface {
+
+    ID: number,
+   
+    Role: string,
+
+   }
+
+   export interface EquipmentsInterface {
+    ID: number,
   
-  export interface RoleItemInterface {
-    ID: number,
-    Name:string,
+    Name: string,
+  
+    Quantity: string,
+  
+    InputDate: Date ,
+  
+    SportTypeID: number,
+    SportType: SportTypesInterface
+    
+    CompanyID: number,
+    Company: CompaniesInterface,
+  
+    RoleItemID: number,
+    RoleItem: RoleItemsInterface,
+  
+    EquipmentStaffID: number,
+    EquipmentStaff: UserInterface,
+    
   }

@@ -33,6 +33,12 @@ func main() {
 			protected.GET("/listborrowstatus", controller.ListBorrowStatus)
 			protected.GET("/listborrowings", controller.ListBorrowings)
 			protected.POST("/createborrowing", controller.CreateBorrowing)
+
+			protected.GET("/ListSportType", controller.ListSportType)
+			protected.GET("/ListCompany", controller.ListCompany)
+			protected.GET("/ListRoleItem", controller.ListRoleItem)
+			protected.GET("/ListEquipment", controller.ListEquipment)
+			protected.POST("/InputEquipment", controller.InputEquipment)
 		}
 	}
 	//Get func login/Actor
