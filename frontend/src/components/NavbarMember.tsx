@@ -58,7 +58,7 @@ export default function ButtonAppBar() {
     
     { name: "จองสนามกีฬา", icon: <SportsSoccerIcon />, path: "/CreateReserve"},
     { name: "ประวัติการจองสนามกีฬา", icon: <MenuBookIcon />, path: "/HistoryReserve"},
-    { name: "ข้อมูลสิทธิประโยชน์สำหรับสมาชิก", icon: <MenuBookIcon  />, path: "/HistoryFacility" },
+    { name: "ข้อมูลสิทธิประโยชน์สำหรับสมาชิก", icon: <MenuBookIcon  />, path: "/HistoryFacilityForMember" },
     { name: "ผลการบันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/HistoryEvent" },
     { name: "ประวัติการยืมอุปกรณ์", icon: <MenuBookIcon  />, path: "/BorrowingforMember" },
     
