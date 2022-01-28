@@ -103,7 +103,7 @@ func ListBorrowStatus(c *gin.Context) {
 
 func ListAbleEquipments(c *gin.Context) {
 	var equipment []entity.Equipment
-	if err := entity.DB().Raw("SELECT * FROM equipment WHERE role_item_id=1").Scan(&equipment).Error; err != nil {
+	if err := entity.DB().Preload("RoleItem").Raw("SELECT equipment.* FROM equipment LEFT JOIN role_items ON equipment.role_item_id = role_items.id WHERE role_items.role = 'Borrow allow';").Scan(&equipment).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

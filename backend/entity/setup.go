@@ -326,12 +326,12 @@ func SetupDatabase() {
 
 	//RoleItem
 	RoleItem1 := RoleItem{
-		Role: "ยืมได้",
+		Role: "Borrow allow",
 	}
 	db.Model(&RoleItem{}).Create(&RoleItem1)
 
 	RoleItem2 := RoleItem{
-		Role: "ยืมไม่ได้",
+		Role: "Borrow not allow",
 	}
 	db.Model(&RoleItem{}).Create(&RoleItem2)
 
