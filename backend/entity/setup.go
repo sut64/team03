@@ -158,6 +158,18 @@ func SetupDatabase() {
 	}
 	db.Model(&User{}).Create(&User10)
 
+	PasswordUser11, err := bcrypt.GenerateFromPassword([]byte("1234"), 14)
+	User11 := User{
+		Name:     "BIG",
+		Password: string(PasswordUser11),
+		Email:    "Big16635@gmail.com",
+		Tel:      "036-XXXXXXX",
+		Gender:   "male",
+		Brithday: time.Now().AddDate(-1, -9, 9),
+		Role:     Role1,
+	}
+	db.Model(&User{}).Create(&User11)
+
 	// setup Package -------------------------------------------------------------------
 	Package1 := Package{
 		Name: "Silver",
@@ -480,5 +492,363 @@ func SetupDatabase() {
 		Total:           280,
 	}
 	db.Model(&Payment{}).Create(&Payment1)
+
+
+///Setup reserve
+Zone1 := Zone{
+	Name: "Football",
+}
+db.Model(Zone{}).Create(&Zone1)
+
+Zone2 := Zone{
+	Name: "Basketball",
+}
+db.Model(Zone{}).Create(&Zone2)
+
+Zone3 := Zone{
+	Name: "Pingpong",
+}
+db.Model(Zone{}).Create(&Zone3)
+
+Zone4 := Zone{
+	Name: "Badmintion",
+}
+db.Model(Zone{}).Create(&Zone4)
+
+Zone5 := Zone{
+	Name: "Tennis",
+}
+db.Model(Zone{}).Create(&Zone5)
+
+Zone6 := Zone{
+	Model: gorm.Model{},
+	Name:  "Swimming Pool",
+}
+db.Model(Zone{}).Create(&Zone6)
+
+Court1 := Court{
+	Model: gorm.Model{},
+	Name:  "Football field1",
+	Zone:  Zone1,
+}
+db.Model(Court{}).Create(&Court1)
+
+Court2 := Court{
+	Model: gorm.Model{},
+	Name:  "Football field2",
+	Zone:  Zone1,
+}
+db.Model(Court{}).Create(&Court2)
+
+Court3 := Court{
+	Model: gorm.Model{},
+	Name:  "Basketball 1",
+	Zone:  Zone2,
+}
+db.Model(Court{}).Create(&Court3)
+
+Court4 := Court{
+	Model: gorm.Model{},
+	Name:  "Basketball 2",
+	Zone:  Zone2,
+}
+db.Model(Court{}).Create(&Court4)
+
+//Courtpingpong
+Court5 := Court{
+	Model: gorm.Model{},
+	Name:  "Pingpong1",
+	Zone:  Zone3,
+}
+db.Model(Court{}).Create(&Court5)
+
+Court6 := Court{
+	Model: gorm.Model{},
+	Name:  "Pingpong2",
+	Zone:  Zone3,
+}
+db.Model(Court{}).Create(&Court6)
+
+//setupBadminton
+Court7 := Court{
+	Model: gorm.Model{},
+	Name:  "Badminton Court1",
+	Zone:  Zone4,
+}
+db.Model(Court{}).Create(&Court7)
+
+Court8 := Court{
+	Model: gorm.Model{},
+	Name:  "Badminton Court2",
+	Zone:  Zone4,
+}
+db.Model(Court{}).Create(&Court8)
+
+//setupTennis
+Court9 := Court{
+	Model: gorm.Model{},
+	Name:  "Tennis Court1",
+	Zone:  Zone5,
+}
+db.Model(Court{}).Create(&Court9)
+
+Court10 := Court{
+	Model: gorm.Model{},
+	Name:  "Tennis Court2",
+	Zone:  Zone5,
+}
+db.Model(Court{}).Create(&Court10)
+
+//setupSwim
+Court11 := Court{
+	Model: gorm.Model{},
+	Name:  "Swimming pool 1",
+	Zone:  Zone6,
+}
+db.Model(Court{}).Create(&Court11)
+
+Court12 := Court{
+	Model: gorm.Model{},
+	Name:  "Swimming pool 2",
+	Zone:  Zone6,
+}
+db.Model(Court{}).Create(&Court12)
+
+//SetTime  Football--------------------------------------------------------------------------------------------------------------------
+Booking0 := BookingTime{
+	Model:    gorm.Model{},
+	Name:     "Football1_1",
+	Time:     "8.00-19.00",
+	Amount:   30,
+	Avalable: 30,
+	Court:    Court1,
+}
+db.Model(BookingTime{}).Create(&Booking0)
+
+Booking1 := BookingTime{
+	Model:    gorm.Model{},
+	Name:     "Football1_1",
+	Time:     "15.00-17.00",
+	Amount:   30,
+	Avalable: 30,
+	Court:    Court1,
+}
+db.Model(BookingTime{}).Create(&Booking1)
+
+Booking2 := BookingTime{
+	Name:     "Football1_2",
+	Time:     "17.00-19.00",
+	Amount:   30,
+	Avalable: 30,
+	Court:    Court1,
+}
+db.Model(BookingTime{}).Create(&Booking2)
+
+Booking3 := BookingTime{
+	Name:     "Football2_1",
+	Time:     "15.00-17.00",
+	Amount:   30,
+	Avalable: 30,
+	Court:    Court2,
+}
+db.Model(BookingTime{}).Create(&Booking3)
+
+Booking4 := BookingTime{
+	Name:     "Football2_2",
+	Time:     "17.00-19.00",
+	Amount:   30,
+	Avalable: 30,
+	Court:    Court2,
+}
+
+//SetTime  Basketball
+db.Model(BookingTime{}).Create(&Booking4)
+Booking5 := BookingTime{
+	Name:     "Basketball1_1",
+	Time:     "15.00-17.00",
+	Amount:   15,
+	Avalable: 15,
+	Court:    Court3,
+}
+db.Model(BookingTime{}).Create(&Booking5)
+
+Booking6 := BookingTime{
+	Name:     "Basketball1_2",
+	Time:     "17.00-19.00",
+	Amount:   15,
+	Avalable: 15,
+	Court:    Court3,
+}
+db.Model(BookingTime{}).Create(&Booking6)
+
+Booking7 := BookingTime{
+	Name:     "Basketball2_1",
+	Time:     "15.00-17.00",
+	Amount:   15,
+	Avalable: 15,
+	Court:    Court4,
+}
+db.Model(BookingTime{}).Create(&Booking7)
+
+Booking8 := BookingTime{
+	Name:     "Basketball2_2",
+	Time:     "17.00-19.00",
+	Amount:   15,
+	Avalable: 15,
+	Court:    Court4,
+}
+db.Model(BookingTime{}).Create(&Booking8)
+
+//Setuppingpong
+Booking9 := BookingTime{
+	Name:     "Pingpong1_1",
+	Time:     "15.00-17.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court5,
+}
+db.Model(BookingTime{}).Create(&Booking9)
+
+Booking10 := BookingTime{
+	Name:     "Pingpong1_2",
+	Time:     "17.00-19.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court5,
+}
+db.Model(BookingTime{}).Create(&Booking10)
+
+Booking11 := BookingTime{
+	Name:     "Pingpong2_1",
+	Time:     "15.00-17.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court6,
+}
+db.Model(BookingTime{}).Create(&Booking11)
+
+Booking12 := BookingTime{
+	Name:     "Pingpong2_2",
+	Time:     "17.00-19.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court6,
+}
+db.Model(BookingTime{}).Create(&Booking12)
+
+//setBadminton
+
+Booking13 := BookingTime{
+	Name:     "Badminton1_1",
+	Time:     "15.00-17.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court7,
+}
+db.Model(BookingTime{}).Create(&Booking13)
+
+Booking14 := BookingTime{
+	Name:     "Badminton1_2",
+	Time:     "17.00-19.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court7,
+}
+db.Model(BookingTime{}).Create(&Booking14)
+
+Booking15 := BookingTime{
+	Name:     "Badminton2_1",
+	Time:     "15.00-17.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court8,
+}
+db.Model(BookingTime{}).Create(&Booking15)
+
+Booking16 := BookingTime{
+	Name:     "Badminton2_2",
+	Time:     "17.00-19.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court8,
+}
+db.Model(BookingTime{}).Create(&Booking16)
+
+//setTennis
+
+Booking17 := BookingTime{
+	Name:     "Tennis1_1",
+	Time:     "15.00-17.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court9,
+}
+db.Model(BookingTime{}).Create(&Booking17)
+
+Booking18 := BookingTime{
+	Name:     "Tennis1_2",
+	Time:     "17.00-19.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court9,
+}
+db.Model(BookingTime{}).Create(&Booking18)
+
+Booking19 := BookingTime{
+	Name:     "Tennis2_1",
+	Time:     "15.00-17.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court10,
+}
+db.Model(BookingTime{}).Create(&Booking19)
+
+Booking20 := BookingTime{
+	Name:     "Tennis2_2",
+	Time:     "17.00-19.00",
+	Amount:   4,
+	Avalable: 4,
+	Court:    Court10,
+}
+db.Model(BookingTime{}).Create(&Booking20)
+
+//Setup swim
+
+Booking21 := BookingTime{
+	Name:     "Swim1_1",
+	Time:     "15.00-17.00",
+	Amount:   30,
+	Avalable: 30,
+	Court:    Court11,
+}
+db.Model(BookingTime{}).Create(&Booking21)
+
+Booking22 := BookingTime{
+	Name:     "Swim1_2",
+	Time:     "17.00-19.00",
+	Amount:   30,
+	Avalable: 30,
+	Court:    Court11,
+}
+db.Model(BookingTime{}).Create(&Booking22)
+
+Booking23 := BookingTime{
+	Name:     "Swim2_1",
+	Time:     "15.00-17.00",
+	Amount:   30,
+	Avalable: 30,
+	Court:    Court12,
+}
+db.Model(BookingTime{}).Create(&Booking23)
+
+Booking24 := BookingTime{
+	Name:     "Swim2_2",
+	Time:     "17.00-19.00",
+	Amount:   30,
+	Avalable: 30,
+	Court:    Court12,
+}
+db.Model(BookingTime{}).Create(&Booking24)
+//-------------------------------------------------------------------------------------------------------------------------------------------------
 
 }

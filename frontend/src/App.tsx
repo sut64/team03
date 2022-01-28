@@ -23,6 +23,10 @@ import Equipment from "./components/Equipment";
 import PaymentCreate from "./components/PaymentCreate";
 import HistoryPayment from "./components/HistoryPayment";
 
+import CreateReserve from "./components/Reserve";
+import HistoryReserve from "./components/HistoryReserve";
+
+
 
 export default function App() {
   const [token, setToken] = useState<string>("");
@@ -64,6 +68,10 @@ export default function App() {
               <Route path="/inputEquip" element={<InputEquipment/>} />
               <Route path="/HistoryPayment" element={<HistoryPayment />} />
               <Route path="/PaymentCreate" element={<PaymentCreate />} />
+              <Route path="/CreateReserve" element={<CreateReserve />} />
+              <Route path="/HistoryReserve" element={<HistoryReserve />} />
+
+
 
               </>
               )}

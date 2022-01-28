@@ -22,7 +22,7 @@ func main() {
 			protected.GET("/listpaymentmethod", controller.ListPaymentMethod)
 			protected.GET("/listfacility", controller.ListFacility)
 			protected.POST("/paymentcreate", controller.CreatePayment)
-			
+
 			protected.GET("/users", controller.ListUserMember)
 			protected.GET("/package", controller.ListPackage)
 			protected.GET("/trainner", controller.ListTrainner)
@@ -45,6 +45,16 @@ func main() {
 			protected.GET("/ListRoleItem", controller.ListRoleItem)
 			protected.GET("/ListEquipment", controller.ListEquipment)
 			protected.POST("/InputEquipment", controller.InputEquipment)
+
+			protected.GET("/api/ListZone", controller.ListZone)
+			protected.GET("/api/ListCourt/:ZoneID", controller.ListCourt)
+			protected.GET("/api/ListBookingTime/:CourtID", controller.ListBookingTime)
+			protected.POST("/api/CreateReserve", controller.CreateReserve)
+			protected.GET("/api/ListReserve", controller.ListReserve)
+
+			//api MedicalHistory
+			protected.GET("/api/ListUser", controller.ListUser)
+
 		}
 	}
 	//Get func login/Actor
