@@ -110,3 +110,14 @@ func ListAbleEquipments(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{"data": equipment})
 }
+
+func GetBorrowingByUser(c *gin.Context) {
+	var borrowings []entity.Borrowing
+	id := c.Param("id")
+	if err := entity.DB().Preload("CustomerBorrow").Preload("Equipment").Preload("BorrowStatus").Raw("SELECT * FROM borrowings WHERE customer_borrow_id = ?", id).Find(&borrowings).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": borrowings})
+}

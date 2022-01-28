@@ -38,6 +38,7 @@ func main() {
 			protected.GET("/listableequip", controller.ListAbleEquipments)
 			protected.GET("/listborrowstatus", controller.ListBorrowStatus)
 			protected.GET("/listborrowings", controller.ListBorrowings)
+			protected.GET("/listborrowbyuser/:id", controller.GetBorrowingByUser)
 			protected.POST("/createborrowing", controller.CreateBorrowing)
 
 			protected.GET("/ListSportType", controller.ListSportType)
@@ -53,7 +54,6 @@ func main() {
 			protected.GET("/api/ListReserve", controller.ListReserve)
 			protected.GET("/api/ListUser", controller.ListUser)
 			protected.GET("/api/ListFacilityZone/:UserID", controller.ListFacilityZone)
-
 
 		}
 	}
