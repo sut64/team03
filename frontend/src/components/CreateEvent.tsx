@@ -150,7 +150,6 @@ function Body() {
               TrainnerID: Evet.TrainnerID,
               RoomID: Evet.RoomID,
               TypeEventID: Evet.TypeEventID,
-
               Name: Evet.Name,
               Details: Evet.Details,
               TimeStart: AddTime1,

@@ -9,6 +9,7 @@ import { ClassNames } from '@emotion/react';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Button from "@material-ui/core/Button";
+import { Box } from '@mui/material';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -42,16 +43,21 @@ export default function Home() {
       
       <CssBaseline />
       <Container fixed maxWidth='md'>
-        <br/>
+      <Grid item xs={12}>
+        <Box >
+        <img src={require('./image/health-fitness-tips-weight.jfif')}  width="1000" height="600" />
+        </Box>
+        
+          
+        </Grid>
+      <Grid item xs={12}><Typography variant="h2" sx={{ fontSize: 50 , color : '#BEBEBE',textAlign : 'center' }}> SPORTS CENTER</Typography></Grid>
         
 
       </Container>
 
       <Grid>
 
-      <Grid item xs={6}><img src={require('./image/health-fitness-tips-weight.jfif')} width="1000" height="600"/></Grid>
-          
-      <Grid item xs={6}><Typography variant="h2" sx={{ fontSize: 50 , color : '#BEBEBE',textAlign : 'center' }}> SPORTS CENTER</Typography></Grid>
+      
 
       </Grid>
        

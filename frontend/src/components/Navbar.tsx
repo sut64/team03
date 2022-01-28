@@ -65,7 +65,6 @@ export default function ButtonAppBar() {
     { name: "อุปกรณ์ทั้งหมด", icon: <MenuBookIcon  />, path: "/equip" },
     { name: "บันทึกการชำระเงิน", icon: <MenuBookIcon />, path: "/PaymentCreate"},
     { name: "ประวัติการบันทึกการชำระเงิน", icon: <MenuBookIcon />, path: "/HistoryPayment"},
-    { name: "จองสนามกีฬา", icon: <SportsSoccerIcon />, path: "/CreateReserve"},
     { name: "ประวัติการจองสนามกีฬา", icon: <MenuBookIcon />, path: "/HistoryReserve"},
 
   ]
