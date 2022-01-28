@@ -15,7 +15,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
-import HomeIcon from "@material-ui/icons/Home";
+import HomeIcon from '@mui/icons-material/Home';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import SportsTennisIcon from '@mui/icons-material/SportsTennis';
 import TocIcon from '@mui/icons-material/Toc';
@@ -54,13 +54,17 @@ export default function ButtonAppBar() {
     localStorage.clear();
     window.location.href = "/";
   }
+
+  const Home = () => {
+    window.location.href = "/";
+  }
   const menu = [
     
     { name: "จองสนามกีฬา", icon: <SportsSoccerIcon />, path: "/CreateReserve"},
     { name: "ประวัติการจองสนามกีฬา", icon: <MenuBookIcon />, path: "/HistoryReserve"},
     { name: "ข้อมูลสิทธิประโยชน์สำหรับสมาชิก", icon: <MenuBookIcon  />, path: "/HistoryFacilityForMember" },
     { name: "ผลการบันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/HistoryEvent" },
-    { name: "อุปกรณ์สำหรับการยืม", icon: <MenuBookIcon  />, path: "/userEquip" },
+    { name: "อุปกรณ์สำหรับการยืม", icon: <MenuBookIcon  />, path: "/UserEquipment" },
     { name: "ประวัติการยืมอุปกรณ์", icon: <MenuBookIcon  />, path: "/BorrowingforMember" },
     
   ]
@@ -111,6 +115,8 @@ export default function ButtonAppBar() {
 
             </List>
           </Drawer>
+
+          <Button onClick={Home} color="inherit" className={classes.small} ><HomeIcon sx={{ fontSize: 47 , color : '#ffffff' }}/></Button>
 
           <Typography variant="h4"  className={classes.title}>
             

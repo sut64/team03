@@ -15,11 +15,14 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
-import HomeIcon from "@material-ui/icons/Home";
+import HomeIcon from '@mui/icons-material/Home';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import SportsTennisIcon from '@mui/icons-material/SportsTennis';
 import TocIcon from '@mui/icons-material/Toc';
-import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
+import PaymentIcon from '@mui/icons-material/Payment';
+import DomainIcon from '@mui/icons-material/Domain';
+import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -28,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       flexGrow: 1,
+      
     },
     small: {
         marginTop : theme.spacing(0.5),
@@ -54,18 +58,21 @@ export default function ButtonAppBar() {
     localStorage.clear();
     window.location.href = "/";
   }
+  const Home = () => {
+    window.location.href = "/";
+  }
   const menu = [
     { name: "สิทธิประโยชน์สำหรับสมาชิก", icon: <AssignmentIcon  />, path: "/CreateFacility" },
     { name: "ข้อมูลสิทธิประโยชน์สำหรับสมาชิก", icon: <MenuBookIcon  />, path: "/HistoryFacility" },
-    { name: "บันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/CreateEvent" },
+    { name: "บันทึกตารางกิจกรรม", icon: <SportsMartialArtsIcon  />, path: "/CreateEvent" },
     { name: "ผลการบันทึกตารางกิจกรรม", icon: <MenuBookIcon  />, path: "/HistoryEvent" },
     { name: "ยืมอุปกรณ์", icon: <SportsTennisIcon  />, path: "/BorrowingCreate" },
-    { name: "ประวัติการยืมอุปกรณ์", icon: <TocIcon  />, path: "/Borrowing" },
-    { name: "เพิ่มอุปกรณ์", icon: <MenuBookIcon  />, path: "/inputEquip" },
+    { name: "ประวัติการยืมอุปกรณ์", icon: <MenuBookIcon />, path: "/Borrowing" },
+    { name: "เพิ่มอุปกรณ์", icon: <SportsBasketballIcon  />, path: "/inputEquip" },
     { name: "อุปกรณ์ทั้งหมด", icon: <MenuBookIcon  />, path: "/equip" },
-    { name: "บันทึกการชำระเงิน", icon: <MenuBookIcon />, path: "/PaymentCreate"},
+    { name: "บันทึกการชำระเงิน", icon: <PaymentIcon />, path: "/PaymentCreate"},
     { name: "ประวัติการบันทึกการชำระเงิน", icon: <MenuBookIcon />, path: "/HistoryPayment"},
-    { name: "ประวัติการจองสนามกีฬา", icon: <MenuBookIcon />, path: "/HistoryReserve"},
+    { name: "ประวัติการจองสนามกีฬา", icon: <MenuBookIcon />, path: "/ReserveAdmin"},
 
   ]
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -105,7 +112,7 @@ export default function ButtonAppBar() {
                 <ListItem key={index} button component={RouterLink} to={item.path}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText>{item.name}</ListItemText>
-
+                  
                 </ListItem>
               ))}
               <ListItem button onClick={SignOut}>
@@ -116,9 +123,13 @@ export default function ButtonAppBar() {
             </List>
           </Drawer>
 
+          <Button onClick={Home} color="inherit" className={classes.small} ><HomeIcon sx={{ fontSize: 47 , color : '#ffffff' }}/> </Button>
+
           <Typography variant="h4"  className={classes.title}>
             
           </Typography>
+
+         
 
           
           <Button onClick={SignOut} color="inherit" className={classes.small} >Logout</Button>

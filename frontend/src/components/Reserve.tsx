@@ -280,7 +280,7 @@ const getBookingTime = async (CourtID : unknown) => {
       
       <Container  className={classes.container} maxWidth="md">
 
-<Snackbar open={success} autoHideDuration={800} onClose={handleClose} TransitionProps={{onExit: () => {window.location.href="/";}}}>
+<Snackbar open={success} autoHideDuration={800} onClose={handleClose} TransitionProps={{onExit: () => {window.location.href="/HistoryReserve";}}}>
             <Alert onClose={handleClose} severity="success">
               บันทึกข้อมูลสำเร็จ
               
@@ -462,6 +462,7 @@ const getBookingTime = async (CourtID : unknown) => {
                             variant="contained"
                             color="primary"
                             onClick={submitReserve}
+
                             >
                             SUBMIT
                         </Button>

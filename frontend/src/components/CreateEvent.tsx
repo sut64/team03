@@ -197,7 +197,7 @@ function Body() {
     return (
 
         <Container className={classes.container} maxWidth="md">
-          <Snackbar open={success} autoHideDuration={2000} onClose={handleClose} TransitionProps={{onExit: () => {window.location.href="/";}}}>
+          <Snackbar open={success} autoHideDuration={2000} onClose={handleClose} TransitionProps={{onExit: () => {window.location.href="/HistoryEvent";}}}>
             <Alert onClose={handleClose} severity="success">
                บันทึกข้อมูลสำเร็จ
             </Alert>
@@ -235,7 +235,7 @@ function Body() {
                             style={{ width: 200 }}
                             
                         >
-                            <MenuItem value={0} key={0}>เลือกชื่อผู้ป่วย</MenuItem>
+                            <MenuItem value={0} key={0}>เลือกเทรนเนอร์</MenuItem>
                             {Trainner.map((item: TrainnerInterface) => (
                               <MenuItem value={item.ID} key={item.ID}>{item.Name}</MenuItem>))}
                         </Select>
@@ -252,7 +252,7 @@ function Body() {
                             style={{ width: 200 }}
                             
                         >
-                            <MenuItem value={0} key={0}>เลือกโรค</MenuItem>
+                            <MenuItem value={0} key={0}>เลือกประเภทอีเวนต์</MenuItem>
                             {TypeEvent.map((item: TypeEventInterface) => (
                               <MenuItem value={item.ID} key={item.ID}>{item.Name}</MenuItem>))}
                         </Select>
@@ -270,7 +270,7 @@ function Body() {
                             style={{ width: 200 }}
                             
                         >
-                            <MenuItem value={0} key={0}>เลือกโรค</MenuItem>
+                            <MenuItem value={0} key={0}>เลือกห้อง</MenuItem>
                             {Room.map((item: RoomInterface) => (
                               <MenuItem value={item.ID} key={item.ID}>{item.Name}</MenuItem>))}
                         </Select>
