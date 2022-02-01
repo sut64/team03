@@ -38,7 +38,7 @@ func CreateReserve(c *gin.Context) {
 	// 12: สร้าง Reserve
 	rs := entity.Reserve{
 		User:        User,
-		Facility:   Facility,
+		Facility:    Facility,
 		BookingTime: BookingTime,
 		Amount:      Reserve.Amount,
 		Tel:         Reserve.Tel,
@@ -92,11 +92,21 @@ func ListBookingTime(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"data": BookingTime})
 }
-func ListUser(c *gin.Context) {
-	var User []entity.User
-	if err := entity.DB().Table("users").Find(&User).Error; err != nil {
+
+// func ListUser(c *gin.Context) {
+// 	var User []entity.User
+// 	if err := entity.DB().Table("users").Find(&User).Error; err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+// 		return
+// 	}
+// 	c.JSON(http.StatusOK, gin.H{"data": User})
+// }
+func ListZonePac(c *gin.Context) {
+	var Zone []entity.Zone
+	PacID := c.Param("PacID")
+	if err := entity.DB().Raw("SELECT * FROM zones WHERE status <= ?", PacID).Find(&Zone).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"data": User})
+	c.JSON(http.StatusOK, gin.H{"data": Zone})
 }

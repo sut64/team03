@@ -1,35 +1,30 @@
 package entity
 
 import (
-	"gorm.io/gorm"
 	"time"
-)
 
+	"gorm.io/gorm"
+)
 
 type BookingTime struct {
 	gorm.Model
-	Name   string
-	Time   string
-	Amount uint
+	Name     string
+	Time     string
+	Amount   uint
 	Avalable uint
 
 	CourtID uint
 	Court   Court
 
-
-	Reserve  []Reserve  `gorm:"foreignKey:BookingTimeID"`
-
-	
-	
+	Reserve []Reserve `gorm:"foreignKey:BookingTimeID"`
 }
 
 type Court struct {
 	gorm.Model
-	Name           string
-	
+	Name string
+
 	ZoneID uint
 	Zone   Zone
-
 
 	BookingTime []BookingTime `gorm:"foreignKey:CourtID"`
 }
@@ -48,14 +43,13 @@ type Reserve struct {
 	BookingTime   BookingTime
 
 	FacilityID uint
-	Facility  Facility
+	Facility   Facility
 }
-
-
 
 type Zone struct {
 	gorm.Model
 	Name   string
+	Status uint
 
-	Court    []Court  `gorm:"foreignKey:ZoneID"`
+	Court []Court `gorm:"foreignKey:ZoneID"`
 }

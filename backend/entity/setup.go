@@ -439,7 +439,6 @@ func SetupDatabase() {
 	}
 	db.Model(&Event{}).Create(&Event1)
 
-
 	Event2 := Event{
 		Name:      "Dance Class",
 		Details:   "Practicing your KPOP Dance",
@@ -549,34 +548,41 @@ func SetupDatabase() {
 	db.Model(&Payment{}).Create(&Payment2)
 
 	///Setup reserve
+
 	Zone1 := Zone{
-		Name: "Football",
+		Name:   "Football1111",
+		Status: 1,
 	}
 	db.Model(Zone{}).Create(&Zone1)
 
 	Zone2 := Zone{
-		Name: "Basketball",
+		Name:   "Pingpong",
+		Status: 1,
 	}
 	db.Model(Zone{}).Create(&Zone2)
 
 	Zone3 := Zone{
-		Name: "Pingpong",
+		Name:   "Basketball",
+		Status: 2,
 	}
 	db.Model(Zone{}).Create(&Zone3)
 
 	Zone4 := Zone{
-		Name: "Badmintion",
+		Name:   "Badmintion",
+		Status: 2,
 	}
 	db.Model(Zone{}).Create(&Zone4)
 
 	Zone5 := Zone{
-		Name: "Tennis",
+		Name:   "Tennis",
+		Status: 3,
 	}
 	db.Model(Zone{}).Create(&Zone5)
 
 	Zone6 := Zone{
-		Model: gorm.Model{},
-		Name:  "Swimming Pool",
+		Model:  gorm.Model{},
+		Name:   "Swimming Pool",
+		Status: 3,
 	}
 	db.Model(Zone{}).Create(&Zone6)
 
@@ -596,14 +602,14 @@ func SetupDatabase() {
 
 	Court3 := Court{
 		Model: gorm.Model{},
-		Name:  "Basketball 1",
+		Name:  "Pingpong 1",
 		Zone:  Zone2,
 	}
 	db.Model(Court{}).Create(&Court3)
 
 	Court4 := Court{
 		Model: gorm.Model{},
-		Name:  "Basketball 2",
+		Name:  "Pingpong 2",
 		Zone:  Zone2,
 	}
 	db.Model(Court{}).Create(&Court4)
@@ -611,14 +617,14 @@ func SetupDatabase() {
 	//Courtpingpong
 	Court5 := Court{
 		Model: gorm.Model{},
-		Name:  "Pingpong1",
+		Name:  "BasketBall 1",
 		Zone:  Zone3,
 	}
 	db.Model(Court{}).Create(&Court5)
 
 	Court6 := Court{
 		Model: gorm.Model{},
-		Name:  "Pingpong2",
+		Name:  "basketball 2",
 		Zone:  Zone3,
 	}
 	db.Model(Court{}).Create(&Court6)
@@ -906,24 +912,22 @@ func SetupDatabase() {
 	//-------------------------------------------------------------------------------------------------------------------------------------------------
 
 	Reserve1 := Reserve{
-		Amount   : 2,
-		Tel     :  "0854215698",
-		AddedTime : time.Now(),
-		User  :  User4,
-		BookingTime :  Booking1,
-		Facility : Facility1,
-
+		Amount:      2,
+		Tel:         "0854215698",
+		AddedTime:   time.Now(),
+		User:        User4,
+		BookingTime: Booking1,
+		Facility:    Facility1,
 	}
 	db.Model(Reserve{}).Create(&Reserve1)
 
 	Reserve2 := Reserve{
-		Amount   : 1,
-		Tel     :  "0954415798",
-		AddedTime : time.Now(),
-		User  :  User4,
-		BookingTime :  Booking15,
-		Facility : Facility2,
-
+		Amount:      1,
+		Tel:         "0954415798",
+		AddedTime:   time.Now(),
+		User:        User4,
+		BookingTime: Booking15,
+		Facility:    Facility2,
 	}
 	db.Model(Reserve{}).Create(&Reserve2)
 }

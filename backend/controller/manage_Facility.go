@@ -69,15 +69,7 @@ func ListPackage(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": Package})
 }
 
-func ListFacilityZone(c *gin.Context) {
-	var Facility []entity.Facility
-	UserID := c.Param("UserID")
-	if err := entity.DB().Preload("Package").Raw("SELECT * FROM facilities WHERE user_id = ?", UserID).Find(&Facility).Error; err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
-	}
-	c.JSON(http.StatusOK, gin.H{"data": Facility})
-}
+
 
 func ListFacilityForMember(c *gin.Context) {
 	var Facility []*entity.Facility
@@ -89,3 +81,31 @@ func ListFacilityForMember(c *gin.Context) {
 
 	c.JSON(http.StatusOK, gin.H{"data": Facility})
 }
+
+//-----------------reserve
+func ListFacilityZone(c *gin.Context) {
+	var Facility []entity.Facility
+	// var Package []entity.Package
+	UserID := c.Param("UserID")
+	if err := entity.DB().Preload("Package").Raw("SELECT * FROM facilities WHERE user_id = ?", UserID).Find(&Facility).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	// if err := entity.DB().Preload("Package").Raw("SELECT * FROM facilities WHERE user_id = ?", UserID).Find(&Package).Error; err != nil {
+	// 	c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	// 	return
+	// }
+	
+	c.JSON(http.StatusOK, gin.H{"data": Facility})
+}
+
+
+// func ListPackageZone(c *gin.Context) {
+// 	var Court []entity.Court
+// 	ZoneID := c.Param("ZoneID")
+// 	if err := entity.DB().Preload("Zone").Raw("SELECT * FROM courts WHERE zone_id = ?", ZoneID).Find(&Court).Error; err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+// 		return
+// 	}
+// 	c.JSON(http.StatusOK, gin.H{"data": Court})
+// }
