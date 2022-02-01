@@ -19,6 +19,7 @@ export interface BookingTimeInterface{
 export interface ZoneInterface{
 	ID :    number;
     Name   :string;
+	status : number;
 }
 export interface ReserveInterface{
 	ID : number
@@ -36,6 +37,7 @@ export interface ReserveInterface{
 	BookingTime : BookingTimeInterface
 
 	FacilityID : number
+	Facility  : FacilityInterface
 
 
 }

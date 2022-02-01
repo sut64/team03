@@ -49,11 +49,12 @@ func main() {
 			protected.POST("/InputEquipment", controller.InputEquipment)
 
 			protected.GET("/api/ListZone", controller.ListZone)
+			protected.GET("/api/ListZonePac/:PacID", controller.ListZonePac)
 			protected.GET("/api/ListCourt/:ZoneID", controller.ListCourt)
 			protected.GET("/api/ListBookingTime/:CourtID", controller.ListBookingTime)
 			protected.POST("/api/CreateReserve", controller.CreateReserve)
 			protected.GET("/api/ListReserve", controller.ListReserve)
-			protected.GET("/api/ListUser", controller.ListUser)
+			// protected.GET("/api/ListUser", controller.ListUser)
 			protected.GET("/api/ListFacilityZone/:UserID", controller.ListFacilityZone)
 
 		}
