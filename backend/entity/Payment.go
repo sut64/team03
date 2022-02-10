@@ -17,7 +17,7 @@ type Payment struct {
 	AddedTime			time.Time				`valid:"past~AddedTime must be in the past"`
 	Bill				string					`valid:"matches(^[R]\\d{6}$)"`	
 	Discount			uint					
-	Total				uint					`valid:"range(0|10000)"`
+	Total				uint					`valid:"range(0|10000)~Total is between 0 and 10000"`
 	PaymentMethodID		*uint
 	PaymentMethod		PaymentMethod			`gorm:"references:id" valid:"-"`
 	FacilityID			*uint
