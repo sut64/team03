@@ -174,6 +174,7 @@ function PaymentCreate() {
   const [value, setValue] = React.useState('Controlled');
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
     if (reason === "clickaway") {
@@ -263,8 +264,10 @@ function submit() {
     .then((res) => {
       if (res.data) {
         setSuccess(true);
+        setErrorMessage("")
       } else {
         setError(true);
+        setErrorMessage(res.error)
       }
     });
     
@@ -288,7 +291,7 @@ return (
       </Snackbar>
       <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
-          บันทึกข้อมูลไม่สำเร็จ
+          บันทึกข้อมูลไม่สำเร็จ: {errorMessage}
         </Alert>
       </Snackbar>
       <br/><br/> 
