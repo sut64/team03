@@ -22,7 +22,7 @@ func TestBillMustBeInvalidPattern(t *testing.T){
 	for _, fixture := range fixtures {
 		payment := Payment{
 			Bill: fixture,
-			AddedTime:       time.Date(2022, 5, 24, 10, 29, 20, 10, time.Local),
+			AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
 			Discount: 20,
 			Total: 180,
 		}
@@ -37,7 +37,7 @@ func TestBillMustBeInvalidPattern(t *testing.T){
 		g.Expect(err).ToNot(BeNil())
 
 		// err.Error ต้องมี error message แสดงออกมา
-		g.Expect(err.Error()).To(Equal(fmt.Sprintf(`Bill: %s does not validate as matches(^[R]\\d{6}$`, fixture)))
+		g.Expect(err.Error()).To(Equal(fmt.Sprintf(`Bill: %s does not validate as matches(^[R]\d{6}$)`, fixture)))
 	}
 }
 
@@ -48,7 +48,7 @@ func TestTotalBetweenZeroAndTenThousand(t *testing.T){
 
 	payment := Payment{
 		Bill: "R000005",
-		AddedTime:       time.Date(2022, 5, 24, 10, 29, 20, 10, time.Local),
+		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
 		Discount: 20,
 		Total: 90000,
 	}
@@ -66,7 +66,7 @@ func TestTotalBetweenZeroAndTenThousand(t *testing.T){
 }
 
 // ตรวจสอบ AddedTime แล้วต้องเจอ Error
-func TestWatchVideoMustBePast(t *testing.T) {
+func TestAddedTimeMustBePast(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	payment := Payment{
