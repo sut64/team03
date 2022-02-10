@@ -38,8 +38,10 @@ func main() {
 
 			protected.GET("/listableequip", controller.ListAbleEquipments)
 			protected.GET("/listborrowstatus", controller.ListBorrowStatus)
+			protected.GET("/listbackborrowstatus", controller.ListBackBorrowStatus)
 			protected.GET("/listborrowings", controller.ListBorrowings)
 			protected.GET("/listborrowbyuser/:id", controller.GetBorrowingByUser)
+			protected.GET("/listborrowbystatus/:id", controller.GetBorrowingByStatus)
 			protected.POST("/createborrowing", controller.CreateBorrowing)
 
 			protected.GET("/ListSportType", controller.ListSportType)

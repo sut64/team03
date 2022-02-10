@@ -3,6 +3,7 @@ package entity
 import (
 	"time"
 
+	"github.com/asaskevich/govalidator"
 	"gorm.io/gorm"
 )
 
@@ -14,16 +15,40 @@ type BorrowStatus struct {
 
 type Borrowing struct {
 	gorm.Model
-	Borrowtime       time.Time
+	Borrowtime       time.Time `valid:"required~กรุณากรอกวันที่-เวลา,past~ไม่สามารถกรอกเวลาในอนาคต"`
 	Comment          string
-	Quantity         uint
-	Contact          string
+	Quantity         int    `valid:"required~กรุณากรอกจำนวนอุปกรณ์,positive~จำนวนอุปกรณ์ไม่สามารถติดลบได้"`
+	Contact          string `valid:"required~กรุณากรอกเบอร์โทรศัพท์,matches(^[0][689]\\d{8}$)~กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง (ต้องขึ้นต้นด้วย06-08-09)"`
 	BorrowStatusID   *uint
-	BorrowStatus     BorrowStatus
+	BorrowStatus     BorrowStatus `valid:"-"`
 	EquipmentID      *uint
-	Equipment        Equipment
+	Equipment        Equipment `valid:"-"`
 	CustomerBorrowID *uint
-	CustomerBorrow   User
+	CustomerBorrow   User `valid:"-"`
 	StaffBorrowID    *uint
-	StaffBorrow      User
+	StaffBorrow      User `valid:"-"`
+}
+
+func init() {
+	govalidator.CustomTypeTagMap.Set("past", func(i interface{}, context interface{}) bool {
+		t := i.(time.Time)
+		return t.Before(time.Now())
+	})
+
+	govalidator.CustomTypeTagMap.Set("future", func(i interface{}, context interface{}) bool {
+		t := i.(time.Time)
+		return t.After(time.Now())
+	})
+
+	govalidator.CustomTypeTagMap.Set("present", func(i interface{}, context interface{}) bool {
+		t := i.(time.Time)
+		return t.Equal(time.Now())
+	})
+
+	govalidator.CustomTypeTagMap.Set("positive", func(i interface{}, context interface{}) bool {
+		t := i.(int)
+
+		return t >= 1
+	})
+
 }

@@ -503,7 +503,7 @@ func SetupDatabase() {
 		Comment:        "-",
 		Quantity:       1,
 		Contact:        "0908208456",
-		BorrowStatus:   BorrowStatus1,
+		BorrowStatus:   BorrowStatus2,
 		Equipment:      Equipment1,
 		CustomerBorrow: User4,
 		StaffBorrow:    User1,
