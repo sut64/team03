@@ -5,6 +5,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/sut64/team03/backend/entity"
+
+	"github.com/asaskevich/govalidator"
 )
 
 func CreateReserve(c *gin.Context) {
@@ -43,6 +45,11 @@ func CreateReserve(c *gin.Context) {
 		Amount:      Reserve.Amount,
 		Tel:         Reserve.Tel,
 		AddedTime:   Reserve.AddedTime,
+	}
+
+	if _, err := govalidator.ValidateStruct(Reserve); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// 13: บันทึก
