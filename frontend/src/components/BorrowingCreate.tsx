@@ -15,6 +15,8 @@ import Select from "@material-ui/core/Select";
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
 import MenuItem from '@mui/material/MenuItem';
+import { IconButton } from "@material-ui/core";
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import {
   MuiPickersUtilsProvider,
   KeyboardDateTimePicker,
@@ -43,13 +45,9 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.text.secondary,
       background: '#ffffff',
     },
-    paper0: {
-
-      
-    },
     text:{
       color: '#778899',
-      textAlign: 'center',
+      textAlign: 'left',
     },
 
     combobox: {
@@ -151,7 +149,7 @@ function EquipBorrowCreate() {
   };
 
   const getBorrowStatus = async () => {
-    fetch(`${apiUrl}/listborrowstatus`, requestOptions)
+    fetch(`${apiUrl}/listbackborrowstatus`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
@@ -177,6 +175,7 @@ function EquipBorrowCreate() {
   const [value, setValue] = React.useState('Controlled');
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
     if (reason === "clickaway") {
@@ -195,10 +194,18 @@ function EquipBorrowCreate() {
       ...borrowing,
       [name]: event.target.value,
     });
+
   };
 
 
   const handleDateChange = (date: Date | null) => {
+    console.log(date);
+    setSelectedDate(date);
+  };
+
+
+  function resetTime() {
+    let date = new Date();
     console.log(date);
     setSelectedDate(date);
   };
@@ -209,18 +216,25 @@ function EquipBorrowCreate() {
     return val;
   };
 
-  const handleInputChange = (
+  const convertQuantity = (data: string | number | undefined) => {
+    let val = typeof data === "string" ? parseFloat(data) : data;
+    return val;
+  };
 
+  function isFloat(n: number | undefined){
+    return Number(n) === n && n % 1 !== 0;
+}
+
+function isNegative(n: number | undefined){
+  return Number(n) === n && n < 0;
+}
+
+  const handleInputChange = (
     event: React.ChangeEvent<{ id?: string; value: any }>
- 
   ) => {
- 
     const id = event.target.id as keyof typeof EquipBorrowCreate;
- 
     const { value } = event.target;
- 
     setBorrowings({ ...borrowing, [id]: value });
- 
   };
 
   
@@ -232,7 +246,7 @@ function submit() {
       EquipmentID: convertType(borrowing.EquipmentID),
       BorrowStatusID: convertType(borrowing.BorrowStatusID),
       Borrowtime: selectedDate,
-      Quantity: convertType(borrowing.Quantity) ?? "",
+      Quantity: convertQuantity(borrowing.Quantity),
       Contact: borrowing.Contact ?? "",
       Comment: borrowing.Comment ?? "",
   };
@@ -246,13 +260,24 @@ function submit() {
     body: JSON.stringify(data),
   };
 
+
+
   fetch(`${apiUrl}/createborrowing`, requestOptionsPost)
     .then((response) => response.json())
     .then((res) => {
       if (res.data) {
+        console.log("บันทึกได้")
         setSuccess(true);
+        setErrorMessage("")
       } else {
+        console.log("บันทึกไม่ได้")
         setError(true);
+        if(isFloat(convertQuantity(borrowing.Quantity))) {
+          setErrorMessage("จำนวนอุปกรณ์ต้องไม่มีทศนิยม")
+        }
+        else {
+        setErrorMessage(res.error)
+        }
       }
     });
     
@@ -278,25 +303,26 @@ return (
       </Snackbar>
       <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
-          บันทึกข้อมูลไม่สำเร็จ
+          บันทึกข้อมูลไม่สำเร็จ : 
+          {errorMessage}
         </Alert>
       </Snackbar>
       <br/><br/> 
       <Container maxWidth = 'lg'>
     
       <Typography variant="h5" className={classes.text}>
-            Borrowing System
+            ระบบยืมอุปกรณ์
           </Typography>
   
       <br/>
       
-      <Paper elevation={4} className={classes.paper0}>
+      <Paper elevation={4}>
       <Grid container spacing={2}>
 
       
       <Grid className={classes.paper2} container spacing={0} item xs={6} wrap='wrap'>
       
-      <Grid item xs={12}>
+      <Grid item xs={6}>
          Equipment
          <form className={classes.combobox} noValidate >
           
@@ -305,11 +331,12 @@ return (
                 native
                 value={borrowing.EquipmentID}
                 onChange={handleChange}
+
                 inputProps={{
                   name: "EquipmentID",
                 }}
                 variant= "outlined"
-                style  = {{ width : 510 ,minHeight : 320 }}
+                style  = {{ width : 350 ,minHeight : 320 }}
               >
                 
                 <option aria-label="None" value="" style  = {{ minHeight : 45 }}>
@@ -318,18 +345,45 @@ return (
                 {equipments.map((item: EquipmentsInterface) => (
                   <option value={item.ID} key={item.ID} 
                   style  = {{ minHeight : 45 , fontSize: 17 }}>
-                    {item.Name} &ensp;&ensp;&ensp; remain : {item.Quantity}
+                    {item.Name} 
                   </option>
                 ))}
               </Select>
               <br/><Typography variant="caption" >
             *คลิ๊กEquipmentเพื่อเคลียร์ตัวเลือก
           </Typography>
+         </form>
+         
+        </Grid>
 
-
-      
-              
-    
+        <Grid item xs={6}>
+         จำนวนคงเหลือ
+         <form className={classes.combobox} noValidate >
+          <div>
+          <Select        
+                multiple
+                native
+                disabled
+                value={borrowing.EquipmentID}
+                onChange={handleChange}
+                inputProps={{
+                  name: "EquipmentID",
+                }}
+                variant= "outlined"
+                style  = {{ width : 200 ,minHeight : 320 }}
+              >
+                
+                <option aria-label="None" value="" style  = {{ minHeight : 45 }}>
+                  คงเหลือ
+                </option>
+                {equipments.map((item: EquipmentsInterface) => (
+                  <option value={item.ID} key={item.ID} 
+                  style  = {{ minHeight : 45 , fontSize: 17 }}>
+                    {item.Quantity} 
+                  </option>
+                ))}
+              </Select>
+      </div>
          </form>
          
         </Grid>
@@ -484,7 +538,14 @@ return (
                   style  = {{  width : 300 , height : 40}}
                 />
               </MuiPickersUtilsProvider>
-              
+          <IconButton onClick={resetTime}>
+          <RestartAltIcon/>
+          <Typography variant="caption"  >
+            *รีเซ็ตเวลาเป็นปัจจุบัน
+          </Typography>
+            </IconButton>
+
+          
     </form>
         
         </Grid>
