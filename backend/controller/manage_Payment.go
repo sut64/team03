@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"github.com/sut64/team03/backend/entity"
 	"github.com/gin-gonic/gin"
+	"github.com/asaskevich/govalidator"
 ) 
 
 // POST /Payment
@@ -53,6 +54,12 @@ func CreatePayment(c *gin.Context) {
 		Total: payment.Total,    
 		AddedTime: payment.AddedTime,
 		Bill: payment.Bill,
+	}
+
+	// แทรกการ validate ไว้ช่วงนี้ของ controller
+	if _, err := govalidator.ValidateStruct(pay); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// 14: บันทึก
