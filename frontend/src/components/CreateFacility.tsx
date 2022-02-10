@@ -46,6 +46,7 @@ export default function CreateFacility(){
   const [Facility, setFacility] = React.useState<Partial<FacilityInterface>>({});
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [errormessage, setErrormessage] = useState("");
   const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return;
@@ -196,8 +197,10 @@ export default function CreateFacility(){
           .then((res) => {
             if (res.data) {
               setSuccess(true);
+              setErrormessage("");
             } else {
               setError(true);
+              setErrormessage(res.error);
             }
         });
       }
@@ -214,14 +217,14 @@ export default function CreateFacility(){
         <div  >
         <ThemeProvider theme={theme}>
             <Container className='container' maxWidth="md" >
-            <Snackbar  anchorOrigin={{ vertical:"bottom", horizontal:"center" }} open={success} autoHideDuration={1000} onClose={handleClose} TransitionProps={{ onExit: () => (window.location.href = "/HistoryFacility") }} > 
+            <Snackbar  anchorOrigin={{ vertical:"bottom", horizontal:"center" }} open={success} autoHideDuration={2000} onClose={handleClose} TransitionProps={{ onExit: () => (window.location.href = "/HistoryFacility") }} > 
               <Alert onClose={handleClose} severity="success">
                 บันทึกข้อมูลสำเร็จ
               </Alert>
             </Snackbar>
-            <Snackbar anchorOrigin={{ vertical:"bottom", horizontal:"center" }} open={error} autoHideDuration={1000} onClose={handleClose}>
+            <Snackbar anchorOrigin={{ vertical:"bottom", horizontal:"center" }} open={error} autoHideDuration={2000} onClose={handleClose}>
               <Alert onClose={handleClose} severity="error">
-                บันทึกข้อมูลไม่สำเร็จ
+                บันทึกข้อมูลไม่สำเร็จ : {errormessage}
               </Alert>
             </Snackbar>
                 <Box border={5} borderColor = '#D0D9FF' width = "100%" height = "70vh" borderRadius = {3} >
