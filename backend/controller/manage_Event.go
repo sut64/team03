@@ -5,6 +5,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
+	"github.com/asaskevich/govalidator"
+
 	"net/http"
 )
 
@@ -50,6 +52,12 @@ func CreateEvent(c *gin.Context) {
 		Trainner:  Trainner,
 		Room:      Room,
 		TypeEvent: TypeEvent,
+	}
+
+	// ขั้นตอนการ Validate
+	if _, err := govalidator.ValidateStruct(Ev); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// 12: บันทึก

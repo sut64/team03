@@ -61,7 +61,8 @@ function Body() {
     
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
-        
+    const [errorMessage, setErrorMessage] = useState("");
+    
     const Alert = (props: AlertProps) => {
         return <MuiAlert elevation={6} variant="filled" {...props} />;
     };
@@ -174,6 +175,7 @@ function Body() {
                   setSuccess(true);
                 } else {
                   setError(true);
+                  setErrorMessage(res.error)
                 }
             });
           }
@@ -204,7 +206,7 @@ function Body() {
           </Snackbar>
       <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
-          บันทึกข้อมูลไม่สำเร็จ
+          บันทึกข้อมูลไม่สำเร็จ : {errorMessage}
         </Alert>
       </Snackbar>
             <Paper className={classes.paper}>
