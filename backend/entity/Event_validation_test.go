@@ -13,8 +13,8 @@ func TestEventPass(t *testing.T) {
 
 	Event := Event{
 		Name:      "test",
-		TimeStart: time.Now().Add(24),
-		TimeEnd:   time.Now().Add(25),
+		TimeStart: time.Now().AddDate(0, 0, 13),
+		TimeEnd:   time.Now().AddDate(0, 0, 15),
 		Amount:    1,
 	}
 
@@ -31,8 +31,8 @@ func TestNamenotblank(t *testing.T) {
 
 	Event := Event{
 		Name:      "", //ผิด
-		TimeStart: time.Now().Add(24),
-		TimeEnd:   time.Now().Add(25),
+		TimeStart: time.Now().AddDate(0, 0, 13),
+		TimeEnd:   time.Now().AddDate(0, 0, 15),
 		Amount:    1,
 	}
 
