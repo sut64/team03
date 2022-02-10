@@ -137,19 +137,7 @@ const useStyles = makeStyles((theme: Theme) =>
       
       
   };
-  
-  // console.log("ASDDSADAS",test1())
-
-//   const getPacage =  () => {
-//     var PacageClass = 0;
-//     for (let i = 0 ; 3 >= i ; i++)
-//     {
-//       if (pac[i] > PacageClass) {
-//         PacageClass = pac[i];
-//       }
-//   }
-//   return PacageClass
-// }
+ 
 
 
   //Get Zone ==========================================================================================
@@ -250,6 +238,7 @@ const useStyles = makeStyles((theme: Theme) =>
   const [warning, setWarning] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [errormessage, setErrormessage] = useState("");
 
   const handleClose = (event?: SyntheticEvent, reason?: string) => {
     if (reason === "clickaway") {
@@ -303,9 +292,11 @@ const useStyles = makeStyles((theme: Theme) =>
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
+          setErrormessage("")
           setSuccess(true);
         } else {
           setError(true);
+          setErrormessage(res.error)
         }
       });
   };
@@ -314,7 +305,7 @@ const useStyles = makeStyles((theme: Theme) =>
     <Container className={classes.container} maxWidth="md">
       <Snackbar
         open={success}
-        autoHideDuration={800}
+        autoHideDuration={5000}
         onClose={handleClose}
         TransitionProps={{
           onExit: () => {
@@ -322,13 +313,13 @@ const useStyles = makeStyles((theme: Theme) =>
           },
         }}
       >
-        <Alert onClose={handleClose} severity="success">
+        <Alert onClose={handleClose}  severity="success">
           บันทึกข้อมูลสำเร็จ
         </Alert>
       </Snackbar>
       <Snackbar open={error} autoHideDuration={5000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
-          บันทึกข้อมูลไม่สำเร็จ
+          บันทึกข้อมูลไม่สำเร็จ : {errormessage}
         </Alert>
       </Snackbar>
 
