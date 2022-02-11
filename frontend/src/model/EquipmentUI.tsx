@@ -33,7 +33,7 @@ import { UserInterface } from "./UserUI";
   
     Name: string,
   
-    Quantity: string,
+    Quantity: number,
   
     InputDate: Date ,
   

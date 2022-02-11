@@ -29,9 +29,9 @@ type RoleItem struct {
 type Equipment struct {
 	gorm.Model
 
-	Name      string `gorm:"uniqueIndex"`
-	InputDate time.Time
-	Quantity  uint
+	Name      string `gorm:"uniqueIndex" valid:"required~กรุณากรอกชื่ออุปกรณ์"`
+	InputDate time.Time 
+	Quantity  int 
 
 	SportTypeID *uint
 	SportType   SportType

@@ -1,0 +1,53 @@
+package entity
+
+import (
+	"testing"
+	"time"
+
+	"github.com/asaskevich/govalidator"
+	. "github.com/onsi/gomega"
+)
+
+func TestEquipmentPass(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	// ข้อมูลถูกต้องหมดทุก field
+	Equipment := Equipment{
+		Name:      "ลูกบอล1",
+		Quantity:  30,
+		InputDate: time.Now(),
+	}
+
+	// ตรวจสอบด้วย govalidaator
+	ok, err := govalidator.ValidateStruct(Equipment)
+
+	// ok ต้องเป็น true แปลว่าไม่มี error
+	g.Expect(ok).To(BeTrue())
+
+	// err เป็นค่า nil แปลว่าไม่มี error
+	g.Expect(err).To(BeNil())
+
+}
+
+func TestEquipmentNameNotBlank(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	Equipment := Equipment{
+		Name:      "", // ผิด
+		Quantity:  30,
+		InputDate: time.Now().AddDate(0, -1, 0),
+	}
+
+	// ตรวจสอบด้วย govalidaator
+	ok, err := govalidator.ValidateStruct(Equipment)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("กรุณากรอกชื่ออุปกรณ์"))
+}
+
