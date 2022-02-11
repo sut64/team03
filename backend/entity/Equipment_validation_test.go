@@ -73,3 +73,50 @@ func TestEquipmentInputMustBePast(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("วันที่นำเข้าอุปกรณ์ไม่สามารถเป็นอนาคต"))
 }
 
+
+func TestQuantityRange(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	Equipment := Equipment{
+		Name:      "ลูกบอล1",
+		Quantity:  -10,
+		InputDate: time.Now().AddDate(0, -1, 0),
+	}
+
+	// ตรวจสอบด้วย govalidator
+	ok, err := govalidator.ValidateStruct(Equipment)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("จำนวนที่เพิ่มต้องมากกว่า 0 และน้อยกว่า 1000"))
+
+}
+
+func TestQuantityNotZeroOrBlank(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	Equipment := Equipment{
+		Name:      "ลูกบอล1",
+		Quantity:  0 ,
+		InputDate: time.Now().AddDate(0, -1, 0),
+	}
+
+	// ตรวจสอบด้วย govalidator
+	ok, err := govalidator.ValidateStruct(Equipment)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("กรุณากรอกจำนวนอุปกรณ์ที่ต้องการเพิ่ม"))
+
+}
+

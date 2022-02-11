@@ -32,7 +32,7 @@ type Equipment struct {
 
 	Name      string `gorm:"uniqueIndex" valid:"required~กรุณากรอกชื่ออุปกรณ์"`
 	InputDate time.Time `valid:"past~วันที่นำเข้าอุปกรณ์ไม่สามารถเป็นอนาคต"`
-	Quantity  int 
+	Quantity  int `valid:"required~กรุณากรอกจำนวนอุปกรณ์ที่ต้องการเพิ่ม, range(1|1000)~จำนวนที่เพิ่มต้องมากกว่า 0 และน้อยกว่า 1000"`
 
 	SportTypeID *uint
 	SportType   SportType
