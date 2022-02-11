@@ -15,7 +15,7 @@ import TableRow from "@material-ui/core/TableRow";
 import { EventInterface } from "../model/EventUI";
 import { format } from 'date-fns'
 import moment from "moment";
-
+import { UserInterface, UserloginInterface, RoleloginInterface } from "../model/UserUI";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
@@ -27,12 +27,20 @@ const useStyles = makeStyles((theme: Theme) =>
     tableSpace: {
       marginTop: 20,
     },
+    button: {
+      
+      margin: theme.spacing(2),
+      background: '#dd0000',
+      color: '#ffffff',
+    },
   })
 );
 
 function PreloadEvents() {
   const classes = useStyles();
   const [Evet, setEvent] = useState<EventInterface[]>([]);
+  const [role, setRole] = useState<string>("");
+  const [user, setuser] = useState<UserInterface>();
   const apiUrl = "http://localhost:8080/ListEvent";
   const requestOptions = {
     method: "GET",
@@ -57,6 +65,11 @@ function PreloadEvents() {
 
   useEffect(() => {
     getEvent();
+    const getToken = localStorage.getItem("token");
+    if (getToken) {
+      setuser(JSON.parse(localStorage.getItem("User")|| ""))
+      setRole(localStorage.getItem("Role") || "");
+    } 
   }, []);
 
   return (
@@ -73,6 +86,17 @@ function PreloadEvents() {
               ข้อมูลตารางกิจกรรม
             </Typography>
           </Box>
+          {role === "admin" && user?.Role.Name === role && ( <>
+            <Button className={classes.button}
+              component={RouterLink}
+              to="/CreateEvent"
+              variant="contained"
+              color="primary"
+            >
+              บันทึกตารางกิจกรรม
+            </Button>
+          </>
+          )}
           <Box>
           </Box>
         </Box>
