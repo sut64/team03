@@ -9,6 +9,26 @@ import (
 	. "github.com/onsi/gomega"
 )
 
+func TestPaymentPass(t *testing.T){
+	g := NewGomegaWithT(t)
+
+	payment := Payment{
+		Bill: "R000005",
+		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
+		Discount: 20,
+		Total: 1980,
+	}
+
+	// ตรวจสอบด้วย govalidator
+	ok, err := govalidator.ValidateStruct(payment)
+
+	// ok ต้องเป็น true แปลว่าไม่มี error
+	g.Expect(ok).To(BeTrue())
+
+	// err เป็นค่า nil แปลว่าไม่มี error
+	g.Expect(err).To(BeNil())
+}
+
 // ตรวจสอบ Pattern ของ Bill แล้วต้องเจอ Error
 func TestBillMustBeInvalidPattern(t *testing.T){
 	g := NewGomegaWithT(t)
