@@ -1,0 +1,1347 @@
+{
+  "id": "7fc971a0-8f87-4a3e-b878-3340fd56e9d5",
+  "version": "2.0",
+  "name": "Equipment",
+  "url": "http://localhost:3000/equip",
+  "tests": [{
+    "id": "ae62bac8-f5fd-4ef4-94f7-8e3d5c87b07f",
+    "name": "B6215415 - บันทึกข้อมูล equipment สำเร็จ",
+    "commands": [{
+      "id": "08689507-d9c9-40cf-a9e3-8023b60ade71",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/equip",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6cbe114f-7cf2-4a81-bedf-a51b0be7bd43",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1033",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6e55d4a-3a71-4986-acb2-4e3576b4b8fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a1611ac-49d6-435d-a8b4-7d5f9812e5b2",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4897fdb2-29dc-46a0-a6d6-e36c22a36ea4",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "ลูกบอล3"
+    }, {
+      "id": "75202788-17a8-4453-a5dc-b8ddc0fdd23e",
+      "comment": "",
+      "command": "click",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["name=Quantity", "name"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6bbdbc2-7fee-4945-b589-8b19f110d040",
+      "comment": "",
+      "command": "type",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["name=Quantity", "name"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "30"
+    }, {
+      "id": "17fe1ef9-0774-45fa-b4be-4c79e8466186",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-SportTypeID",
+      "targets": [
+        ["id=mui-component-select-SportTypeID", "id"],
+        ["css=#mui-component-select-SportTypeID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-SportTypeID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "14618cc7-4937-4dbf-846b-2c8dfe299a37",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตบอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "176f2f51-49a7-4ba2-a1c2-e9692d4e4540",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0279d40a-7315-46b3-8a50-414d90ff5fba",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตบอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b76ea790-530c-4d88-a713-f6a3ad3d6ccc",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-CompanyID",
+      "targets": [
+        ["id=mui-component-select-CompanyID", "id"],
+        ["css=#mui-component-select-CompanyID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-CompanyID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[4]/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "810ce641-ed62-4845-919e-80eb9afc92e7",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "681697d6-2863-4584-b967-13efcdbf61b3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "29a060b6-6d8a-48b6-906a-8b90ecd9cd02",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c94f32d-cbdd-4b05-b75c-ac1cad523fcd",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-RoleItemID",
+      "targets": [
+        ["id=mui-component-select-RoleItemID", "id"],
+        ["css=#mui-component-select-RoleItemID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-RoleItemID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[5]/div/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac3b22cd-e23b-48d2-9a9a-1bf6b9543f33",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "51ed5b3f-571e-4b84-bc8e-f41e32bca9fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6169f902-20c1-45d2-be8f-a6b7ef1ab393",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "085de571-ec1d-4b4a-b656-90dab7b1fe32",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(9) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[9]/button/span", "xpath:idRelative"],
+        ["xpath=//div[9]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่ม')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "38823350-0c68-4c83-87dd-a32ba04aa581",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b4ad97f-faac-46db-acee-2bd3b09cc02e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "บันทึกข้อมูลสำเร็จ"
+    }]
+  }, {
+    "id": "e11fbf27-88ea-4f5b-9273-88778acf0f3a",
+    "name": "B6215415 - ตรวจสอบ Name ต้องไม่เป็นช่องว่าง",
+    "commands": [{
+      "id": "517446eb-4c21-4dbd-9f21-acd929224351",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/equip",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76b546a6-0a42-4f83-9dc6-beb97867db4f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c80fcfc4-dcd7-4749-874c-e0e70e029bfe",
+      "comment": "",
+      "command": "click",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["name=Quantity", "name"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b75f599-28bc-49f8-9bdb-627edc80617f",
+      "comment": "",
+      "command": "type",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["name=Quantity", "name"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "30"
+    }, {
+      "id": "678f5f63-b2fd-40ec-8095-0c921c3a3a54",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-SportTypeID",
+      "targets": [
+        ["id=mui-component-select-SportTypeID", "id"],
+        ["css=#mui-component-select-SportTypeID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-SportTypeID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78b816d4-7ee9-44e6-9a7d-062865f47a6b",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตบอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f4e290f-99ed-4683-8ab7-538d2f3dd2e0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "21bb5d36-0cbc-47f2-9927-ae420d22bf8c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตบอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "13db6068-261e-4456-96bf-3fe98bf35879",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-CompanyID",
+      "targets": [
+        ["id=mui-component-select-CompanyID", "id"],
+        ["css=#mui-component-select-CompanyID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-CompanyID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[4]/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b614b5c9-026a-4118-bbcb-5d1d66a64996",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55753e12-d9be-43ac-9f12-0673b194d6a2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56d018c8-8c2b-43a2-a290-e7b51c8fe9b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "674e36d2-21fe-4b3b-9865-900502e06c43",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-RoleItemID",
+      "targets": [
+        ["id=mui-component-select-RoleItemID", "id"],
+        ["css=#mui-component-select-RoleItemID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-RoleItemID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[5]/div/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4115d661-0592-4294-9509-10aa24e9601b",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47c2a9af-3c24-4c4d-96dc-2bcee7d86337",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b2915bf-773b-4899-81b0-9b06f10d442b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "384ad547-4081-4040-af74-e3207cfc2790",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(9) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[9]/button/span", "xpath:idRelative"],
+        ["xpath=//div[9]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่ม')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1033af5c-fd53-41d6-849d-7bf8ef19a537",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db1a8aa6-1bf4-4360-b45d-650816ea7e3e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "กรุณากรอกชื่ออุปกรณ์"
+    }]
+  }, {
+    "id": "fd3c9e21-5a85-4421-9a50-940e364ad87c",
+    "name": "B6215415 - ตรวจสอบ Input date ไม่เป็นอานาคต",
+    "commands": [{
+      "id": "bbd6b324-788d-40be-a42e-95a91935e9af",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/equip",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1aef1e02-a2bc-4cb4-b0aa-04139b30501e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b853d93-2294-4a73-aeda-b1c6c521ea0c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e40d45e6-334c-48af-b46b-2d7b8d5bc2e9",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc511caa-803f-4d52-9e81-0da0780cdabf",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "ลูกฟุตซอล1"
+    }, {
+      "id": "7847d00f-4dfc-4669-854e-b6e6de1e4fd8",
+      "comment": "",
+      "command": "click",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["name=Quantity", "name"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "82d150ef-5875-47dc-a0cc-14d81d0e9196",
+      "comment": "",
+      "command": "type",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["name=Quantity", "name"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "50"
+    }, {
+      "id": "21a3f0d9-16f3-4493-960e-f7de75849b59",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-SportTypeID",
+      "targets": [
+        ["id=mui-component-select-SportTypeID", "id"],
+        ["css=#mui-component-select-SportTypeID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-SportTypeID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd8e955e-fad7-4315-b6a1-25ebdbbece4f",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.Mui-focusVisible",
+      "targets": [
+        ["css=.Mui-focusVisible", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตบอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "acee7b9d-90f6-42f2-98f0-9b9ccdce80e7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04fdf28e-f7fb-48a8-a700-fcb92ac3a7a6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(3)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตซอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bd640b6-868c-4bc8-aecb-fffab61e93e9",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-CompanyID",
+      "targets": [
+        ["id=mui-component-select-CompanyID", "id"],
+        ["css=#mui-component-select-CompanyID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-CompanyID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[4]/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "beb6f603-01d3-4b95-b77d-1ee0e2c242f3",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5990408e-c321-4125-9430-d383f7eaf81d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a78eb670-3ab9-4e3c-8e12-25f8e557d00c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "be8cea4b-50fe-434b-9873-20d54c25092d",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-RoleItemID",
+      "targets": [
+        ["id=mui-component-select-RoleItemID", "id"],
+        ["css=#mui-component-select-RoleItemID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-RoleItemID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[5]/div/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "327313ab-5c5a-45b8-b3c5-0760fe1ecd65",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b08ffa4b-7a42-41f7-8576-35aefddc0159",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "337bbef2-4097-4890-bbe8-7ff0878f11b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "12d56d07-782b-4f45-8718-70d94ad6d571",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "425247f3-fedc-40bd-a098-1f21c8d8bdd2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa17e432-fe8e-4da1-8505-c74357aac99c",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbae5868-a7a8-4388-b630-249ec8384850",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "f63f1379-ebf5-4a26-842a-4aae7c1e08ff",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "d58c1a9c-3a57-4654-a339-16a5f4ba2486",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "71d49f88-ffe6-49b0-939e-64b39d388237",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "50d294ae-8b36-490a-a620-3a38077ad3e5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(4) > div:nth-child(5) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(4) > div:nth-child(5) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[4]/div[5]/button/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'21')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba66ce6a-201a-4fde-8066-b9b5914deef7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ce2248c-73c6-4bac-b43d-edcd510b01dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(9) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[9]/button/span", "xpath:idRelative"],
+        ["xpath=//div[9]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่ม')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebbf8320-5a1a-484f-a952-faf7f3cdc8db",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95e95d0f-a213-4519-873e-c2e22dc147e3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "วันที่นำเข้าอุปกรณ์ไม่สามารถเป็นอนาคต"
+    }]
+  }, {
+    "id": "7c53a729-97af-485a-97a4-4b6a8dc1f507",
+    "name": "B6215415 - ตรวจสอบ Quantity ต้องมากกว่า 0",
+    "commands": [{
+      "id": "5c9cc0e2-e9cc-4ef9-bf65-71953737b578",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/equip",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ebc9970b-e57f-49d2-adae-c1e69a495df2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8c07c15-8fe5-420e-b442-038bbd6860b4",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "421dce18-fe3c-4d67-85fd-a3bee6b5e68a",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "ลูกฟุตซอล1"
+    }, {
+      "id": "1ccc56fe-b349-47b9-8dd0-45138fc1a8e4",
+      "comment": "",
+      "command": "click",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["name=Quantity", "name"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fa17d59-1c61-42c2-af62-df334a605dae",
+      "comment": "",
+      "command": "type",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["name=Quantity", "name"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "-60"
+    }, {
+      "id": "7b751afa-2ba7-4715-b4aa-0e88ac578d93",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-SportTypeID",
+      "targets": [
+        ["id=mui-component-select-SportTypeID", "id"],
+        ["css=#mui-component-select-SportTypeID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-SportTypeID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae042031-8796-4444-82cc-95f4e08fe4d6",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.Mui-focusVisible",
+      "targets": [
+        ["css=.Mui-focusVisible", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตบอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f14c9bed-da21-469f-8097-cfb4b0918943",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "855c7404-228a-4371-a5ec-f99ed59f240e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(3)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตซอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3f0c241-5635-4e4f-a6bb-f686a8ea21bc",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-CompanyID",
+      "targets": [
+        ["id=mui-component-select-CompanyID", "id"],
+        ["css=#mui-component-select-CompanyID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-CompanyID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[4]/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1359318-3c7a-472c-b760-81c486d7882f",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d44c2b69-4ac2-4b20-9e68-b171e19a4d4c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a85968de-3566-41d2-9e6a-f8747fad1dd5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e8abc77-bb08-496e-b4c5-b77764eb89d2",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-RoleItemID",
+      "targets": [
+        ["id=mui-component-select-RoleItemID", "id"],
+        ["css=#mui-component-select-RoleItemID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-RoleItemID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[5]/div/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd8a8922-882b-40ab-93f7-6af837d53128",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "79a390f3-891d-4be8-884a-2549c31e2606",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e954ec83-6244-4074-a1cc-b9f04b882a5e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "12f5bdc0-0ead-401e-8fd5-e97f83885f3e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(9) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[9]/button/span", "xpath:idRelative"],
+        ["xpath=//div[9]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่ม')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d269729-fb9d-495d-a187-c6f49325d962",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4191d6b0-698e-4df4-b99e-2b6fe7bc166c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "จำนวนที่เพิ่มต้องมากกว่า 0 และน้อยกว่า 1000"
+    }]
+  }, {
+    "id": "f9cfe987-f91e-44e4-b65c-c309056f2d4b",
+    "name": "B6215415 - ตรวจสอบ Quantity ต้องไม่เป็นค่าว่าง",
+    "commands": [{
+      "id": "3646c655-487e-4a2e-909a-5bc73a6d8048",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/equip",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "18d82c0e-480c-4081-bb33-f00023ecdc2b",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3ba5a3a-ed0f-46fd-be44-26b108aa7d84",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d06d1f89-31a8-40c3-89d6-382cea08e9dd",
+      "comment": "",
+      "command": "click",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56dc2caa-0a59-4865-83dd-99ff4cc5e90c",
+      "comment": "",
+      "command": "type",
+      "target": "id=Name",
+      "targets": [
+        ["id=Name", "id"],
+        ["name=Name", "name"],
+        ["css=#Name", "css:finder"],
+        ["xpath=//input[@id='Name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "ลูกฟุตซอล1"
+    }, {
+      "id": "3b004c0d-b057-4aee-b8e0-b843720494b4",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-SportTypeID",
+      "targets": [
+        ["id=mui-component-select-SportTypeID", "id"],
+        ["css=#mui-component-select-SportTypeID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-SportTypeID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fccc035-1875-45ae-a39b-9a67786f5297",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.Mui-focusVisible",
+      "targets": [
+        ["css=.Mui-focusVisible", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตบอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6909abf2-5866-4cf7-9002-4db92aa069fd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6d113cf-3209-4f20-979b-a941eb43a3c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(3)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[3]", "xpath:idRelative"],
+        ["xpath=//li[3]", "xpath:position"],
+        ["xpath=//li[contains(.,'ฟุตซอล')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b79f6fce-bae9-4e21-afc2-957c99ed92be",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-CompanyID",
+      "targets": [
+        ["id=mui-component-select-CompanyID", "id"],
+        ["css=#mui-component-select-CompanyID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-CompanyID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[4]/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96610f72-2a7b-490a-8035-b1a8ea01271b",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f7f81be-3c84-4248-8bb8-96b6a598552a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "576be94c-a57c-4223-b0c7-80d15c2b76f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-CompanyID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'JN Sport')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8348208b-06e9-4f98-b95b-a5dddc58eb68",
+      "comment": "",
+      "command": "mouseDown",
+      "target": "id=mui-component-select-RoleItemID",
+      "targets": [
+        ["id=mui-component-select-RoleItemID", "id"],
+        ["css=#mui-component-select-RoleItemID", "css:finder"],
+        ["xpath=//div[@id='mui-component-select-RoleItemID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[5]/div/div", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d75b6434-9f86-4006-bde6-dc4646c58a77",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cf725c3e-7650-4ca9-a3c3-9825469b7251",
+      "comment": "",
+      "command": "click",
+      "target": "css=.vsc-initialized",
+      "targets": [
+        ["css=.vsc-initialized", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95b2e59a-2b30-430a-8618-be175611c7d7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiListItem-root:nth-child(2)",
+      "targets": [
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='menu-RoleItemID']/div[3]/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Borrow allow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d97509f-f804-4348-a5bf-2999cbe68093",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(9) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[9]/button/span", "xpath:idRelative"],
+        ["xpath=//div[9]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่ม')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2589f0a-c4fa-442d-b13b-5b97a2feab2f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiAlert-root",
+      "targets": [
+        ["css=.MuiAlert-root", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92694c5f-055a-4e6a-a68a-f254fcfbda68",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiAlert-message",
+      "targets": [
+        ["css=.MuiAlert-message", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": "กรุณากรอกจำนวนอุปกรณ์ที่ต้องการเพิ่ม"
+    }]
+  }],
+  "suites": [{
+    "id": "8ee15c03-068c-40c5-a18b-f054c1b58da0",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["ae62bac8-f5fd-4ef4-94f7-8e3d5c87b07f"]
+  }],
+  "urls": ["http://localhost:3000/equip"],
+  "plugins": []
+}
