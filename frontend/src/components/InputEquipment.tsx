@@ -208,19 +208,16 @@ const submit = () => {
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
-          setSuccess(true);
+          setSuccess(true)
+          setErrorMessage("")
         } 
         
         else { 
-          if (res.error == "UNIQUE constraint failed: equipment.name") {
-            setErrorMessage("ชื่ออุปกรณ์ซ้ำ")
-        } else {
-            setErrorMessage("บันทึกข้อมูลไม่สำเร็จ")
-        }
-
-        setError(true)
+          setErrorMessage(res.error)
+          setError(true)
 
         }
+        
     });
   
 }

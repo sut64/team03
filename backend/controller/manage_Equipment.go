@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"github.com/asaskevich/govalidator"
 	"github.com/sut64/team03/backend/entity"
 
 	"github.com/gin-gonic/gin"
@@ -57,6 +58,12 @@ func InputEquipment(c *gin.Context) {
 		Company:   Company,
 		RoleItem:  RoleItem,
 		EquipmentStaff:      EquipmentStaff,
+	}
+
+	// ขั้นตอนการ validate ที่นำมาจาก unit test
+	if _, err := govalidator.ValidateStruct(equip); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 
 	// : บันทึก
