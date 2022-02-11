@@ -98,10 +98,10 @@ function PreloadEvents() {
                 <TableCell align="center" width="5%">
                   จำนวน
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="20%">
                   เวลาเริ่ม
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="20%">
                  เวลาจบ
                 </TableCell>
               </TableRow>
@@ -116,8 +116,8 @@ function PreloadEvents() {
                   <TableCell align="center">{item.Room.Name}</TableCell>
                   <TableCell align="center">{item.Details}</TableCell>
                   <TableCell align="center">{item.Amount}</TableCell>
-                  <TableCell align="center">{moment(item.TimeStart).format("YYYY-MM-DDTHH:mm")}</TableCell>
-                  <TableCell align="center">{moment(item.TimeEnd).format("YYYY-MM-DDTHH:mm")}</TableCell>
+                  <TableCell align="center">{moment(item.TimeStart).format("DD MMMM yyyy hh:mm a")}</TableCell>
+                  <TableCell align="center">{moment(item.TimeEnd).format("DD MMMM yyyy hh:mm a")}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
