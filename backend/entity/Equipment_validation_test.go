@@ -35,7 +35,7 @@ func TestEquipmentNameNotBlank(t *testing.T) {
 	Equipment := Equipment{
 		Name:      "", // ผิด
 		Quantity:  30,
-		InputDate: time.Now().AddDate(0, -1, 0),
+		InputDate: time.Now().AddDate(-1, -1, 0),
 	}
 
 	// ตรวจสอบด้วย govalidaator
@@ -80,7 +80,7 @@ func TestQuantityRange(t *testing.T) {
 	Equipment := Equipment{
 		Name:      "ลูกบอล1",
 		Quantity:  -10,
-		InputDate: time.Now().AddDate(0, -1, 0),
+		InputDate: time.Now().AddDate(-1, -1, 0),
 	}
 
 	// ตรวจสอบด้วย govalidator
@@ -103,7 +103,7 @@ func TestQuantityNotZeroOrBlank(t *testing.T) {
 	Equipment := Equipment{
 		Name:      "ลูกบอล1",
 		Quantity:  0 ,
-		InputDate: time.Now().AddDate(0, -1, 0),
+		InputDate: time.Now().AddDate(-1, -1, 0),
 	}
 
 	// ตรวจสอบด้วย govalidator
