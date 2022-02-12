@@ -7,21 +7,33 @@
     "id": "ae62bac8-f5fd-4ef4-94f7-8e3d5c87b07f",
     "name": "B6215415 - บันทึกข้อมูล equipment สำเร็จ",
     "commands": [{
-      "id": "08689507-d9c9-40cf-a9e3-8023b60ade71",
+      "id": "070ded5d-c770-4123-8e2c-3074653cc706",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/equip",
       "targets": [],
       "value": ""
     }, {
-      "id": "6cbe114f-7cf2-4a81-bedf-a51b0be7bd43",
+      "id": "c972db24-d57b-45ed-b897-06044976b67f",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1920x1033",
+      "target": "1608x1020",
       "targets": [],
       "value": ""
     }, {
-      "id": "a6e55d4a-3a71-4986-acb2-4e3576b4b8fc",
+      "id": "d736ce05-f3b7-4fd9-8875-b89102785394",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2fdbe314-9c10-4788-835d-ade30fe79d60",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -33,7 +45,7 @@
       ],
       "value": ""
     }, {
-      "id": "6a1611ac-49d6-435d-a8b4-7d5f9812e5b2",
+      "id": "35ff95e2-7b25-409c-b07c-af8eec752032",
       "comment": "",
       "command": "click",
       "target": "id=Name",
@@ -47,7 +59,7 @@
       ],
       "value": ""
     }, {
-      "id": "4897fdb2-29dc-46a0-a6d6-e36c22a36ea4",
+      "id": "bd2d2c20-f558-498b-887b-93feb7453e30",
       "comment": "",
       "command": "type",
       "target": "id=Name",
@@ -59,9 +71,9 @@
         ["xpath=//div[@id='root']/div[2]/div/div[2]/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "ลูกบอล3"
+      "value": "ลูกบอล1"
     }, {
-      "id": "75202788-17a8-4453-a5dc-b8ddc0fdd23e",
+      "id": "ddb5c528-1636-41d6-9ded-7da5acbbad84",
       "comment": "",
       "command": "click",
       "target": "id=Quantity",
@@ -75,7 +87,7 @@
       ],
       "value": ""
     }, {
-      "id": "d6bbdbc2-7fee-4945-b589-8b19f110d040",
+      "id": "e8a5b923-7cd8-457e-a5f7-77685a79b569",
       "comment": "",
       "command": "type",
       "target": "id=Quantity",
@@ -89,7 +101,7 @@
       ],
       "value": "30"
     }, {
-      "id": "17fe1ef9-0774-45fa-b4be-4c79e8466186",
+      "id": "3c9fbaca-fd42-4c41-b20b-11c7bc20a5b5",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-SportTypeID",
@@ -102,7 +114,7 @@
       ],
       "value": ""
     }, {
-      "id": "14618cc7-4937-4dbf-846b-2c8dfe299a37",
+      "id": "708b423d-4b77-4acd-9f38-f7b584e9fb1b",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -114,7 +126,7 @@
       ],
       "value": ""
     }, {
-      "id": "176f2f51-49a7-4ba2-a1c2-e9692d4e4540",
+      "id": "dc9be854-52e1-4b4c-ae24-da24846ea981",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -124,7 +136,7 @@
       ],
       "value": ""
     }, {
-      "id": "0279d40a-7315-46b3-8a50-414d90ff5fba",
+      "id": "6445c05c-6e83-48f1-8226-a409d66703c1",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -136,7 +148,7 @@
       ],
       "value": ""
     }, {
-      "id": "b76ea790-530c-4d88-a713-f6a3ad3d6ccc",
+      "id": "24a21ac8-a4d7-4d7e-9f97-655a6c64c5e4",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-CompanyID",
@@ -149,7 +161,7 @@
       ],
       "value": ""
     }, {
-      "id": "810ce641-ed62-4845-919e-80eb9afc92e7",
+      "id": "d010353b-8957-44bb-b1c6-972a30a373bb",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -161,7 +173,7 @@
       ],
       "value": ""
     }, {
-      "id": "681697d6-2863-4584-b967-13efcdbf61b3",
+      "id": "7f9905bf-b98f-4b0c-a3c7-60ff4cfbeb13",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -171,7 +183,7 @@
       ],
       "value": ""
     }, {
-      "id": "29a060b6-6d8a-48b6-906a-8b90ecd9cd02",
+      "id": "bfb02aee-efec-42ea-af29-94fba7f29bea",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -183,7 +195,7 @@
       ],
       "value": ""
     }, {
-      "id": "7c94f32d-cbdd-4b05-b75c-ac1cad523fcd",
+      "id": "af039606-d657-4f7d-9fa4-23c62fd62f6d",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-RoleItemID",
@@ -196,7 +208,7 @@
       ],
       "value": ""
     }, {
-      "id": "ac3b22cd-e23b-48d2-9a9a-1bf6b9543f33",
+      "id": "c7a321b1-8ba1-43ae-b435-dd78d319359b",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -208,7 +220,7 @@
       ],
       "value": ""
     }, {
-      "id": "51ed5b3f-571e-4b84-bc8e-f41e32bca9fc",
+      "id": "2dbeb7f3-7e9e-403b-afd0-a1020ded6fc4",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -218,7 +230,7 @@
       ],
       "value": ""
     }, {
-      "id": "6169f902-20c1-45d2-be8f-a6b7ef1ab393",
+      "id": "b4e45cad-7556-4337-b101-74da8e2a791c",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -230,7 +242,7 @@
       ],
       "value": ""
     }, {
-      "id": "085de571-ec1d-4b4a-b656-90dab7b1fe32",
+      "id": "02e6d732-4af6-4034-a851-e0e66dd18f86",
       "comment": "",
       "command": "click",
       "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
@@ -242,7 +254,7 @@
       ],
       "value": ""
     }, {
-      "id": "38823350-0c68-4c83-87dd-a32ba04aa581",
+      "id": "43b95771-34a9-41ad-9822-4c526439d237",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -253,7 +265,7 @@
       ],
       "value": ""
     }, {
-      "id": "5b4ad97f-faac-46db-acee-2bd3b09cc02e",
+      "id": "445cc246-6318-49b3-a0cc-ae757b89818a",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -263,6 +275,46 @@
         ["xpath=//div/div/div[2]", "xpath:position"]
       ],
       "value": "บันทึกข้อมูลสำเร็จ"
+    }, {
+      "id": "0fe4f110-86b9-421e-ba49-0c1095855378",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-root:nth-child(8) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(8) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[8]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'อุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24859c10-9c29-4de9-b003-febca279bcd4",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiTableRow-root:nth-child(5) path",
+      "targets": [
+        ["css=.MuiTableRow-root:nth-child(5) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7cb5bbf-7f46-4b38-ae09-48ae571fd30a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiTableRow-root:nth-child(5) path",
+      "targets": [
+        ["css=.MuiTableRow-root:nth-child(5) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "e23dfc13-eb8c-4e1f-97a3-a66934669bce",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"]
+      ],
+      "value": ""
     }]
   }, {
     "id": "e11fbf27-88ea-4f5b-9273-88778acf0f3a",
@@ -491,29 +543,24 @@
       "value": "กรุณากรอกชื่ออุปกรณ์"
     }]
   }, {
-    "id": "fd3c9e21-5a85-4421-9a50-940e364ad87c",
+    "id": "82c5c8dc-4320-4256-847a-89324afd4319",
     "name": "B6215415 - ตรวจสอบ Input date ไม่เป็นอานาคต",
     "commands": [{
-      "id": "bbd6b324-788d-40be-a42e-95a91935e9af",
+      "id": "5b21e326-7f01-4abd-bbfa-903d82452d2c",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/equip",
       "targets": [],
       "value": ""
     }, {
-      "id": "1aef1e02-a2bc-4cb4-b0aa-04139b30501e",
+      "id": "3de10223-b2fe-41cc-9966-de4f6bdbac8d",
       "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiButton-contained > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
-        ["xpath=//a/span", "xpath:position"],
-        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
-      ],
+      "command": "setWindowSize",
+      "target": "1464x1040",
+      "targets": [],
       "value": ""
     }, {
-      "id": "2b853d93-2294-4a73-aeda-b1c6c521ea0c",
+      "id": "cbfdb65a-2c75-44c5-ba15-ebceb50420cb",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -525,7 +572,7 @@
       ],
       "value": ""
     }, {
-      "id": "e40d45e6-334c-48af-b46b-2d7b8d5bc2e9",
+      "id": "e2dfaaa0-7626-4fe8-be2f-7cae734f0a34",
       "comment": "",
       "command": "click",
       "target": "id=Name",
@@ -539,7 +586,7 @@
       ],
       "value": ""
     }, {
-      "id": "fc511caa-803f-4d52-9e81-0da0780cdabf",
+      "id": "3d9e6f81-7da6-4775-874f-697bae496f70",
       "comment": "",
       "command": "type",
       "target": "id=Name",
@@ -553,7 +600,7 @@
       ],
       "value": "ลูกฟุตซอล1"
     }, {
-      "id": "7847d00f-4dfc-4669-854e-b6e6de1e4fd8",
+      "id": "e0163d6f-7c6a-4838-a9f6-6bef84e40bd0",
       "comment": "",
       "command": "click",
       "target": "id=Quantity",
@@ -567,7 +614,7 @@
       ],
       "value": ""
     }, {
-      "id": "82d150ef-5875-47dc-a0cc-14d81d0e9196",
+      "id": "5b2a3862-c675-43d2-9c79-3c3814810d4b",
       "comment": "",
       "command": "type",
       "target": "id=Quantity",
@@ -579,9 +626,9 @@
         ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "50"
+      "value": "30"
     }, {
-      "id": "21a3f0d9-16f3-4493-960e-f7de75849b59",
+      "id": "3151c5e6-39c1-4bea-b753-af30b0b79c47",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-SportTypeID",
@@ -594,19 +641,19 @@
       ],
       "value": ""
     }, {
-      "id": "bd8e955e-fad7-4315-b6a1-25ebdbbece4f",
+      "id": "cca9924f-f96d-4fb4-bcef-dcf6f2eac942",
       "comment": "",
       "command": "mouseUp",
-      "target": "css=.Mui-focusVisible",
+      "target": "css=.MuiListItem-root:nth-child(2)",
       "targets": [
-        ["css=.Mui-focusVisible", "css:finder"],
+        ["css=.MuiListItem-root:nth-child(2)", "css:finder"],
         ["xpath=//div[@id='menu-SportTypeID']/div[3]/ul/li[2]", "xpath:idRelative"],
         ["xpath=//li[2]", "xpath:position"],
         ["xpath=//li[contains(.,'ฟุตบอล')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "acee7b9d-90f6-42f2-98f0-9b9ccdce80e7",
+      "id": "00be7acf-51a7-4953-ae2d-72710218c273",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -616,7 +663,7 @@
       ],
       "value": ""
     }, {
-      "id": "04fdf28e-f7fb-48a8-a700-fcb92ac3a7a6",
+      "id": "769eb129-88d3-465b-9a12-998d1cabbad2",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButtonBase-root:nth-child(3)",
@@ -628,7 +675,7 @@
       ],
       "value": ""
     }, {
-      "id": "4bd640b6-868c-4bc8-aecb-fffab61e93e9",
+      "id": "c4ab092d-5768-4721-8428-a6f1718f137a",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-CompanyID",
@@ -641,7 +688,7 @@
       ],
       "value": ""
     }, {
-      "id": "beb6f603-01d3-4b95-b77d-1ee0e2c242f3",
+      "id": "af8520a6-2520-47d5-886d-83182a0aa86a",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -653,7 +700,7 @@
       ],
       "value": ""
     }, {
-      "id": "5990408e-c321-4125-9430-d383f7eaf81d",
+      "id": "c37dc2c4-f5e8-4907-bf84-1a0bc33db728",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -663,7 +710,7 @@
       ],
       "value": ""
     }, {
-      "id": "a78eb670-3ab9-4e3c-8e12-25f8e557d00c",
+      "id": "d22f8ea0-52c2-406f-9b31-d07cb0c4650c",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -675,7 +722,7 @@
       ],
       "value": ""
     }, {
-      "id": "be8cea4b-50fe-434b-9873-20d54c25092d",
+      "id": "e498d4c1-71f3-45f2-b2fd-bdfb548ba72a",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-RoleItemID",
@@ -688,7 +735,7 @@
       ],
       "value": ""
     }, {
-      "id": "327313ab-5c5a-45b8-b3c5-0760fe1ecd65",
+      "id": "fad81d64-f8c1-4205-97c8-df3cacfb2cdc",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -700,7 +747,7 @@
       ],
       "value": ""
     }, {
-      "id": "b08ffa4b-7a42-41f7-8576-35aefddc0159",
+      "id": "d19ffe2b-6f75-41fa-ab02-5fd9b6cfc626",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -710,7 +757,7 @@
       ],
       "value": ""
     }, {
-      "id": "337bbef2-4097-4890-bbe8-7ff0878f11b6",
+      "id": "180896f0-2de5-4fc1-96ff-850a3ea8538a",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -722,61 +769,34 @@
       ],
       "value": ""
     }, {
-      "id": "12d56d07-782b-4f45-8718-70d94ad6d571",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "425247f3-fedc-40bd-a098-1f21c8d8bdd2",
+      "id": "6527ecd7-4cea-4b4c-8674-dae496b211e7",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
       "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "fa17e432-fe8e-4da1-8505-c74357aac99c",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
-      "targets": [
-        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "bbae5868-a7a8-4388-b630-249ec8384850",
+      "id": "a2f3040d-410f-4a2e-b841-8f106c60b4b0",
       "comment": "",
       "command": "mouseOver",
-      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "target": "css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root",
       "targets": [
-        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+        ["css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "f63f1379-ebf5-4a26-842a-4aae7c1e08ff",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
-      "targets": [
-        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
-      ],
-      "value": ""
-    }, {
-      "id": "d58c1a9c-3a57-4654-a339-16a5f4ba2486",
+      "id": "e507f117-a7fd-4d91-a7e9-f1a45268abf2",
       "comment": "",
       "command": "mouseOut",
-      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "target": "css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root",
       "targets": [
-        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+        ["css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "71d49f88-ffe6-49b0-939e-64b39d388237",
+      "id": "4ea3086c-2012-4059-9802-c44cbd096d05",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButtonBase-root:nth-child(3) .MuiSvgIcon-root",
@@ -785,18 +805,53 @@
       ],
       "value": ""
     }, {
-      "id": "50d294ae-8b36-490a-a620-3a38077ad3e5",
+      "id": "479e5fa7-a2e3-4366-a072-74354bccee1c",
       "comment": "",
-      "command": "click",
-      "target": "css=.MuiPickersCalendar-week:nth-child(4) > div:nth-child(5) .MuiTypography-root",
+      "command": "mouseOver",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
       "targets": [
-        ["css=.MuiPickersCalendar-week:nth-child(4) > div:nth-child(5) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[4]/div[5]/button/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'21')]", "xpath:innerText"]
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "ba66ce6a-201a-4fde-8066-b9b5914deef7",
+      "id": "b0367c52-dc3d-4691-8d01-e04c9cffdfe2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "e163a38a-bf12-4aa5-9d5f-da103a060cc5",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c1eadcd-ba4f-46c3-a0d2-82f0f90c511a",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(3) path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "68f996e5-4222-4ec3-a051-d21d61721496",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(5) .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPickersCalendar-week:nth-child(5) > div:nth-child(5) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[5]/div[5]/button/span/p", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98a43937-841a-4de1-bdc8-fbca630315b6",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
@@ -807,7 +862,7 @@
       ],
       "value": ""
     }, {
-      "id": "1ce2248c-73c6-4bac-b43d-edcd510b01dc",
+      "id": "d610aa02-88dd-428d-ba5b-fffb8b61ce1f",
       "comment": "",
       "command": "click",
       "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
@@ -819,7 +874,7 @@
       ],
       "value": ""
     }, {
-      "id": "ebbf8320-5a1a-484f-a952-faf7f3cdc8db",
+      "id": "f059d683-ff90-4718-8ead-edfe00e4b058",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -830,7 +885,7 @@
       ],
       "value": ""
     }, {
-      "id": "95e95d0f-a213-4519-873e-c2e22dc147e3",
+      "id": "fec3bdd1-7612-4cc1-9b51-5dff1d985044",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -842,17 +897,24 @@
       "value": "วันที่นำเข้าอุปกรณ์ไม่สามารถเป็นอนาคต"
     }]
   }, {
-    "id": "7c53a729-97af-485a-97a4-4b6a8dc1f507",
+    "id": "432236e7-20d9-416f-88d0-1b1c5a26bdfd",
     "name": "B6215415 - ตรวจสอบ Quantity ต้องมากกว่า 0",
     "commands": [{
-      "id": "5c9cc0e2-e9cc-4ef9-bf65-71953737b578",
+      "id": "787d7395-1391-48d7-af88-e575bac0abd3",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/equip",
       "targets": [],
       "value": ""
     }, {
-      "id": "ebc9970b-e57f-49d2-adae-c1e69a495df2",
+      "id": "e95c08e8-42bf-408d-8318-1aaacd2dd4e1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1464x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89a8f6db-f5ea-4687-8db0-f647a381ed25",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -864,7 +926,7 @@
       ],
       "value": ""
     }, {
-      "id": "a8c07c15-8fe5-420e-b442-038bbd6860b4",
+      "id": "151cbd79-fe41-4c43-8371-570621395eea",
       "comment": "",
       "command": "click",
       "target": "id=Name",
@@ -878,7 +940,7 @@
       ],
       "value": ""
     }, {
-      "id": "421dce18-fe3c-4d67-85fd-a3bee6b5e68a",
+      "id": "cb977839-608b-42ab-b535-ad6136d0eb97",
       "comment": "",
       "command": "type",
       "target": "id=Name",
@@ -892,7 +954,7 @@
       ],
       "value": "ลูกฟุตซอล1"
     }, {
-      "id": "1ccc56fe-b349-47b9-8dd0-45138fc1a8e4",
+      "id": "d4bcc7f4-a9e7-4829-8791-5957caa1b5ed",
       "comment": "",
       "command": "click",
       "target": "id=Quantity",
@@ -906,7 +968,7 @@
       ],
       "value": ""
     }, {
-      "id": "0fa17d59-1c61-42c2-af62-df334a605dae",
+      "id": "c29490e4-84c1-46ca-a33a-94ff3995b89d",
       "comment": "",
       "command": "type",
       "target": "id=Quantity",
@@ -918,9 +980,9 @@
         ["xpath=//div[@id='root']/div[2]/div/div[2]/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "-60"
+      "value": "-20"
     }, {
-      "id": "7b751afa-2ba7-4715-b4aa-0e88ac578d93",
+      "id": "ca383197-30f1-412f-8cca-422fd07dc9ba",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-SportTypeID",
@@ -933,7 +995,7 @@
       ],
       "value": ""
     }, {
-      "id": "ae042031-8796-4444-82cc-95f4e08fe4d6",
+      "id": "6f124384-cb9a-4732-8b26-2de86bffdeb8",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.Mui-focusVisible",
@@ -945,7 +1007,7 @@
       ],
       "value": ""
     }, {
-      "id": "f14c9bed-da21-469f-8097-cfb4b0918943",
+      "id": "02aae7a4-a963-4923-bd53-ebad68b73749",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -955,7 +1017,7 @@
       ],
       "value": ""
     }, {
-      "id": "855c7404-228a-4371-a5ec-f99ed59f240e",
+      "id": "518c5589-b17d-42d1-9ab2-1bc9f1505720",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButtonBase-root:nth-child(3)",
@@ -967,7 +1029,7 @@
       ],
       "value": ""
     }, {
-      "id": "e3f0c241-5635-4e4f-a6bb-f686a8ea21bc",
+      "id": "54ce8a54-b33b-49f9-a098-2ae88443976b",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-CompanyID",
@@ -980,7 +1042,7 @@
       ],
       "value": ""
     }, {
-      "id": "d1359318-3c7a-472c-b760-81c486d7882f",
+      "id": "8954e7bc-1793-4aca-b598-510e1bd51d92",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -992,7 +1054,7 @@
       ],
       "value": ""
     }, {
-      "id": "d44c2b69-4ac2-4b20-9e68-b171e19a4d4c",
+      "id": "307154a6-9415-4a9d-b336-6692e2e83b3b",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -1002,7 +1064,7 @@
       ],
       "value": ""
     }, {
-      "id": "a85968de-3566-41d2-9e6a-f8747fad1dd5",
+      "id": "2a1645ab-3814-46fc-85c0-841b310eb990",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -1014,7 +1076,7 @@
       ],
       "value": ""
     }, {
-      "id": "8e8abc77-bb08-496e-b4c5-b77764eb89d2",
+      "id": "9f0c2756-c0a0-4299-9527-76a6356860e9",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-RoleItemID",
@@ -1027,7 +1089,7 @@
       ],
       "value": ""
     }, {
-      "id": "cd8a8922-882b-40ab-93f7-6af837d53128",
+      "id": "1091aa16-584b-4022-a472-e10ef3b05f6e",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -1039,7 +1101,7 @@
       ],
       "value": ""
     }, {
-      "id": "79a390f3-891d-4be8-884a-2549c31e2606",
+      "id": "31adf1b6-2d77-492c-8f04-6d55027f6a5e",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -1049,7 +1111,7 @@
       ],
       "value": ""
     }, {
-      "id": "e954ec83-6244-4074-a1cc-b9f04b882a5e",
+      "id": "b4ce8070-a79b-40d4-b807-cec2f57ce9e8",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -1061,7 +1123,19 @@
       ],
       "value": ""
     }, {
-      "id": "12f5bdc0-0ead-401e-8fd5-e97f83885f3e",
+      "id": "3590ebbb-f16e-4b81-aa7f-560fdb31f9c1",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(9) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[9]/button/span", "xpath:idRelative"],
+        ["xpath=//div[9]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่ม')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3218aa74-fbe3-4b4f-a969-f77d74a10c83",
       "comment": "",
       "command": "click",
       "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
@@ -1073,7 +1147,19 @@
       ],
       "value": ""
     }, {
-      "id": "9d269729-fb9d-495d-a187-c6f49325d962",
+      "id": "18bf3eb1-1fa8-45b3-81e9-3a85e90f18c6",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(9) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[9]/button/span", "xpath:idRelative"],
+        ["xpath=//div[9]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่ม')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "303c69d2-2163-48d0-8bd0-d5cbc12176ab",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1084,7 +1170,7 @@
       ],
       "value": ""
     }, {
-      "id": "4191d6b0-698e-4df4-b99e-2b6fe7bc166c",
+      "id": "278f6c22-2b3f-4bc6-b513-78bafe7fc129",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -1096,29 +1182,24 @@
       "value": "จำนวนที่เพิ่มต้องมากกว่า 0 และน้อยกว่า 1000"
     }]
   }, {
-    "id": "f9cfe987-f91e-44e4-b65c-c309056f2d4b",
-    "name": "B6215415 - ตรวจสอบ Quantity ต้องไม่เป็นค่าว่าง",
+    "id": "dd423f51-b787-49cc-95c1-aa30e4eaa9eb",
+    "name": "B6215415 - ตรวจสอบ Quantity ต้องไม่เป็น 0 หรือค่าว่าง",
     "commands": [{
-      "id": "3646c655-487e-4a2e-909a-5bc73a6d8048",
+      "id": "95df4cac-4f88-4110-b73e-2bc300d25426",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/equip",
       "targets": [],
       "value": ""
     }, {
-      "id": "18d82c0e-480c-4081-bb33-f00023ecdc2b",
+      "id": "c89ad7ed-4752-4026-af47-d32935004811",
       "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiButton-contained > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a/span", "xpath:idRelative"],
-        ["xpath=//a/span", "xpath:position"],
-        ["xpath=//span[contains(.,'เพิ่มอุปกรณ์')]", "xpath:innerText"]
-      ],
+      "command": "setWindowSize",
+      "target": "1464x1040",
+      "targets": [],
       "value": ""
     }, {
-      "id": "f3ba5a3a-ed0f-46fd-be44-26b108aa7d84",
+      "id": "07c036d4-deba-40fa-88e9-cc7d35b89038",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -1130,7 +1211,7 @@
       ],
       "value": ""
     }, {
-      "id": "d06d1f89-31a8-40c3-89d6-382cea08e9dd",
+      "id": "190acf8a-7c0d-47fd-b90f-fed9d7a1b19a",
       "comment": "",
       "command": "click",
       "target": "id=Name",
@@ -1144,7 +1225,7 @@
       ],
       "value": ""
     }, {
-      "id": "56dc2caa-0a59-4865-83dd-99ff4cc5e90c",
+      "id": "adf01d38-1edd-4081-94a3-0041af8ff209",
       "comment": "",
       "command": "type",
       "target": "id=Name",
@@ -1158,7 +1239,7 @@
       ],
       "value": "ลูกฟุตซอล1"
     }, {
-      "id": "3b004c0d-b057-4aee-b8e0-b843720494b4",
+      "id": "411f1f6b-5f5c-4be3-b674-38a75ab88148",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-SportTypeID",
@@ -1171,7 +1252,7 @@
       ],
       "value": ""
     }, {
-      "id": "4fccc035-1875-45ae-a39b-9a67786f5297",
+      "id": "cafb056b-78c5-41da-8a5d-e41eb1ea3f2e",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.Mui-focusVisible",
@@ -1183,7 +1264,7 @@
       ],
       "value": ""
     }, {
-      "id": "6909abf2-5866-4cf7-9002-4db92aa069fd",
+      "id": "53da7cf2-69f3-4181-88a2-391c1663f904",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -1193,7 +1274,7 @@
       ],
       "value": ""
     }, {
-      "id": "d6d113cf-3209-4f20-979b-a941eb43a3c4",
+      "id": "63f1e354-52c0-4586-849f-fdc22a9f4c5a",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButtonBase-root:nth-child(3)",
@@ -1205,7 +1286,7 @@
       ],
       "value": ""
     }, {
-      "id": "b79f6fce-bae9-4e21-afc2-957c99ed92be",
+      "id": "91389e0d-3381-4351-af9c-bfaaa4f7b8d4",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-CompanyID",
@@ -1218,7 +1299,7 @@
       ],
       "value": ""
     }, {
-      "id": "96610f72-2a7b-490a-8035-b1a8ea01271b",
+      "id": "7d7471fd-f2be-47d6-8ff0-fab80cef7d3c",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -1230,7 +1311,7 @@
       ],
       "value": ""
     }, {
-      "id": "9f7f81be-3c84-4248-8bb8-96b6a598552a",
+      "id": "05ec4050-7f82-4893-ac8e-9b516ff67045",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -1240,7 +1321,7 @@
       ],
       "value": ""
     }, {
-      "id": "576be94c-a57c-4223-b0c7-80d15c2b76f1",
+      "id": "29f02b17-6f14-43f7-87ee-7807afecab6d",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -1252,7 +1333,7 @@
       ],
       "value": ""
     }, {
-      "id": "8348208b-06e9-4f98-b95b-a5dddc58eb68",
+      "id": "671c81a3-df1a-498e-ab8b-7bb8d61a8625",
       "comment": "",
       "command": "mouseDown",
       "target": "id=mui-component-select-RoleItemID",
@@ -1265,7 +1346,7 @@
       ],
       "value": ""
     }, {
-      "id": "d75b6434-9f86-4006-bde6-dc4646c58a77",
+      "id": "f9a8acc3-f0fc-4d43-be57-1ac3e946035b",
       "comment": "",
       "command": "mouseUp",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -1277,7 +1358,7 @@
       ],
       "value": ""
     }, {
-      "id": "cf725c3e-7650-4ca9-a3c3-9825469b7251",
+      "id": "76893b9f-28c7-42d3-8a74-b3efc5c4ebc6",
       "comment": "",
       "command": "click",
       "target": "css=.vsc-initialized",
@@ -1287,7 +1368,7 @@
       ],
       "value": ""
     }, {
-      "id": "95b2e59a-2b30-430a-8618-be175611c7d7",
+      "id": "ba371df0-bd19-425d-b018-9913c21b145d",
       "comment": "",
       "command": "click",
       "target": "css=.MuiListItem-root:nth-child(2)",
@@ -1299,7 +1380,19 @@
       ],
       "value": ""
     }, {
-      "id": "1d97509f-f804-4348-a5bf-2999cbe68093",
+      "id": "c8dc28fc-331e-4002-9854-952db28e00e9",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(9) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[9]/button/span", "xpath:idRelative"],
+        ["xpath=//div[9]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่ม')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5712f783-628e-4b5c-83ab-10795e315c2e",
       "comment": "",
       "command": "click",
       "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
@@ -1311,7 +1404,19 @@
       ],
       "value": ""
     }, {
-      "id": "d2589f0a-c4fa-442d-b13b-5b97a2feab2f",
+      "id": "ab17e62f-43f0-47a5-bae0-c647a705deb8",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiGrid-root:nth-child(9) .MuiButton-label",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(9) .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div[2]/div[9]/button/span", "xpath:idRelative"],
+        ["xpath=//div[9]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'เพิ่ม')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f292f74-347f-4393-a21a-a34cf272b175",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1322,7 +1427,7 @@
       ],
       "value": ""
     }, {
-      "id": "92694c5f-055a-4e6a-a68a-f254fcfbda68",
+      "id": "0d1d5fdc-cc7b-451f-8c37-5b6462e055d9",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
