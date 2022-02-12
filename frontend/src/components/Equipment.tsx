@@ -14,18 +14,30 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { format } from 'date-fns'
 import Grid from '@material-ui/core/Grid';
+import { IconButton, Snackbar } from "@material-ui/core";
+import DeleteIcon from '@material-ui/icons/Delete';
+import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
 
 import { EquipmentsInterface } from "../model/EquipmentUI";
+import React from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       marginTop: theme.spacing(2),
-      minWidth: 1500,
+      minWidth: 1400,
     },
     table: {
       minWidth: 1000,
     },
+
+    tablehead: {
+
+      background: '#ada9a9',
+      color: '#ffffff',
+  
+    },
+
     button: {
       
       margin: theme.spacing(2),
@@ -47,6 +59,20 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Equipment() {
   const classes = useStyles();
+
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setSuccess(false);
+    setError(false);
+  };
+
+  const Alert = (props: AlertProps) => {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  };
 
   
   const [equipments, setEquipments] = useState<EquipmentsInterface[]>([]);
@@ -71,15 +97,63 @@ function Equipment() {
       });
   };
 
+
+
+  const [ErrorMessage, setErrorMessage] = React.useState("");
+
+  const DeleteEquipment = (id: number) => {
+    const apiUrl = "http://localhost:8080/DeleteEquipment";
+    const requestOptions = {
+      method: "DELETE",
+      headers: { 
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",},
+      body: JSON.stringify(id),
+      
+    };
+  
+    fetch(`${apiUrl}/${id}`, requestOptions)
+    .then((response) => response.json())
+    .then(
+      (res) => {
+        if (res.data) {
+          setSuccess(true)
+          setErrorMessage("")
+        } 
+        else { 
+          setErrorMessage(res.error)
+          setError(true)
+        }  
+        getEquipment(); 
+      }
+    )
+  }
+
   useEffect(() => {
     getEquipment();
   }, []);
+
 
   return (
     <div>
       <Container className={classes.container} maxWidth="md">
         <Box display="flex">
           <Box flexGrow={1}>
+
+            <Snackbar open={success} autoHideDuration={6000} onClose={handleClose}>
+              <Alert onClose={handleClose} severity="success">
+                ลบข้อมูลสำเร็จ
+              </Alert>
+            </Snackbar>
+
+            <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
+              <Alert onClose={handleClose} severity="error">
+                {ErrorMessage}
+              </Alert>
+            </Snackbar>
+            <br/><br/> 
+
+
           <Grid item xs={6}>
             <Typography
               component="h2"
@@ -105,30 +179,33 @@ function Equipment() {
         <TableContainer component={Paper} className={classes.tableSpace}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
-              <TableRow>
+              <TableRow className={classes.tablehead }>
               <TableCell align="center" width="5%">
                   ID
                 </TableCell>
-              <TableCell align="center" width="15%">
+              <TableCell align="left" width="12%">
                   ชื่ออุปกรณ์
                 </TableCell>
                 <TableCell align="center" width="10%">
                   จำนวน
                 </TableCell>
-                <TableCell align="center" width="12%">
+                <TableCell align="left" width="10%">
                   ประเภทกีฬา
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="left" width="10%">
                   บริษัทที่ผลิต
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="12%">
                   สถานะอุปกรณ์
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="left" width="10%">
                   ผู้ลงทะเบียน
                 </TableCell>
                 <TableCell align="center" width="12%">
                   วันที่นำเข้าอุปกรณ์
+                </TableCell>
+                <TableCell align="center" width="8%">
+                  ลบอุปกรณ์
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -136,13 +213,18 @@ function Equipment() {
               {equipments.map((item: EquipmentsInterface) => (
                 <TableRow key={item.ID}>
                   <TableCell align="center">{item.ID}</TableCell>
-                  <TableCell align="center">{item.Name}</TableCell>
+                  <TableCell align="left">{item.Name}</TableCell>
                   <TableCell align="center">{item.Quantity}</TableCell>
-                  <TableCell align="center">{item.SportType.Type}</TableCell>
-                  <TableCell align="center">{item.Company.Company}</TableCell>
+                  <TableCell align="left">{item.SportType.Type}</TableCell>
+                  <TableCell align="left">{item.Company.Company}</TableCell>
                   <TableCell align="center">{item.RoleItem.Role}</TableCell>
-                  <TableCell align="center">{item.EquipmentStaff.Name}</TableCell>
+                  <TableCell align="left">{item.EquipmentStaff.Name}</TableCell>
                   <TableCell align="center">{format((new Date(item.InputDate)), 'dd MMMM yyyy')}</TableCell>
+                  <TableCell align="center"> 
+                  
+                  <IconButton  aria-label="delete" onClick={() => DeleteEquipment(item.ID)} > <DeleteIcon /> </IconButton>
+
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

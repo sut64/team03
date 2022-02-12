@@ -86,6 +86,18 @@ func ListEquipment(c *gin.Context) {
 }
 
 
+func ListEquipmentForMember(c *gin.Context) {
+	var Equipment []*entity.Equipment
+	if err := 
+		entity.DB().Preload("SportType").Preload("Company").Preload("RoleItem").Preload("EquipmentStaff").Raw("SELECT * FROM equipment WHERE role_item_id = 1").Find(&Equipment).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": Equipment})
+}
+
+
 // GET /roleitems
 func ListRoleItem(c *gin.Context) {
 	var RoleItem []entity.RoleItem
@@ -118,3 +130,12 @@ func ListSportType(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": SportType})
 }
 
+func DeleteEquipment(c *gin.Context) {
+	id := c.Param("id")
+	if tx := entity.DB().Exec("DELETE FROM equipment WHERE id = ?", id); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "equipment not found"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": id})
+}
