@@ -25,6 +25,7 @@ import UserEquipment from "./components/UserEquipment";
 
 import PaymentCreate from "./components/PaymentCreate";
 import HistoryPayment from "./components/HistoryPayment";
+import PaymentforMember from "./components/PaymentforMember";
 
 import CreateReserve from "./components/Reserve";
 import HistoryReserve from "./components/HistoryReserve";
@@ -93,7 +94,7 @@ export default function App() {
               <Route path="/HistoryEvent" element={<HistoryEvent/>} />
               <Route path="/BorrowingforMember" element={<BorrowingforMember/>} /> 
               <Route path="/UserEquipment" element={<UserEquipment/>} /> 
-              
+              <Route path="/PaymentforMember" element={<PaymentforMember />} />
               </Routes>
               </>
               )}

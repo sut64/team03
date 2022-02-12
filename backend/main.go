@@ -21,6 +21,7 @@ func main() {
 			protected.GET("/api/listpayment", controller.ListPayment)
 			protected.GET("/listpaymentmethod", controller.ListPaymentMethod)
 			protected.GET("/listfacility", controller.ListFacility)
+			protected.GET("/listpaymentbyuser/:id", controller.GetPaymentforMember)
 			protected.POST("/paymentcreate", controller.CreatePayment)
 
 			protected.GET("/users", controller.ListUserMember)
