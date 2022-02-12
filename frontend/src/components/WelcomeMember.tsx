@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
     button: {
       background: '#DF1B3F',
       color: '#ffffff',
-      height: '30ch',
+      height: '27ch',
       width: '30ch',
       margin: theme.spacing(0.8),
     },
@@ -120,7 +120,15 @@ export default function Home() {
             <SportsTennisIcon sx={{ fontSize: 35 , color : '#ffffff' }}/>
           </Button>
           
-          
+          <Button
+            variant="contained"
+            className={classes.button2}
+            component={RouterLink}
+            to="/PaymentforMember"
+          >
+            <Typography variant="body1"> ประวัติการชำระค่าบริการ &nbsp;&nbsp;</Typography>
+            <PaymentIcon sx={{ fontSize: 35 , color : '#ffffff' }}/>
+          </Button>
           
         
         

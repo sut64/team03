@@ -89,3 +89,14 @@ func ListPaymentMethod(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"data": paymentmethod})
 }
+
+func GetPaymentforMember(c *gin.Context) {
+	var paymentformember []entity.Payment
+	id := c.Param("id")
+	if err := entity.DB().Preload("CustomerPayment").Preload("Facility").Preload("PaymentMethod").Raw("SELECT * FROM payments WHERE customer_payment_id = ?", id).Find(&paymentformember).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": paymentformember})
+}
