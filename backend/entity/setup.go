@@ -550,7 +550,7 @@ func SetupDatabase() {
 	///Setup reserve
 
 	Zone1 := Zone{
-		Name:   "Football1111",
+		Name:   "Football",
 		Status: 1,
 	}
 	db.Model(Zone{}).Create(&Zone1)
@@ -624,7 +624,7 @@ func SetupDatabase() {
 
 	Court6 := Court{
 		Model: gorm.Model{},
-		Name:  "basketball 2",
+		Name:  "Basketball 2",
 		Zone:  Zone3,
 	}
 	db.Model(Court{}).Create(&Court6)
