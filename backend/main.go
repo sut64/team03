@@ -44,6 +44,7 @@ func main() {
 			protected.GET("/listborrowbyuser/:id", controller.GetBorrowingByUser)
 			protected.GET("/listborrowbystatus/:id", controller.GetBorrowingByStatus)
 			protected.POST("/createborrowing", controller.CreateBorrowing)
+			protected.PATCH("/updateborrow/:id", controller.UpdateBorrowing)
 
 			protected.GET("/ListSportType", controller.ListSportType)
 			protected.GET("/ListCompany", controller.ListCompany)
@@ -76,7 +77,7 @@ func CORSMiddleware() gin.HandlerFunc {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
-		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE, PATCH")
 
 		if c.Request.Method == "OPTIONS" {
 			c.AbortWithStatus(204)

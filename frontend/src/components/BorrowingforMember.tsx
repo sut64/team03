@@ -144,7 +144,7 @@ function BorrowMember() {
              gutterBottom
            >
 
-             Borrowing System
+             ประวัติการยืมอุปกรณ์
 
            </Typography>
 
@@ -185,43 +185,49 @@ function BorrowMember() {
 
                <TableCell align="left" width="8%">
 
-                 Borrower
+                 ผู้ยืม
 
                </TableCell>
 
-               <TableCell align="right" width="8%">
+               <TableCell align="right" width="6%">
 
-                 Equipment
-
-               </TableCell>
-
-               <TableCell align="right" width="7%">
-
-                 Quantity
+                 อุปกรณ์
 
                </TableCell>
 
-               <TableCell align="right" width="8%">
+               <TableCell align="right" width="5%">
 
-                 Contact
+                 จำนวน
 
                </TableCell>
 
                <TableCell align="right" width="10%">
 
-                 Borrow Time
+                 เบอร์โทรติดต่อ
+
+               </TableCell>
+
+               <TableCell align="right" width="12%">
+
+                 เวลายืม
+
+               </TableCell>
+
+               <TableCell align="right" width="12%">
+
+                 เวลาคืน
 
                </TableCell>
 
                <TableCell align="right" width="8%">
 
-                 Status
+                 สถานะ
 
                </TableCell>
 
-               <TableCell align="right" width="13%">
+               <TableCell align="right" width="10%">
 
-                 Comment
+                 เพิ่มเติม
 
                </TableCell>
 
@@ -247,6 +253,12 @@ function BorrowMember() {
                  <TableCell align="right" size="medium">{borrow.Contact}</TableCell>
 
                  <TableCell align="right">{moment(borrow.Borrowtime).format("HH:mm DD/MM/YYYY")}</TableCell>
+
+                 <TableCell align="right">
+                 {borrow.BorrowStatus?.Status === 'Finished' && ( <>
+
+                   {moment(borrow.Backtime).format("HH:mm DD/MM/YYYY")} </> )} </TableCell>
+
 
                  <TableCell align="right" size="medium">{borrow.BorrowStatus.Status}</TableCell>
                  
