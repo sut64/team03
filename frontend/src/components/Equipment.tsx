@@ -101,15 +101,13 @@ function Equipment() {
 
   const [ErrorMessage, setErrorMessage] = React.useState("");
 
-  const DeleteEquipment = (id: number) => {
+  const DeleteEquipment = async (id: string | number | undefined) => {
     const apiUrl = "http://localhost:8080/DeleteEquipment";
     const requestOptions = {
       method: "DELETE",
       headers: { 
         Authorization: `Bearer ${localStorage.getItem("token")}`,
         "Content-Type": "application/json",},
-      body: JSON.stringify(id),
-      
     };
   
     fetch(`${apiUrl}/${id}`, requestOptions)

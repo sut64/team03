@@ -1,8 +1,4 @@
-import React, { ChangeEvent,
-  useEffect,
-  useState, 
-  Fragment, 
-  SyntheticEvent } from 'react';
+import React, { ChangeEvent, useEffect, useState} from 'react';
 import { Link as RouterLink } from "react-router-dom";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
@@ -19,8 +15,7 @@ import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
 import { FormControl } from '@material-ui/core';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import { KeyboardDateTimePicker, KeyboardDatePicker } from '@material-ui/pickers';
-
+import { KeyboardDateTimePicker} from '@material-ui/pickers';
 
 import { EquipmentsInterface } from "../model/EquipmentUI";
 import { SportTypesInterface } from "../model/EquipmentUI";
@@ -66,15 +61,13 @@ export default function EquipmentInput() {
   
 
   const classes = useStyles();
+
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
-  
 
-  const [equipment, setEquipment] = useState<Partial<EquipmentsInterface>>(
-    {}
-  );
-
+  const [equipment, setEquipment] = useState<Partial<EquipmentsInterface>>({});
   
   const [success, setSuccess] = useState(false);
+
   const [error, setError] = useState(false);
 
   const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
@@ -172,7 +165,7 @@ export default function EquipmentInput() {
   }
 
 
- useEffect(() => {
+  useEffect(() => {
    getCompany();
    getSportType();
    getRoleItem();
@@ -180,29 +173,29 @@ export default function EquipmentInput() {
  }, []);
 
 
-const [ErrorMessage, setErrorMessage] = React.useState<String>();
+  const [ErrorMessage, setErrorMessage] = React.useState<String>();
 
-const submit = () => {
-  let data = {
-    Name: equipment.Name ?? "",
-    Quantity: typeof equipment.Quantity === "string"? parseInt(equipment.Quantity): equipment.Quantity,
-    InputDate: selectedDate,
+  const submit = () => {
+    let data = {
+      Name: equipment.Name ?? "",
+      Quantity: typeof equipment.Quantity === "string"? parseInt(equipment.Quantity): equipment.Quantity,
+      InputDate: selectedDate,
 
-    SportTypeID: equipment.SportTypeID,
-    CompanyID: equipment.CompanyID,
-    RoleItemID: equipment.RoleItemID,
-    EquipmentStaffID: EquipmentStaff.ID,
+      SportTypeID: equipment.SportTypeID,
+      CompanyID: equipment.CompanyID,
+      RoleItemID: equipment.RoleItemID,
+      EquipmentStaffID: EquipmentStaff.ID,
     
-  };
-
-  const apiUrl = "http://localhost:8080/InputEquipment";
-    const requestOptionsPost = {
-      method: "POST",
-      headers: { 
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-Type": "application/json",},
-      body: JSON.stringify(data),
     };
+
+    const apiUrl = "http://localhost:8080/InputEquipment";
+      const requestOptionsPost = {
+        method: "POST",
+        headers: { 
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",},
+        body: JSON.stringify(data),
+      };
 
     fetch(apiUrl, requestOptionsPost)
       .then((response) => response.json())
@@ -211,48 +204,49 @@ const submit = () => {
           setSuccess(true)
           setErrorMessage("")
         } 
-        
         else { 
-          setErrorMessage(res.error)
+          if (res.error == "UNIQUE constraint failed: equipment.name") {
+            setErrorMessage("ชื่ออุปกรณ์ซ้ำ")
+          }else {
+            setErrorMessage(res.error)
+          }
           setError(true)
-
         }
-        
-    });
-  
-}
+      });
+  }
 
 
   return (
 
     <Container className={classes.container} maxWidth="md">
-    <Paper className={classes.paper}>
+      <Paper className={classes.paper}>
         <Box display="flex">
-            <Box flexGrow={1}>
+          <Box flexGrow={1}>
 
             <Snackbar open={success} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
-          บันทึกข้อมูลสำเร็จ
-        </Alert>
-      </Snackbar>
-      <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="error">
-          {ErrorMessage}
-        </Alert>
-      </Snackbar>
-      <br/><br/> 
+              <Alert onClose={handleClose} severity="success">
+                บันทึกข้อมูลสำเร็จ
+              </Alert>
+            </Snackbar>
 
-                <Typography
-                    component="h2"
-                    variant="h6"
-                    color="primary"
-                    gutterBottom
-                >
-                    เพิ่มอุปกรณ์กีฬา
-                </Typography>
+            <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
+              <Alert onClose={handleClose} severity="error">
+                {ErrorMessage}
+              </Alert>
+            </Snackbar>
+            <br/><br/> 
 
-            </Box>
+            <Typography
+              component="h2"
+              variant="h6"
+              color="primary"
+              gutterBottom>
+                เพิ่มอุปกรณ์กีฬา
+            </Typography>
+
+          </Box>
         </Box>
+
         <Divider />
 
                 <Grid container spacing={5}>
@@ -383,9 +377,7 @@ const submit = () => {
                       </Button>
                     </Grid>
 
-        
                 </Grid>   
-        
         </Paper>
     </Container>
   )

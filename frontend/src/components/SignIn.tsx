@@ -99,8 +99,12 @@ function SignIn() {
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign in
-
         </Typography>
+        
+        <p>Email: admin@gmail.com, password: 1234 <br></br>
+        Email: member@gmail.com, password: 1234
+        </p>
+        
         
         <form className={classes.form} noValidate>
           <TextField
