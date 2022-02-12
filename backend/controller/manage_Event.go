@@ -17,7 +17,7 @@ func CreateEvent(c *gin.Context) {
 	var TypeEvent entity.TypeEvent
 	var Room entity.Room
 
-	// ผลลัพธ์ที่ได้จากขั้นตอนที่ 7 จะถูก bind เข้าตัวแปร Screening
+	// ผลลัพธ์ที่ได้จากขั้นตอนที่ 7 จะถูก bind เข้าตัวแปร Event
 	if err := c.ShouldBindJSON(&Event); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -40,7 +40,7 @@ func CreateEvent(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "TypeEvent not found"})
 		return
 	}
-	// 11: สร้าง Screening
+	// 11: สร้าง Event
 	Ev := entity.Event{
 
 		Name:      Event.Name,
@@ -69,7 +69,7 @@ func CreateEvent(c *gin.Context) {
 
 }
 
-//Get ListScreenings
+//Get ListEvent
 func ListEvent(c *gin.Context) {
 	var Events []entity.Event
 	if err := entity.DB().Preload("Trainner").Preload("Room").Preload("TypeEvent").Raw("SELECT * FROM events").Find(&Events).Error; err != nil {
