@@ -15,6 +15,7 @@ export interface BorrowingInterface {
   Contact: string,
   Comment:string,
   Borrowtime : Date
+  Backtime : Date
 }
 
 export interface BorrowStatusInterface {

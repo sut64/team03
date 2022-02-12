@@ -16,8 +16,10 @@ import TableRow from "@material-ui/core/TableRow";
 import { BorrowingInterface , BorrowStatusInterface } from "../model/BorrowingUI";
 import { UserInterface } from '../model/UserUI';
 import moment from 'moment';
-import UserEquipment from "./EquipmentForUser";
-import { loadavg } from "os";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { IconButton } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -93,6 +95,22 @@ function EquipBorrow() {
  const [users, setUsers] = useState<UserInterface[]>([]);
  const [borrowstatuses, setBorrowstatuses] = useState<BorrowStatusInterface[]>([]);
  const [search, setSearch] = useState<Partial<SearchInterface>>({});
+
+ const [success, setSuccess] = useState(false);
+ const [error, setError] = useState(false);
+
+ const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
+   if (reason === "clickaway") {
+     return;
+   }
+   setSuccess(false);
+   setError(false);
+ };
+
+ const Alert = (props: AlertProps) => {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+};
+
 
  const apiUrl = "http://localhost:8080";
  const requestOptions = {
@@ -215,8 +233,37 @@ const handleStatusChange = (
   });
 
 };
+  
+function Update(id : string | number | undefined |unknown) {
+  let data = {
+      ID : id
+  };
 
- 
+
+  const requestOptionsPost = {
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+
+  fetch(`${apiUrl}/updateborrow/${id}`, requestOptionsPost)
+    .then((response) => response.json())
+    .then((res) => {
+      if (res.data) {
+        console.log("อัพเดทได้")
+        setSuccess(true);
+      } else {
+        console.log("อัพเดทไม่ได้")
+        setError(true);
+      }
+    });
+    
+    window.location.reload();
+}
+
 
 
 
@@ -233,6 +280,17 @@ const handleStatusChange = (
  return (
 
    <div className={classes.background}>
+      <Snackbar open={success} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success">
+          อัพเดทข้อมูลสำเร็จ
+          {}
+        </Alert>
+      </Snackbar>
+      <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error">
+          อัพเดทข้อมูลไม่สำเร็จ
+        </Alert>
+      </Snackbar>
 
      <Container className={classes.container} maxWidth="xl">
 
@@ -326,50 +384,62 @@ const handleStatusChange = (
 
                <TableCell align="left" width="8%">
 
-                 Borrower
+                 ผู้ยืม
 
                </TableCell>
 
-               <TableCell align="right" width="8%">
+               <TableCell align="right" width="5%">
 
-                 Equipment
+                 อุปกรณ์
 
                </TableCell>
 
                <TableCell align="right" width="7%">
 
-                 Quantity
+                 จำนวน
 
                </TableCell>
 
                <TableCell align="right" width="8%">
 
-                 Contact
+                 เบอร์ติดต่อ
 
                </TableCell>
 
                <TableCell align="right" width="10%">
 
-                 Borrow Time
+                 เวลายืม
+
+               </TableCell>
+
+               <TableCell align="right" width="10%">
+
+                 เวลาคืน
 
                </TableCell>
 
 
                <TableCell align="right" width="8%">
 
-                 Status
+                 สถานะ
 
                </TableCell>
 
                <TableCell align="right" width="13%">
 
-                 Comment
+                 เพิ่มเติม
 
                </TableCell>
 
                <TableCell align="right" width="9%">
 
-                 Staff
+                 ผู้ทำรายการ
+
+               </TableCell>
+
+               <TableCell align="right" width="5%">
+
+                 คืนอุปกรณ์
 
                </TableCell>
 
@@ -395,15 +465,29 @@ const handleStatusChange = (
 
                  <TableCell align="right">{moment(borrow.Borrowtime).format("HH:mm DD/MM/YYYY")}</TableCell>
 
+                 <TableCell align="right">
+                 {borrow.BorrowStatus?.Status === 'Finished' && ( <>
+
+                   {moment(borrow.Backtime).format("HH:mm DD/MM/YYYY")} </> )} </TableCell>
+
                  <TableCell align="right" size="medium">{borrow.BorrowStatus.Status}</TableCell>
                  
                  <TableCell align="right">{borrow.Comment}</TableCell>
 
                  <TableCell align="right">{borrow.StaffBorrow.Name}</TableCell>
 
+                 <TableCell align="right"> 
+                 
+                 {borrow.BorrowStatus?.Status === 'Borrowing' && ( <>
+
+                  <IconButton onClick={() => Update(borrow.ID)} >
+                    <ArrowForwardIosIcon sx={{ fontSize: 30 , color : '#dd0000' }}/> </IconButton>
+                 </> )}
+           </TableCell>
                </TableRow>
 
              ))}
+             
 
            </TableBody>
 

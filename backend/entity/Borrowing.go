@@ -16,6 +16,7 @@ type BorrowStatus struct {
 type Borrowing struct {
 	gorm.Model
 	Borrowtime       time.Time `valid:"required~กรุณากรอกวันที่-เวลา,past~ไม่สามารถกรอกเวลาในอนาคต"`
+	Backtime		 time.Time 
 	Comment          string
 	Quantity         int    `valid:"required~กรุณากรอกจำนวนอุปกรณ์,positive~จำนวนอุปกรณ์ไม่สามารถติดลบได้"`
 	Contact          string `valid:"required~กรุณากรอกเบอร์โทรศัพท์,matches(^[0][689]\\d{8}$)~กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง (ต้องขึ้นต้นด้วย06-08-09)"`
