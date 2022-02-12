@@ -16,7 +16,7 @@ import TableRow from "@material-ui/core/TableRow";
 import { BorrowingInterface , BorrowStatusInterface } from "../model/BorrowingUI";
 import { UserInterface } from '../model/UserUI';
 import moment from 'moment';
-import UserEquipment from "./UserEquipment";
+import UserEquipment from "./EquipmentForUser";
 import { loadavg } from "os";
 
 

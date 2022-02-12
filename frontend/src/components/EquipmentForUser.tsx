@@ -21,11 +21,11 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       marginTop: theme.spacing(2),
-      minWidth: 1100,
+      minWidth: 1000,
     },
 
     table: {
-      minWidth: 1000,
+      minWidth: 800,
     },
 
     tablehead: {
@@ -60,7 +60,7 @@ function UserEquipment() {
 
   
   const [equipments, setEquipments] = useState<EquipmentsInterface[]>([]);
-  const apiUrl = "http://localhost:8080/ListEquipment";
+  const apiUrl = "http://localhost:8080/ListEquipmentForMember";
   const requestOptions = {
     method: "GET",
     headers: { 
