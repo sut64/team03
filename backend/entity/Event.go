@@ -3,6 +3,8 @@ package entity
 import (
 	"time"
 
+	"fmt"
+
 	"gorm.io/gorm"
 
 	"github.com/asaskevich/govalidator"
@@ -38,4 +40,12 @@ func init() {
 		a := i.(int)
 		return a >= 1
 	})
+}
+
+func CheckTimeEnd(t time.Time, t2 time.Time) (bool, error) {
+	if t.After(t2) == true {
+		return true, nil
+	} else {
+		return false, fmt.Errorf("TimeEnd must be greater than the TimeStart")
+	}
 }
