@@ -116,11 +116,11 @@ function PreloadEvents() {
                 <TableCell align="center" width="5%">
                   Room
                 </TableCell>
-                <TableCell align="center" width="15%">
+                <TableCell align="center" width="20%">
                   Details
                 </TableCell>
-                <TableCell align="center" width="5%">
-                  จำนวน
+                <TableCell align="center" width="15%">
+                  จำนวนคนที่รับ
                 </TableCell>
                 <TableCell align="center" width="20%">
                   เวลาเริ่ม
