@@ -130,3 +130,22 @@ func TestTimeAmountNotNegotive(t *testing.T) {
 
 	}
 }
+
+func TestTimeEndGreaterTimeStart(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	Event := Event{
+		Name:      "test",
+		TimeStart: time.Now().AddDate(0, 0, 15),
+		TimeEnd:   time.Now().AddDate(0, 0, 10), // ผิด
+		Amount:    1,
+	}
+
+	ok, err := CheckTimeEnd(Event.TimeEnd, Event.TimeStart)
+
+	g.Expect(ok).ToNot(BeTrue())
+
+	g.Expect(err).ToNot(BeNil())
+
+	g.Expect(err.Error()).To(Equal("TimeEnd must be greater than the TimeStart"))
+}
