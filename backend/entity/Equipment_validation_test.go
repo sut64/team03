@@ -15,7 +15,7 @@ func TestEquipmentPass(t *testing.T) {
 	Equipment := Equipment{
 		Name:      "ลูกบอล1",
 		Quantity:  30,
-		InputDate: time.Now(),
+		InputDate: time.Now().AddDate(-1, -1, 0),
 	}
 
 	// ตรวจสอบด้วย govalidaator
@@ -73,7 +73,6 @@ func TestEquipmentInputMustBePast(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("วันที่นำเข้าอุปกรณ์ไม่สามารถเป็นอนาคต"))
 }
 
-
 func TestQuantityRange(t *testing.T) {
 	g := NewGomegaWithT(t)
 
@@ -102,7 +101,7 @@ func TestQuantityNotZeroOrBlank(t *testing.T) {
 
 	Equipment := Equipment{
 		Name:      "ลูกบอล1",
-		Quantity:  0 ,
+		Quantity:  0,
 		InputDate: time.Now().AddDate(-1, -1, 0),
 	}
 
@@ -119,4 +118,3 @@ func TestQuantityNotZeroOrBlank(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("กรุณากรอกจำนวนอุปกรณ์ที่ต้องการเพิ่ม"))
 
 }
-
