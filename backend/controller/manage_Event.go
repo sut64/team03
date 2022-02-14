@@ -60,6 +60,12 @@ func CreateEvent(c *gin.Context) {
 		return
 	}
 
+	// เวลา จบกิจกรรมต้องมีค่ามากกว่าเวลาเริ่มกิจกรรม
+	if _, err := entity.CheckTimeEnd(Ev.TimeEnd, Ev.TimeStart); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
 	// 12: บันทึก
 	if err := entity.DB().Create(&Ev).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})

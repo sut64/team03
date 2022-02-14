@@ -297,7 +297,7 @@ function Body() {
                     </Grid>
 
                     <Grid item xs={6}>
-                        <p>จำนวน</p>
+                        <p>จำนวนคนที่รับ</p>
                         <TextField 
                         
                         
