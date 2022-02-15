@@ -37,7 +37,7 @@ func CreateFacility(c *gin.Context) {
 	Fac := entity.Facility{
 		User:        User,
 		No:          Facility.No,
-		PackageTime: Facility.PackageTime,
+		PackageTime: Facility.PackageTime.Local(),
 		Price:       Facility.Price,
 		Confirm:     Facility.Confirm,
 		Package:     Package,
