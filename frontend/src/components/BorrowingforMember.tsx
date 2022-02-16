@@ -15,6 +15,12 @@ import TableRow from "@material-ui/core/TableRow";
 import { BorrowingInterface } from "../model/BorrowingUI";
 import moment from 'moment';
 import { UserInterface } from '../model/UserUI';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 
 
 
@@ -50,29 +56,41 @@ const useStyles = makeStyles((theme: Theme) =>
     maxHeight : 'auto',
 
   },
+  
 
   tablehead: {
 
-    background: '#ada9a9',
-    color: '#ffffff',
+    background: '#DF1B3F',
+    color: '#000000',
 
   },
 
   headtext: {
-
     marginTop: 20 ,
-    color: '#939393',
+    color: '#666666',
     textAlign: 'center',
-    fontStyle: 'bold'
-
   },
 
   textmember: {
-
     marginTop: 20 ,
     color: '#666666',
     textAlign: 'left',
+    fontWeight: 600,
+  },
 
+  borrowing: {
+    color: '#FFB90F',
+    fontWeight: 600,
+  },
+
+  finished: {
+    color: '#32CD32',
+    fontWeight: 600,
+  },
+
+  missed: {
+    color: '#FF4500',
+    fontWeight: 600,
   },
 
 
@@ -116,6 +134,7 @@ function BorrowMember() {
 
  };
 
+
  
 
  useEffect(() => {
@@ -123,6 +142,7 @@ function BorrowMember() {
   getฺBorrowings(member.ID);
 
  }, []);
+
 
  
 
@@ -135,7 +155,7 @@ function BorrowMember() {
        <Box display="flex">
 
          <Box flexGrow={3}>
-
+            <br/>
            <Typography
              className={classes.headtext}
              component="h1"
@@ -177,57 +197,57 @@ function BorrowMember() {
 
              <TableRow className={classes.tablehead}>
 
-               <TableCell align="center" width="5%">
+               <TableCell align="center" width="5%" className={classes.tablehead}>
 
                  ID
 
                </TableCell>
 
-               <TableCell align="left" width="8%">
+               <TableCell align="left" width="8%" className={classes.tablehead}>
 
-                 ผู้ยืม
+                 สมาชิก
 
                </TableCell>
 
-               <TableCell align="right" width="6%">
+               <TableCell align="right" width="6%" className={classes.tablehead}>
 
                  อุปกรณ์
 
                </TableCell>
 
-               <TableCell align="right" width="5%">
+               <TableCell align="right" width="5%" className={classes.tablehead}>
 
                  จำนวน
 
                </TableCell>
 
-               <TableCell align="right" width="10%">
+               <TableCell align="right" width="10%" className={classes.tablehead}>
 
-                 เบอร์โทรติดต่อ
+                 เบอร์ติดต่อ
 
                </TableCell>
 
-               <TableCell align="right" width="12%">
+               <TableCell align="right" width="12%" className={classes.tablehead}>
 
                  เวลายืม
 
                </TableCell>
 
-               <TableCell align="right" width="12%">
+               <TableCell align="right" width="12%" className={classes.tablehead}>
 
                  เวลาคืน
 
                </TableCell>
 
-               <TableCell align="right" width="8%">
+               <TableCell align="right" width="8%" className={classes.tablehead}>
 
                  สถานะ
 
                </TableCell>
 
-               <TableCell align="right" width="10%">
+               <TableCell align="right" width="10%" className={classes.tablehead}>
 
-                 เพิ่มเติม
+                 หมายเหตุ
 
                </TableCell>
 
@@ -255,12 +275,23 @@ function BorrowMember() {
                  <TableCell align="right">{moment(borrow.Borrowtime).format("HH:mm DD/MM/YYYY")}</TableCell>
 
                  <TableCell align="right">
-                 {borrow.BorrowStatus?.Status === 'Finished' && ( <>
+                 {borrow.BorrowStatus?.Status === 'สำเร็จ' && ( <>
 
                    {moment(borrow.Backtime).format("HH:mm DD/MM/YYYY")} </> )} </TableCell>
 
 
-                 <TableCell align="right" size="medium">{borrow.BorrowStatus.Status}</TableCell>
+                   {borrow.BorrowStatus?.Status === 'กำลังยืม' && ( <> 
+                  <TableCell align="center" size="medium" className={classes.borrowing}>
+                    {borrow.BorrowStatus.Status}</TableCell> </> )}
+
+                    {borrow.BorrowStatus?.Status === 'สำเร็จ' && ( <> 
+                  <TableCell align="center" size="medium" className={classes.finished}>
+                    {borrow.BorrowStatus.Status}</TableCell> </> )}
+                 
+                    {borrow.BorrowStatus?.Status === 'เสียหาย' && ( <> 
+                  <TableCell align="center" size="medium" className={classes.missed}>
+                    {borrow.BorrowStatus.Status}</TableCell> </> )}
+
                  
                  <TableCell align="right">{borrow.Comment}</TableCell>
 

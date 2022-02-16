@@ -14,7 +14,7 @@ func TestBorrowingPass(t *testing.T) {
 	// ข้อมูลถูกต้องหมดทุก field
 	borrowing := Borrowing{
 
-		Borrowtime: time.Now().Add(-10 * time.Second),
+		Borrowtime: time.Now().Add(-30 * time.Second),
 		Comment:    "-",
 		Quantity:   1,
 		Contact:    "0908208456",
@@ -35,7 +35,7 @@ func TestContactNotBlank(t *testing.T) {
 
 	borrowing := Borrowing{
 
-		Borrowtime: time.Now().Add(-10 * time.Second),
+		Borrowtime: time.Now().Add(-30 * time.Second),
 		Comment:    "-",
 		Quantity:   1,
 		Contact:    "", //ผิด
@@ -69,7 +69,7 @@ func TestContactFormat(t *testing.T) {
 	for _, fixture := range fixtures {
 	borrowing := Borrowing{
 
-		Borrowtime: time.Now().Add(-10 * time.Second),
+		Borrowtime: time.Now().Add(-30 * time.Second),
 		Comment:    "-",
 		Quantity:   10,
 		Contact:    fixture, //ผิด
@@ -84,8 +84,12 @@ func TestContactFormat(t *testing.T) {
 	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
 	g.Expect(err).ToNot(BeNil())
 
-	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง (ต้องขึ้นต้นด้วย06-08-09)"))
+	// err.Error ต้องมี error message แสดงออกมา	
+	if err.Error() == "กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง" {
+		g.Expect(err.Error()).To(Equal("กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง"))
+	} else if err.Error() == "เบอร์โทรศัพท์ต้องขึ้นต้นด้วย 06|08|09" {
+		g.Expect(err.Error()).To(Equal("เบอร์โทรศัพท์ต้องขึ้นต้นด้วย 06|08|09"))
+	}
 
 	}
 }
@@ -115,12 +119,12 @@ func TestBorrowtimeMustBePast(t *testing.T) {
 }
 
 
-func TestQuantityisPInt(t *testing.T) {
+func TestQuantityisPositiveInt(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	borrowing := Borrowing{
 
-		Borrowtime: time.Now().Add(-10 * time.Second),
+		Borrowtime: time.Now().Add(-30 * time.Second),
 		Comment:    "-",
 		Quantity:   -10,
 		Contact: "0908208456",
@@ -139,12 +143,12 @@ func TestQuantityisPInt(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("จำนวนอุปกรณ์ไม่สามารถติดลบได้"))
 }
 
-func TestQuantityNotBlank(t *testing.T) {
+func TestQuantityNotZero(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	borrowing := Borrowing{
 
-		Borrowtime: time.Now().Add(-10 * time.Second),
+		Borrowtime: time.Now().Add(-30 * time.Second),
 		Comment:    "-",
 		Quantity:   0,
 		Contact: "0908208456",
@@ -158,7 +162,7 @@ func TestQuantityNotBlank(t *testing.T) {
 
 	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
 	g.Expect(err).ToNot(BeNil())
-
+	
 	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("กรุณากรอกจำนวนอุปกรณ์"))
+	g.Expect(err.Error()).To(Equal("จำนวนอุปกรณ์ไม่สามารถเป็นศูนย์"))
 }

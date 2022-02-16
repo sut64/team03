@@ -18,8 +18,8 @@ type Borrowing struct {
 	Borrowtime       time.Time `valid:"required~กรุณากรอกวันที่-เวลา,past~ไม่สามารถกรอกเวลาในอนาคต"`
 	Backtime		 time.Time 
 	Comment          string
-	Quantity         int    `valid:"required~กรุณากรอกจำนวนอุปกรณ์,positive~จำนวนอุปกรณ์ไม่สามารถติดลบได้"`
-	Contact          string `valid:"required~กรุณากรอกเบอร์โทรศัพท์,matches(^[0][689]\\d{8}$)~กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง (ต้องขึ้นต้นด้วย06-08-09)"`
+	Quantity         int    `valid:"required~จำนวนอุปกรณ์ไม่สามารถเป็นศูนย์,positive~จำนวนอุปกรณ์ไม่สามารถติดลบได้"`
+	Contact          string `valid:"required~กรุณากรอกเบอร์โทรศัพท์,matches(^[0]\\d{9}$)~กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง,matches(^[0][689]\\d{8}$)~เบอร์โทรศัพท์ต้องขึ้นต้นด้วย 06|08|09"`
 	BorrowStatusID   *uint
 	BorrowStatus     BorrowStatus `valid:"-"`
 	EquipmentID      *uint
@@ -48,7 +48,6 @@ func init() {
 
 	govalidator.CustomTypeTagMap.Set("positive", func(i interface{}, context interface{}) bool {
 		t := i.(int)
-
 		return t >= 1
 	})
 
