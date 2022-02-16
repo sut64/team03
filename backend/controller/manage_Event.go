@@ -45,8 +45,8 @@ func CreateEvent(c *gin.Context) {
 
 		Name:      Event.Name,
 		Details:   Event.Details,
-		TimeStart: Event.TimeStart,
-		TimeEnd:   Event.TimeEnd,
+		TimeStart: Event.TimeStart.Local(),
+		TimeEnd:   Event.TimeEnd.Local(),
 		Amount:    Event.Amount,
 
 		Trainner:  Trainner,
