@@ -219,22 +219,6 @@ func SetupDatabase() {
 	}
 	db.Model(&Trainner{}).Create(&Trainner4)
 
-	//Set up BorrowStatus -------------------------------------------------------------------------
-	BorrowStatus1 := BorrowStatus{
-		Status: "Borrowing",
-	}
-	db.Model(&BorrowStatus{}).Create(&BorrowStatus1)
-
-	BorrowStatus2 := BorrowStatus{
-		Status: "Finished",
-	}
-	db.Model(&BorrowStatus{}).Create(&BorrowStatus2)
-
-	BorrowStatus3 := BorrowStatus{
-		Status: "Missed",
-	}
-	db.Model(&BorrowStatus{}).Create(&BorrowStatus3)
-
 	// setup PaymentMethod -------------------------------------------------------------------------
 	PaymentMethod1 := PaymentMethod{
 		Name: "Visa",
@@ -326,12 +310,12 @@ func SetupDatabase() {
 
 	//RoleItem
 	RoleItem1 := RoleItem{
-		Role: "Borrow allow",
+		Role: "ยืมได้",
 	}
 	db.Model(&RoleItem{}).Create(&RoleItem1)
 
 	RoleItem2 := RoleItem{
-		Role: "Borrow not allow",
+		Role: "ยืมไม่ได้",
 	}
 	db.Model(&RoleItem{}).Create(&RoleItem2)
 
@@ -497,30 +481,71 @@ func SetupDatabase() {
 	}
 	db.Model(&Equipment{}).Create(&Equipment4)
 
+	//Set up BorrowStatus -------------------------------------------------------------------------
+	BorrowStatus1 := BorrowStatus{
+		Status: "กำลังยืม",
+	}
+	db.Model(&BorrowStatus{}).Create(&BorrowStatus1)
+
+	BorrowStatus2 := BorrowStatus{
+		Status: "สำเร็จ",
+	}
+	db.Model(&BorrowStatus{}).Create(&BorrowStatus2)
+
+	BorrowStatus3 := BorrowStatus{
+		Status: "เสียหาย",
+	}
+	db.Model(&BorrowStatus{}).Create(&BorrowStatus3)
+	
 	//Borrowing
 	Borrowing1 := Borrowing{
 		Borrowtime:     time.Now(),
-		Comment:        "-",
-		Quantity:       1,
-		Contact:        "0908208456",
+		Backtime:     	time.Now().Add(1 * time.Minute),
+		Comment:        "",
+		Quantity:       2,
+		Contact:        "0883664867",
 		BorrowStatus:   BorrowStatus2,
-		Equipment:      Equipment1,
+		Equipment:      Equipment2,
 		CustomerBorrow: User4,
-		StaffBorrow:    User1,
+		StaffBorrow:    User3,
 	}
 	db.Model(&Borrowing{}).Create(&Borrowing1)
 
 	Borrowing2 := Borrowing{
-		Borrowtime:     time.Now(),
-		Comment:        "-",
-		Quantity:       2,
-		Contact:        "0908208456",
-		BorrowStatus:   BorrowStatus1,
+		Borrowtime:     time.Now().Add(1 * time.Minute),
+		Comment:        "หาย",
+		Quantity:       1,
+		Contact:        "0883664867",
+		BorrowStatus:   BorrowStatus3,
 		Equipment:      Equipment2,
 		CustomerBorrow: User4,
-		StaffBorrow:    User1,
+		StaffBorrow:    User3,
 	}
 	db.Model(&Borrowing{}).Create(&Borrowing2)
+
+	Borrowing3 := Borrowing{
+		Borrowtime:     time.Now().Add(2 * time.Minute),
+		Comment:        "",
+		Quantity:       2,
+		Contact:        "0657781234",
+		BorrowStatus:   BorrowStatus1,
+		Equipment:      Equipment3,
+		CustomerBorrow: User5,
+		StaffBorrow:    User6,
+	}
+	db.Model(&Borrowing{}).Create(&Borrowing3)
+
+	Borrowing4 := Borrowing{
+		Borrowtime:     time.Now().Add(2 * time.Minute),
+		Comment:        "",
+		Quantity:       1,
+		Contact:        "0883664867",
+		BorrowStatus:   BorrowStatus1,
+		Equipment:      Equipment1,
+		CustomerBorrow: User4,
+		StaffBorrow:    User6,
+	}
+	db.Model(&Borrowing{}).Create(&Borrowing4)
 
 	//Payment
 	Payment1 := Payment{

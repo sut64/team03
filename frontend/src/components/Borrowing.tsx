@@ -18,15 +18,21 @@ import { UserInterface } from '../model/UserUI';
 import moment from 'moment';
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { IconButton } from "@material-ui/core";
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 
 
 const useStyles = makeStyles((theme: Theme) =>
 
  createStyles({
 
-   container: {marginTop: theme.spacing(2)},
+   container: {marginTop: theme.spacing(2),overflow: "hidden",},
 
    table: { 
      minWidth: 620,
@@ -39,6 +45,15 @@ const useStyles = makeStyles((theme: Theme) =>
      border: 1 ,
      m: 1,
      borderColor: 'text.primary',
+     
+    },
+
+    textContainer: {
+      whiteSpace: "normal",
+      textOverflow: "ellipsis",
+      width: "200px",
+      display: "block",
+      overflow: "hidden"
     },
 
    button: {
@@ -53,17 +68,29 @@ const useStyles = makeStyles((theme: Theme) =>
 },
 
   background: {
-
     background: '#ffffff',
     maxHeight : 'auto',
-
   },
 
   tablehead: {
-
-    background: '#ada9a9',
+    background: '#43326b',
     color: '#ffffff',
+  },
 
+
+  borrowing: {
+    color: '#FFB90F',
+    fontWeight: 600,
+  },
+
+  finished: {
+    color: '#32CD32',
+    fontWeight: 600,
+  },
+
+  missed: {
+    color: '#FF4500',
+    fontWeight: 600,
   },
 
   headtext: {
@@ -264,6 +291,22 @@ function Update(id : string | number | undefined |unknown) {
     window.location.reload();
 }
 
+const [opendia, setOpenDia] = useState(false);
+const handleClickOpenDia = () => {
+  setOpenDia(true);
+};
+const handleCloseDia = () => {
+  setOpenDia(false);
+};
+
+const [opencom, setOpenCom] = useState(false);
+const handleClickOpenComment = () => {
+  setOpenCom(true);
+};
+const handleCloseComment = () => {
+  setOpenCom(false);
+};
+
 
 
 
@@ -282,13 +325,13 @@ function Update(id : string | number | undefined |unknown) {
    <div className={classes.background}>
       <Snackbar open={success} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
-          อัพเดทข้อมูลสำเร็จ
+          คืนอุปกรณ์สำเร็จ
           {}
         </Alert>
       </Snackbar>
       <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">
-          อัพเดทข้อมูลไม่สำเร็จ
+         คืนอุปกรณ์ไม่สำเร็จ
         </Alert>
       </Snackbar>
 
@@ -297,7 +340,7 @@ function Update(id : string | number | undefined |unknown) {
        <Box display="flex">
 
          <Box flexGrow={3}>
-
+      
            <Typography
              className={classes.headtext}
              component="h1"
@@ -370,74 +413,74 @@ function Update(id : string | number | undefined |unknown) {
 
        <TableContainer component={Paper} className={classes.tableSpace} >
 
-         <Table className={classes.table} aria-label="a dense table"  size="small">
+         <Table className={classes.table} aria-label="simple table" size="small">
 
            <TableHead>
 
              <TableRow className={classes.tablehead}>
 
-               <TableCell align="center" width="5%">
+               <TableCell align="center" width="5%" className={classes.tablehead}>
 
                  ID
 
                </TableCell>
 
-               <TableCell align="left" width="8%">
+               <TableCell align="left" width="8%" className={classes.tablehead}>
 
-                 ผู้ยืม
+                 สมาชิก
 
                </TableCell>
 
-               <TableCell align="right" width="5%">
+               <TableCell align="right" width="8%" className={classes.tablehead}>
 
                  อุปกรณ์
 
                </TableCell>
 
-               <TableCell align="right" width="7%">
+               <TableCell align="right" width="7%" className={classes.tablehead}>
 
                  จำนวน
 
                </TableCell>
 
-               <TableCell align="right" width="8%">
+               <TableCell align="right" width="9%" className={classes.tablehead}>
 
                  เบอร์ติดต่อ
 
                </TableCell>
 
-               <TableCell align="right" width="10%">
+               <TableCell align="right" width="11%" className={classes.tablehead}>
 
                  เวลายืม
 
                </TableCell>
 
-               <TableCell align="right" width="10%">
+               <TableCell align="right" width="10%" className={classes.tablehead}>
 
                  เวลาคืน
 
                </TableCell>
 
 
-               <TableCell align="right" width="8%">
+               <TableCell align="right" width="8%" className={classes.tablehead}>
 
-                 สถานะ
-
-               </TableCell>
-
-               <TableCell align="right" width="13%">
-
-                 เพิ่มเติม
+                 หมายเหตุ
 
                </TableCell>
 
-               <TableCell align="right" width="9%">
+               <TableCell align="right" width="8%" className={classes.tablehead}>
 
                  ผู้ทำรายการ
 
                </TableCell>
 
-               <TableCell align="right" width="5%">
+               <TableCell align="center" width="8%" className={classes.tablehead}>
+
+                 สถานะ
+
+               </TableCell>
+
+               <TableCell align="right" width="6%" className={classes.tablehead}>
 
                  คืนอุปกรณ์
 
@@ -466,22 +509,34 @@ function Update(id : string | number | undefined |unknown) {
                  <TableCell align="right">{moment(borrow.Borrowtime).format("HH:mm DD/MM/YYYY")}</TableCell>
 
                  <TableCell align="right">
-                 {borrow.BorrowStatus?.Status === 'Finished' && ( <>
+                 {borrow.BorrowStatus?.Status === 'สำเร็จ' && ( <>
 
                    {moment(borrow.Backtime).format("HH:mm DD/MM/YYYY")} </> )} </TableCell>
 
-                 <TableCell align="right" size="medium">{borrow.BorrowStatus.Status}</TableCell>
-                 
-                 <TableCell align="right">{borrow.Comment}</TableCell>
 
-                 <TableCell align="right">{borrow.StaffBorrow.Name}</TableCell>
+                <TableCell align="right">{borrow.Comment}</TableCell>
+
+                
+                <TableCell align="right">{borrow.StaffBorrow.Name}</TableCell>
+                   
+                  {borrow.BorrowStatus?.Status === 'กำลังยืม' && ( <> 
+                  <TableCell align="center" size="medium" className={classes.borrowing}>
+                    {borrow.BorrowStatus.Status}</TableCell> </> )}
+
+                    {borrow.BorrowStatus?.Status === 'สำเร็จ' && ( <> 
+                  <TableCell align="center" size="medium" className={classes.finished}>
+                    {borrow.BorrowStatus.Status}</TableCell> </> )}
+                 
+                    {borrow.BorrowStatus?.Status === 'เสียหาย' && ( <> 
+                  <TableCell align="center" size="medium" className={classes.missed}>
+                    {borrow.BorrowStatus.Status}</TableCell> </> )}
 
                  <TableCell align="right"> 
                  
-                 {borrow.BorrowStatus?.Status === 'Borrowing' && ( <>
+                 {borrow.BorrowStatus?.Status === 'กำลังยืม' && ( <>
 
-                  <IconButton onClick={() => Update(borrow.ID)} >
-                    <ArrowForwardIosIcon sx={{ fontSize: 30 , color : '#dd0000' }}/> </IconButton>
+                  <IconButton  >
+                    <ArrowForwardIcon sx={{ fontSize: 30 , color : '#dd0000' }} onClick={() => Update(borrow.ID)}/> </IconButton>
                  </> )}
            </TableCell>
                </TableRow>

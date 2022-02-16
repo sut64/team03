@@ -57,8 +57,8 @@ func CreateBorrowing(c *gin.Context) {
 		Quantity:       borrowing.Quantity,   // ตั้งค่าฟิลด์ Quantity
 		Comment:        borrowing.Comment,    // ตั้งค่าฟิลด์ Comment
 		Contact:        borrowing.Contact,    // ตั้งค่าฟิลด์ Contact
-		Borrowtime:     borrowing.Borrowtime, // ตั้งค่าฟิลด์ Borrowtime
-		Backtime:       borrowing.Backtime,   // ตั้งค่าฟิลด์ Borrowtime
+		Borrowtime:     borrowing.Borrowtime.Local(), // ตั้งค่าฟิลด์ Borrowtime
+		Backtime:       borrowing.Backtime.Local(),   // ตั้งค่าฟิลด์ Borrowtime
 	}
 
 	if _, err := govalidator.ValidateStruct(borrowing); err != nil {
@@ -80,12 +80,9 @@ func CreateBorrowing(c *gin.Context) {
 
 	//update equipment.quantity
 	if err := entity.DB().Raw("UPDATE equipment SET quantity = quantity-? WHERE id = ?", borrowing.Quantity, borrowing.EquipmentID).Find(&equipment).Error; err != nil {
-
 		c.JSON(http.StatusBadRequest, gin.H{"ไม่สามารถอัพเดทจำนวนอุปกรณ์คงเหลือ": err.Error()})
 		return
-
 	}
-
 	c.JSON(http.StatusOK, gin.H{"data": eb})
 
 }
@@ -145,7 +142,7 @@ func UpdateBorrowing(c *gin.Context) {
 		return
 	}
 
-	if err := entity.DB().Raw("UPDATE borrowings SET borrow_status_id = 2 WHERE id = ?", id).Find(&borrowing).Error; err != nil {
+	if err := entity.DB().Raw("UPDATE borrowings SET borrow_status_id = (SELECT id FROM borrow_statuses WHERE status='สำเร็จ') WHERE id = ?", id).Find(&borrowing).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -167,7 +164,7 @@ func UpdateBorrowing(c *gin.Context) {
 
 func ListBorrowStatus(c *gin.Context) {
 	var borrowstatus []entity.BorrowStatus
-	if err := entity.DB().Raw("SELECT * FROM borrow_statuses WHERE status = 'Borrowing'").Scan(&borrowstatus).Error; err != nil {
+	if err := entity.DB().Raw("SELECT * FROM borrow_statuses WHERE status in ('กำลังยืม','เสียหาย')").Scan(&borrowstatus).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -188,10 +185,12 @@ func ListBackBorrowStatus(c *gin.Context) {
 // --------------------EQUIPMENT
 func ListAbleEquipments(c *gin.Context) {
 	var equipment []entity.Equipment
-	if err := entity.DB().Preload("RoleItem").Raw("SELECT equipment.* FROM equipment LEFT JOIN role_items ON equipment.role_item_id = role_items.id WHERE role_items.role = 'Borrow allow';").Scan(&equipment).Error; err != nil {
+	if err := entity.DB().Preload("RoleItem").Raw("SELECT equipment.* FROM equipment LEFT JOIN role_items ON equipment.role_item_id = role_items.id WHERE role_items.role = 'ยืมได้';").Scan(&equipment).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"data": equipment})
 }
+
+

@@ -149,7 +149,7 @@ function EquipBorrowCreate() {
   };
 
   const getBorrowStatus = async () => {
-    fetch(`${apiUrl}/listbackborrowstatus`, requestOptions)
+    fetch(`${apiUrl}/listborrowstatus`, requestOptions)
       .then((response) => response.json())
       .then((res) => {
         if (res.data) {
@@ -223,11 +223,15 @@ function EquipBorrowCreate() {
 
   function isFloat(n: number | undefined){
     return Number(n) === n && n % 1 !== 0;
-}
+  }
 
-function isNegative(n: number | undefined){
+  function isNull(n: number |string | undefined){
+    return n === "" ;
+  }
+
+  function isNegative(n: number | undefined){
   return Number(n) === n && n < 0;
-}
+  }
 
   const handleInputChange = (
     event: React.ChangeEvent<{ id?: string; value: any }>
@@ -236,6 +240,14 @@ function isNegative(n: number | undefined){
     const { value } = event.target;
     setBorrowings({ ...borrowing, [id]: value });
   };
+
+  const setquantity = (
+  ) => {
+    const id = "Quantity" as keyof typeof EquipBorrowCreate;
+    const value  = 1;
+    setBorrowings({ ...borrowing, [id]: value });
+  };
+
 
   
 
@@ -275,11 +287,15 @@ function submit() {
         if(isFloat(convertQuantity(borrowing.Quantity))) {
           setErrorMessage("จำนวนอุปกรณ์ต้องไม่มีทศนิยม")
         }
+        else if(isNull(borrowing.Quantity)) {
+          setErrorMessage("กรุณากรอกจำนวนอุปกรณ์")
+        }
         else {
         setErrorMessage(res.error)
         }
       }
     });
+    
     
 }
 
@@ -287,6 +303,7 @@ function submit() {
     getEquipments();
     getBorrowStatus();
     getUser();
+    setquantity();
   }, []);
 
    
@@ -323,7 +340,7 @@ return (
       <Grid className={classes.paper2} container spacing={0} item xs={6} wrap='wrap'>
       
       <Grid item xs={6}>
-         Equipment
+         เลือกอุปกรณ์
          <form className={classes.combobox} noValidate >
           
          <Select        
@@ -345,7 +362,7 @@ return (
                 {equipments.map((item: EquipmentsInterface) => (
                   <option value={item.ID} key={item.ID} 
                   style  = {{ minHeight : 45 , fontSize: 17 }}>
-                    {item.Name} 
+                    {item.ID}. {item.Name} 
                   </option>
                 ))}
               </Select>
@@ -389,7 +406,7 @@ return (
         </Grid>
 
           <Grid item xs={11} style  = {{  textAlign : 'right' }}>
-          Quantity <br/>
+          จำนวนอุปกรณ์ : <br/>
         <div>
         <form noValidate autoComplete="off">
       <div>
@@ -402,9 +419,9 @@ return (
             inputProps: { min: 1 }
           }}
           id="Quantity"
-          value={borrowing.Quantity || ""}
+          value={borrowing.Quantity || 1}
           onChange={handleInputChange}
-          style  = {{ width : 100 , height : 60 ,textAlign : 'right'}}
+          style  = {{ width : 60 , height : 60 }}
         />
       </div>
     </form>
@@ -431,7 +448,7 @@ return (
       <Grid className={classes.paper} container spacing={3} item xs={6}>
       
         <Grid item xs={12}>
-         Customer
+         เลือกสมาชิก
          <form className={classes.combobox} noValidate >
           
          
@@ -446,7 +463,7 @@ return (
                 style  = {{ width : 300 , height : 40}}
               >
                 <option aria-label="None" value="">
-                  Customer
+                  สมาชิก
                 </option>
                 {users.map((item: UserInterface) => (
                   <option value={item.ID} key={item.ID}>
@@ -460,7 +477,7 @@ return (
         </Grid>
 
         <Grid item xs={6} >
-          Staff
+          ผู้ทำรายการ
           
           <form className={classes.combobox} noValidate autoComplete="off">
           
@@ -485,7 +502,7 @@ return (
         </Grid>
 
          <Grid item xs={12}>
-          Contact
+          เบอร์ติดต่อ
         <div>
         <form noValidate autoComplete="off">
       <div>
@@ -503,7 +520,7 @@ return (
         
         
         <Grid item xs={12} className={classes.combobox}>
-          Comment
+          หมายเหตุ
         <div>
         <form noValidate autoComplete="off">
       <div>
@@ -514,6 +531,7 @@ return (
           variant="outlined"
           value={borrowing.Comment || ""}
           onChange={handleInputChange}
+          style  = {{ width : 450 }}
         />
       </div>
     </form>
@@ -522,7 +540,7 @@ return (
 
 
         <Grid item xs={12}>
-          BorrowTime
+          เวลายืม
           <form className={classes.combobox} noValidate>
       
 
@@ -551,7 +569,7 @@ return (
         </Grid>
 
         <Grid item xs={12}>
-         Status
+         สถานะ
          <form className={classes.combobox} noValidate >
           
          
@@ -565,11 +583,11 @@ return (
                 style  = {{ width : 300 , height : 40}}
               >
                 <option aria-label="None" value="">
-                  Status
+                  สถานะ
                 </option>
                 {borrowstatuses.map((item: BorrowStatusInterface) => (
                   <option value={item.ID} key={item.ID}>
-                    {item.ID} {item.Status} 
+                    {item.Status} 
                   </option>
                 ))}
               </Select>
