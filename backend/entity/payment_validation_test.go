@@ -17,6 +17,7 @@ func TestPaymentPass(t *testing.T){
 		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
 		Discount: 20,
 		Total: 1980,
+		Note: "-",
 	}
 
 	// ตรวจสอบด้วย govalidator
@@ -27,6 +28,30 @@ func TestPaymentPass(t *testing.T){
 
 	// err เป็นค่า nil แปลว่าไม่มี error
 	g.Expect(err).To(BeNil())
+}
+
+func TestBillnotblank(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	payment := Payment{
+		Bill: "",
+		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
+		Discount: 23,
+		Total: 1500,
+		Note: "-",
+	}
+
+	// ตรวจสอบด้วย govalidator
+	ok, err := govalidator.ValidateStruct(payment)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("Bill cannot be blank"))
 }
 
 // ตรวจสอบ Pattern ของ Bill แล้วต้องเจอ Error
@@ -45,6 +70,7 @@ func TestBillMustBeInvalidPattern(t *testing.T){
 			AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
 			Discount: 20,
 			Total: 180,
+			Note: "-",
 		}
 
 		// ตรวจสอบด้วย govalidator
@@ -70,6 +96,7 @@ func TestDiscountBetweenZeroAndTenThousand(t *testing.T){
 		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
 		Discount: 20000,
 		Total: 0,
+		Note: "-",
 	}
 	// ตรวจสอบด้วย govalidator
 	ok, err := govalidator.ValidateStruct(payment)
@@ -93,6 +120,7 @@ func TestTotalBetweenZeroAndTenThousand(t *testing.T){
 		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
 		Discount: 20,
 		Total: 90000,
+		Note: "-",
 	}
 	// ตรวจสอบด้วย govalidator
 	ok, err := govalidator.ValidateStruct(payment)
@@ -112,8 +140,12 @@ func TestAddedTimeMustBePast(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	payment := Payment{
-		AddedTime:  time.Now().Add(24 * time.Hour), // อนาคต, fail
-	}
+		Bill: "R000008",
+		AddedTime: time.Now().Add(24 * time.Hour), //ผิด
+		Discount: 20,
+		Total: 1503,
+		Note: "-",
+		}
 
 	// ตรวจสอบด้วย govalidator
 	ok, err := govalidator.ValidateStruct(payment)
@@ -126,4 +158,28 @@ func TestAddedTimeMustBePast(t *testing.T) {
 
 	// err.Error ต้องมี error message แสดงออกมา
 	g.Expect(err.Error()).To(Equal("AddedTime must be in the past"))
+}
+
+func TestNotenotblank(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	payment := Payment{
+		Bill: "R000005",
+		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
+		Discount: 23,
+		Total: 1500,
+		Note: "",
+	}
+
+	// ตรวจสอบด้วย govalidator
+	ok, err := govalidator.ValidateStruct(payment)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("Note cannot be blank"))
 }

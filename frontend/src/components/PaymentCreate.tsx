@@ -247,7 +247,8 @@ function submit() {
       AddedTime: addedtime,
       Discount: convertType(payment.Discount) ?? "",
       Total: convertType(payment.Total) ?? "",
-      Bill: payment.Bill ?? ""
+      Bill: payment.Bill ?? "",
+      Note: payment.Note ?? "",
   };
 
   const requestOptionsPost = {
@@ -265,9 +266,17 @@ function submit() {
       if (res.data) {
         setSuccess(true);
         setErrorMessage("")
-      } else {
-        setError(true);
-        setErrorMessage(res.error)
+      } 
+      else { 
+        if (res.error == "UNIQUE constraint failed: payments.bill") {
+          setErrorMessage("เลขที่ใบเสร็จซ้ำ")
+        }
+        else if (res.error == "UNIQUE constraint failed: payments.facility_id"){
+          setErrorMessage("รายการชำระค่าบริการซ้ำ")
+        }else {
+          setErrorMessage(res.error)
+        }
+        setError(true)
       }
     });
     
@@ -310,7 +319,7 @@ return (
       
       <Grid className={classes.paper2} container spacing={0} item xs={6} wrap='wrap'>
       
-      <Grid item xs={12}>
+      <Grid item xs={12} style  = {{  textAlign : 'left' }}>
       Staff
           
           <form className={classes.combobox} noValidate autoComplete="off">
@@ -331,6 +340,10 @@ return (
           
    
         </form>
+
+        </Grid>
+
+        <Grid item xs={12} style  = {{  textAlign : 'left' }}>
 
       Customer
          <form className={classes.combobox} noValidate >
@@ -359,7 +372,7 @@ return (
          
         </Grid>
 
-          <Grid item xs={9} style  = {{  textAlign : 'right' }}>
+          <Grid item xs={9} style  = {{  textAlign : 'left' }}>
           Bill
         <div>
         <form noValidate autoComplete="off">
@@ -378,7 +391,7 @@ return (
         
         </Grid>       
 
-           <Grid item xs={6}>
+        <Grid item xs={12} style  = {{  textAlign : 'left' }}>
         <Button className={classes.button2}
               component={RouterLink}
               to="/HistoryPayment"
@@ -415,7 +428,7 @@ return (
                 </option>
                 {facility.map((item: FacilityInterface) => (
                   <option value={item.ID} key={item.ID}>
-                    {item.No} 
+                    {item.No} (ค่าบริการ: {item.Price})
                   </option>
                 ))}
               </Select>
@@ -503,6 +516,25 @@ return (
     
          </form>
 
+
+        </Grid>
+
+        <Grid item xs={12}>
+
+        หมายเหตุ (*หากไม่มีให้ใส่ -)
+        <div>
+        <form noValidate autoComplete="off">
+      <div>
+        <TextField
+          id="Note"
+          variant="outlined"
+          value={payment.Note || ""}
+          onChange={handleInputChange}
+          style  = {{ width : 300 , height : 40}}
+        />
+      </div>
+    </form>
+        </div>
 
         </Grid>
 

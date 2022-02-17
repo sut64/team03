@@ -410,6 +410,28 @@ func SetupDatabase() {
 	}
 	db.Model(&Facility{}).Create(&Facility8)
 
+	Facility9 := Facility{
+		User:        User4,
+		No:          "A000009",
+		PackageTime: time.Date(2021, 2, 2, 6, 30, 20, 30, time.Local),
+		Price:       5000,
+		Confirm:     true,
+		Package:     Package2,
+		Trainner:    Trainner1,
+	}
+	db.Model(&Facility{}).Create(&Facility9)
+
+	Facility10 := Facility{
+		User:        User4,
+		No:          "A000010",
+		PackageTime: time.Date(2021, 2, 2, 6, 30, 20, 30, time.Local),
+		Price:       500,
+		Confirm:     true,
+		Package:     Package2,
+		Trainner:    Trainner1,
+	}
+	db.Model(&Facility{}).Create(&Facility10)
+
 	Event1 := Event{
 		Name:      "Yoga",
 		Details:   "Practicing yoga is the process of training the body",
@@ -557,11 +579,12 @@ func SetupDatabase() {
 		AddedTime:       time.Date(2022, 5, 7, 10, 29, 20, 10, time.Local),
 		Discount:        20,
 		Total:           280,
+		Note: 			 "-",
 	}
 	db.Model(&Payment{}).Create(&Payment1)
 
 	Payment2 := Payment{
-		Bill:            "R000001",
+		Bill:            "R000002",
 		CustomerPayment: User4,
 		StaffPayment:    User1,
 		Facility:        Facility2,
@@ -569,8 +592,23 @@ func SetupDatabase() {
 		AddedTime:       time.Date(2022, 5, 7, 10, 29, 20, 10, time.Local),
 		Discount:        10,
 		Total:           580,
+		Note: 			 "-",
 	}
 	db.Model(&Payment{}).Create(&Payment2)
+
+	Payment3 := Payment{
+		Bill:            "R000003",
+		CustomerPayment: User4,
+		StaffPayment:    User1,
+		Facility:        Facility4,
+		PaymentMethod:   PaymentMethod1,
+		AddedTime:       time.Date(2022, 5, 7, 10, 29, 20, 10, time.Local),
+		Discount:        23,
+		Total:           1500,
+		Note: 			 "-",
+	}
+	db.Model(&Payment{}).Create(&Payment3)
+
 
 	///Setup reserve
 

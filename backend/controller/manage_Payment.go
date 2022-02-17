@@ -52,8 +52,9 @@ func CreatePayment(c *gin.Context) {
 		PaymentMethod: paymentmethod,
 		Discount: payment.Discount,    
 		Total: payment.Total,    
-		AddedTime: payment.AddedTime,
+		AddedTime: payment.AddedTime.Local(),
 		Bill: payment.Bill,
+		Note: payment.Note,
 	}
 
 	// แทรกการ validate ไว้ช่วงนี้ของ controller
@@ -62,9 +63,15 @@ func CreatePayment(c *gin.Context) {
 		return
 	}
 
-	//check Discount ต้องน้อยกว่า Price
+	//check Discount ต้องน้อยกว่าหรือเท่ากับค่า Price
 	if tx := entity.DB().Raw("SELECT * from facilities WHERE id=? AND price > ?", payment.FacilityID, payment.Discount).First(&facility); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "ส่วนลดต้องน้อยกว่าหรือเท่ากับค่าบริการ"})
+		return
+	}
+
+	//check Total ต้องน้อยกว่าหรือเท่ากับค่า Price
+	if tx := entity.DB().Raw("SELECT * from facilities WHERE id=? AND price >= ?", payment.FacilityID, payment.Total).First(&facility); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "ยอดรวมต้องน้อยกว่าหรือเท่ากับค่าบริการ"})
 		return
 	}
 
@@ -79,7 +86,7 @@ func CreatePayment(c *gin.Context) {
 // GET: /api/ListPayment
 func ListPayment(c *gin.Context) {
 	var payment []*entity.Payment
-	if err := entity.DB().Preload("StaffPayment").Preload("CustomerPayment").Preload("PaymentMethod").Preload("Facility").Raw("SELECT * FROM payments").Find(&payment).Error; err != nil {
+	if err := entity.DB().Preload("StaffPayment").Preload("CustomerPayment").Preload("PaymentMethod").Preload("Facility").Raw("SELECT * FROM payments ORDER BY id desc").Find(&payment).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -105,4 +112,14 @@ func GetPaymentforMember(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"data": paymentformember})
+}
+
+func DeletePayment(c *gin.Context) {
+	id := c.Param("id")
+	if tx := entity.DB().Exec("DELETE FROM payments WHERE id = ?", id); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "payment not found"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": id})
 }
