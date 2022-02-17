@@ -69,6 +69,7 @@ func CreatePayment(c *gin.Context) {
 		return
 	}
 
+	
 	//check Total ต้องน้อยกว่าหรือเท่ากับค่า Price
 	if tx := entity.DB().Raw("SELECT * from facilities WHERE id=? AND price >= ?", payment.FacilityID, payment.Total).First(&facility); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "ยอดรวมต้องน้อยกว่าหรือเท่ากับค่าบริการ"})
