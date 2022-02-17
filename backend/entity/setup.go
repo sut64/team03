@@ -499,8 +499,8 @@ func SetupDatabase() {
 	
 	//Borrowing
 	Borrowing1 := Borrowing{
-		Borrowtime:     time.Now(),
-		Backtime:     	time.Now().Add(1 * time.Minute),
+		Borrowtime:     time.Now().Add(-50 * time.Minute),
+		Backtime:     	time.Now().Add(-25 * time.Minute),
 		Comment:        "",
 		Quantity:       2,
 		Contact:        "0883664867",
@@ -512,7 +512,7 @@ func SetupDatabase() {
 	db.Model(&Borrowing{}).Create(&Borrowing1)
 
 	Borrowing2 := Borrowing{
-		Borrowtime:     time.Now().Add(1 * time.Minute),
+		Borrowtime:     time.Now().Add(-23 * time.Minute),
 		Comment:        "หาย",
 		Quantity:       1,
 		Contact:        "0883664867",
@@ -524,7 +524,7 @@ func SetupDatabase() {
 	db.Model(&Borrowing{}).Create(&Borrowing2)
 
 	Borrowing3 := Borrowing{
-		Borrowtime:     time.Now().Add(2 * time.Minute),
+		Borrowtime:     time.Now().Add(-1 * time.Minute),
 		Comment:        "",
 		Quantity:       2,
 		Contact:        "0657781234",
@@ -536,7 +536,7 @@ func SetupDatabase() {
 	db.Model(&Borrowing{}).Create(&Borrowing3)
 
 	Borrowing4 := Borrowing{
-		Borrowtime:     time.Now().Add(2 * time.Minute),
+		Borrowtime:     time.Now(),
 		Comment:        "",
 		Quantity:       1,
 		Contact:        "0883664867",
