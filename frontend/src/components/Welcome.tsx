@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Link as RouterLink } from "react-router-dom";
-import Grid from '@material-ui/core/Grid';
+import { Grid } from "@mui/material";
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
@@ -16,6 +16,7 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import { Box } from '@mui/material';
+import '../../src/App.css';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,7 +34,6 @@ const useStyles = makeStyles((theme: Theme) =>
       background: '#DF1B3F',
       color: '#ffffff',
       height: '9ch',
-      width: '80ch',
       margin: theme.spacing(0.8),
     },
   }),
@@ -46,23 +46,24 @@ export default function Home() {
 
 
     return (
-      <div className={classes.center}>
-      
-      <CssBaseline />
-      <Container fixed maxWidth='xl'>
-        <br/><br/>
-      <Grid container spacing={2}>
-        <Grid item xs={7} >
+      <div>
+        <Container className='container' fixed >
+        <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2} columns={16} >
+        <Grid item xs={10} >
           <Box >
-            <img src={require('./image/health-fitness-tips-weight.jfif')}  width="850" height="550" />
-          </Box> 
+            <img src={require('./image/health-fitness-tips-weight.jfif')}  width="100%" height="550" />
+          </Box>
         </Grid>
-
-        <Grid item xs={5} >
-        <Typography variant="h2" sx={{ fontSize: 50 , color : '#544447',textAlign : 'center' }}> SPORTS CENTER</Typography>
+        <Grid item xs={6} >
+          
+          <Typography  variant="h2" sx={{ fontSize: 30 , color : '#544447',textAlign : 'center' }}> SPORTS CENTER</Typography>
+          
+        
       
       <Button
             variant="contained"
+            fullWidth
             className={classes.button}
             component={RouterLink}
             to="/HistoryFacility"
@@ -73,6 +74,7 @@ export default function Home() {
       
       <Button
             variant="contained"
+            fullWidth
             className={classes.button}
             component={RouterLink}
             to="/HistoryEvent"
@@ -83,6 +85,7 @@ export default function Home() {
 
           <Button
             variant="contained"
+            fullWidth
             className={classes.button}
             component={RouterLink}
             to="/Borrowing"
@@ -93,6 +96,7 @@ export default function Home() {
 
           <Button
             variant="contained"
+            fullWidth
             className={classes.button}
             component={RouterLink}
             to="/equip"
@@ -103,6 +107,7 @@ export default function Home() {
 
           <Button
             variant="contained"
+            fullWidth
             className={classes.button}
             component={RouterLink}
             to="/HistoryPayment"
@@ -114,6 +119,7 @@ export default function Home() {
           
           <Button
             variant="contained"
+            fullWidth
             className={classes.button}
             component={RouterLink}
             to="/ReserveAdmin"
@@ -121,21 +127,21 @@ export default function Home() {
             <Typography variant="body1"> ประวัติการจองสนามกีฬา &nbsp;&nbsp;</Typography>
             <SportsSoccerIcon sx={{ fontSize: 50 , color : '#ffffff' }}/>
           </Button>
-        
-        
+
+
+        </Grid>
       </Grid>
+    </Box>
 
 
-      <Grid item xs={6}></Grid>
-        
-      </Grid>
-       
+        </Container>
 
-      </Container>
+      </div>
+      
 
 
      
-      </div>
+     
     );
   
 }

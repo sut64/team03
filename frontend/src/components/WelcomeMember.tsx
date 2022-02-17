@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Link as RouterLink } from "react-router-dom";
-import Grid from '@material-ui/core/Grid';
+import { Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
@@ -33,17 +33,15 @@ const useStyles = makeStyles((theme: Theme) =>
       background: '#DF1B3F',
       color: '#ffffff',
       height: '27ch',
-      width: '30ch',
       margin: theme.spacing(0.8),
     },
 
     button2: {
-        background: '#DF1B3F',
-        color: '#ffffff',
-        height: '7ch',
-        width: '62ch',
-        margin: theme.spacing(0.8),
-      },
+      background: '#DF1B3F',
+      color: '#ffffff',
+      height: '7ch',
+      margin: theme.spacing(0.8),
+    },
   }),
 );
 
@@ -53,99 +51,116 @@ export default function Home() {
   const classes = useStyles();
 
 
-    return (
-      <div className={classes.center}>
-      
-      <CssBaseline />
-      <Container fixed maxWidth='xl'>
-        <br/><br/>
-      <Grid container spacing={2}>
-        <Grid item xs={7} >
-          <Box >
-            <img src={require('./image/health-fitness-tips-weight.jfif')}  width="850" height="550" />
-          </Box> 
-        </Grid>
+  return (
+    <div>
+      <Container className='container' fixed >
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2} columns={16} >
+            <Grid item xs={10} >
+              <Box >
+                <img src={require('./image/health-fitness-tips-weight.jfif')} width="100%" height="550" />
+              </Box>
+            </Grid>
+            <Grid item xs={6} >
 
-        <Grid item xs={5} >
-        <Typography variant="h2" sx={{ fontSize: 50 , color : '#544447',textAlign : 'center' }}> SPORTS CENTER</Typography>
-      
-      <Button
-            variant="contained"
-            className={classes.button}
-            component={RouterLink}
-            to="/CreateReserve"
-          >
-            <Typography variant="body1"> จองสนามกีฬา &nbsp;&nbsp;</Typography>
-            <SportsSoccerIcon sx={{ fontSize: 50 , color : '#ffffff' }}/>
-          </Button>
-      
-      <Button
-            variant="contained"
-            className={classes.button}
-            component={RouterLink}
-            to="/HistoryEvent"
-          >
-            <Typography variant="body1"> ตารางกิจกรรม &nbsp;&nbsp;</Typography>
-            <SportsMartialArtsIcon sx={{ fontSize: 50 , color : '#ffffff' }}/>
-          </Button>
-
-          <Button
-            variant="contained"
-            className={classes.button2}
-            component={RouterLink}
-            to="/HistoryReserve"
-          >
-            <Typography variant="body1"> ประวัติการจองสนามกีฬา &nbsp;&nbsp;</Typography>
-            <SportsSoccerIcon sx={{ fontSize: 35 , color : '#ffffff' }}/>
-          </Button>
-
-          <Button
-            variant="contained"
-            className={classes.button2}
-            component={RouterLink}
-            to="/UserEquipment"
-          >
-            <Typography variant="body1"> อุปกรณ์สำหรับการยืม &nbsp;&nbsp;</Typography>
-            <SportsBasketballIcon sx={{ fontSize: 35 , color : '#ffffff' }}/>
-          </Button>
+              <Typography variant="h2" sx={{ fontSize: 40, color: '#544447', textAlign: 'center' }}> SPORTS CENTER</Typography>
+              <Grid container  spacing={2}  columns={6} >
+              <Grid item xs={3} >
+                <Button
+                  variant="contained"
+                  fullWidth
+                  className={classes.button}
+                  component={RouterLink}
+                  to="/CreateReserve"
+                >
+                  <Typography variant="body1"> จองสนามกีฬา &nbsp;&nbsp;</Typography>
+                  <SportsSoccerIcon sx={{ fontSize: 50, color: '#ffffff' }} />
+                </Button>
+              </Grid>
+              <Grid item xs={3} >
+                <Button
+                  variant="contained"
+                  fullWidth
+                  className={classes.button}
+                  component={RouterLink}
+                  to="/HistoryEvent"
+                >
+                  <Typography variant="body1"> ตารางกิจกรรม &nbsp;&nbsp;</Typography>
+                  <SportsMartialArtsIcon sx={{ fontSize: 50, color: '#ffffff' }} />
+                </Button>
+              </Grid>
+              </Grid>
 
 
-          <Button
-            variant="contained"
-            className={classes.button2}
-            component={RouterLink}
-            to="/BorrowingforMember"
-          >
-            <Typography variant="body1"> ประวัติการยืมอุปกรณ์ &nbsp;&nbsp;</Typography>
-            <SportsTennisIcon sx={{ fontSize: 35 , color : '#ffffff' }}/>
-          </Button>
-          
-          <Button
-            variant="contained"
-            className={classes.button2}
-            component={RouterLink}
-            to="/PaymentforMember"
-          >
-            <Typography variant="body1"> ประวัติการชำระค่าบริการ &nbsp;&nbsp;</Typography>
-            <PaymentIcon sx={{ fontSize: 35 , color : '#ffffff' }}/>
-          </Button>
-          
-        
-        
-      </Grid>
 
 
-      <Grid item xs={6}></Grid>
-        
-      </Grid>
-       
+              <Button
+                variant="contained"
+                fullWidth
+                className={classes.button2}
+                component={RouterLink}
+                to="/HistoryReserve"
+              >
+                <Typography variant="body1"> ประวัติการจองสนามกีฬา &nbsp;&nbsp;</Typography>
+                <SportsSoccerIcon sx={{ fontSize: 35, color: '#ffffff' }} />
+              </Button>
+
+              <Button
+                variant="contained"
+                fullWidth
+                className={classes.button2}
+                component={RouterLink}
+                to="/UserEquipment"
+              >
+                <Typography variant="body1"> อุปกรณ์สำหรับการยืม &nbsp;&nbsp;</Typography>
+                <SportsBasketballIcon sx={{ fontSize: 35, color: '#ffffff' }} />
+              </Button>
+
+
+              <Button
+                variant="contained"
+                fullWidth
+                className={classes.button2}
+                component={RouterLink}
+                to="/BorrowingforMember"
+              >
+                <Typography variant="body1"> ประวัติการยืมอุปกรณ์ &nbsp;&nbsp;</Typography>
+                <SportsTennisIcon sx={{ fontSize: 35, color: '#ffffff' }} />
+              </Button>
+
+              <Button
+                variant="contained"
+                fullWidth
+                className={classes.button2}
+                component={RouterLink}
+                to="/HistoryFacilityForMember"
+              >
+                <Typography variant="body1"> ข้อมูลสิทธิประโยชน์สำหรับสมาชิก &nbsp;&nbsp;</Typography>
+                <AssignmentIcon sx={{ fontSize: 35, color: '#ffffff' }} />
+              </Button>
+
+              <Button
+                variant="contained"
+                fullWidth
+                className={classes.button2}
+                component={RouterLink}
+                to="/PaymentforMember"
+              >
+                <Typography variant="body1"> ประวัติการชำระค่าบริการ &nbsp;&nbsp;</Typography>
+                <PaymentIcon sx={{ fontSize: 35, color: '#ffffff' }} />
+              </Button>
+
+
+
+            </Grid>
+          </Grid>
+        </Box>
+
 
       </Container>
 
+    </div>
+  );
 
-     
-      </div>
-    );
-  
 }
 
