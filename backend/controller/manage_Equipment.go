@@ -52,7 +52,7 @@ func InputEquipment(c *gin.Context) {
 	equip := entity.Equipment{
 		Name:      Equipment.Name,
 		Quantity:  Equipment.Quantity,
-		InputDate: Equipment.InputDate,
+		InputDate: Equipment.InputDate.Local(),
 
 		SportType: SportType,
 		Company:   Company,
@@ -130,6 +130,8 @@ func ListSportType(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": SportType})
 }
 
+
+// DELETE /equipment
 func DeleteEquipment(c *gin.Context) {
 	id := c.Param("id")
 	if tx := entity.DB().Exec("DELETE FROM equipment WHERE id = ?", id); tx.RowsAffected == 0 {
