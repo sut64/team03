@@ -32,14 +32,14 @@ const useStyles = makeStyles((theme: Theme) =>
     button: {
       background: '#DF1B3F',
       color: '#ffffff',
-      height: '27ch',
+      height: '24ch',
       margin: theme.spacing(0.8),
     },
 
     button2: {
       background: '#DF1B3F',
       color: '#ffffff',
-      height: '7ch',
+      height: '6.1ch',
       margin: theme.spacing(0.8),
     },
   }),
@@ -58,7 +58,8 @@ export default function Home() {
           <Grid container spacing={2} columns={16} >
             <Grid item xs={10} >
               <Box >
-                <img src={require('./image/health-fitness-tips-weight.jfif')} width="100%" height="550" />
+                <br/><br/><br/>
+                <img src={require('./image/health-fitness-tips-weight.jfif')} width="100%" height="482" />
               </Box>
             </Grid>
             <Grid item xs={6} >
