@@ -12,6 +12,7 @@ export interface PaymentInterface {
     Bill: string,
 	Discount: number,
 	Total:  number,
+	Note:	string,
 	AddedTime:  Date,
     FacilityID: number,
     Facility:   FacilityInterface

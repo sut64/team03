@@ -23,6 +23,7 @@ func main() {
 			protected.GET("/listfacility", controller.ListFacility)
 			protected.GET("/listpaymentbyuser/:id", controller.GetPaymentforMember)
 			protected.POST("/paymentcreate", controller.CreatePayment)
+			protected.DELETE("/DeletePayment/:id", controller.DeletePayment)
 
 			protected.GET("/users", controller.ListUserMember)
 			protected.GET("/package", controller.ListPackage)

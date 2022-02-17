@@ -171,10 +171,10 @@ function PaymentMember() {
                 <TableCell align="center" width="15%">
                   สมาชิก
                 </TableCell>
-                <TableCell align="center" width="15%">
+                <TableCell align="center" width="10%">
                   เลขที่ใบเสร็จ
                 </TableCell>
-                <TableCell align="center" width="15%">
+                <TableCell align="center" width="10%">
                   รายการจ่าย
                 </TableCell>
                 <TableCell align="center" width="10%">
@@ -185,6 +185,9 @@ function PaymentMember() {
                 </TableCell>
                 <TableCell align="center" width="15%">
                   ช่องทางการชำระเงิน
+                </TableCell>
+                <TableCell align="center" width="10%">
+                  หมายเหตุ
                 </TableCell>
                 <TableCell align="center" width="15%">
                   วันที่และเวลา
@@ -201,6 +204,7 @@ function PaymentMember() {
                   <TableCell align="center">{item.Discount}</TableCell>
                   <TableCell align="center">{item.Total}</TableCell>
                   <TableCell align="center">{item.PaymentMethod.Name}</TableCell>
+                  <TableCell align="center">{item.Note}</TableCell>
                   <TableCell align="center">{format((new Date(item.AddedTime)), 'dd MMMM yyyy hh:mm a')}</TableCell>
                 </TableRow>
               ))}
