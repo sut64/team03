@@ -25,10 +25,15 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       marginTop: theme.spacing(2),
-      minWidth: 1400,
+      
     },
+
+    paper: {
+      padding: theme.spacing(3)
+    },
+
     table: {
-      minWidth: 1000,
+      minWidth: 650,
     },
 
     tablehead: {
@@ -39,7 +44,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     button: {
-      
       margin: theme.spacing(2),
       background: '#DF1B3F',
       color: '#ffffff',
@@ -48,9 +52,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: 20,
     },
 
-    color:{
-      background: 'linear-gradient(45deg, #F38D98 30%, #E0BBE4 90%)',
-  },
+    color: {background: 'linear-gradient(45deg, #F38D98 30%, #E0BBE4 90%)'},
   })
 );
 
@@ -134,7 +136,7 @@ function Equipment() {
 
   return (
     <div>
-      <Container className={classes.container} maxWidth="md">
+      <Container className={classes.container} maxWidth="lg">
         <Box display="flex">
           <Box flexGrow={1}>
 
