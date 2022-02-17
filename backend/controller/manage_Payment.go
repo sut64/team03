@@ -64,7 +64,7 @@ func CreatePayment(c *gin.Context) {
 	}
 
 	//check Discount ต้องน้อยกว่าหรือเท่ากับค่า Price
-	if tx := entity.DB().Raw("SELECT * from facilities WHERE id=? AND price > ?", payment.FacilityID, payment.Discount).First(&facility); tx.RowsAffected == 0 {
+	if tx := entity.DB().Raw("SELECT * from facilities WHERE id=? AND price >= ?", payment.FacilityID, payment.Discount).First(&facility); tx.RowsAffected == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "ส่วนลดต้องน้อยกว่าหรือเท่ากับค่าบริการ"})
 		return
 	}
