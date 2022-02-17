@@ -144,7 +144,7 @@ export default function HistoryFacility() {
                   Price
                 </TableCell>
                 <TableCell align="center" width="10%">
-                  ลบอุปกรณ์
+                  ลบรายการ
                 </TableCell>
                 
               </TableRow>
