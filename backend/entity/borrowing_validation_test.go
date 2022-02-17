@@ -17,7 +17,7 @@ func TestBorrowingPass(t *testing.T) {
 		Borrowtime: time.Now().Add(-30 * time.Second),
 		Comment:    "-",
 		Quantity:   1,
-		Contact:    "0908208456",
+		Contact:    "0987654321",
 	}
 	// ตรวจสอบด้วย govalidator
 	ok, err := govalidator.ValidateStruct(borrowing)
@@ -60,36 +60,37 @@ func TestContactFormat(t *testing.T) {
 	fixtures := []string{
 		"abc",
 		"098546a200",
-		"08836645678",  // มี 11 ตัว
+		"08836645678", // มี 11 ตัว
 		"088366456",   // มี 9 ตัว
 		"0358795564",  // ไม่ขึ้นด้วย 06-08-09
+		"0a55884569",  // มีตัวอักษร
 
 	}
 
 	for _, fixture := range fixtures {
-	borrowing := Borrowing{
+		borrowing := Borrowing{
 
-		Borrowtime: time.Now().Add(-30 * time.Second),
-		Comment:    "-",
-		Quantity:   10,
-		Contact:    fixture, //ผิด
-	}
+			Borrowtime: time.Now().Add(-30 * time.Second),
+			Comment:    "-",
+			Quantity:   10,
+			Contact:    fixture, //ผิด
+		}
 
-	// ตรวจสอบด้วย govalidator
-	ok, err := govalidator.ValidateStruct(borrowing)
+		// ตรวจสอบด้วย govalidator
+		ok, err := govalidator.ValidateStruct(borrowing)
 
-	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
-	g.Expect(ok).ToNot(BeTrue())
+		// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+		g.Expect(ok).ToNot(BeTrue())
 
-	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
-	g.Expect(err).ToNot(BeNil())
+		// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+		g.Expect(err).ToNot(BeNil())
 
-	// err.Error ต้องมี error message แสดงออกมา	
-	if err.Error() == "กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง" {
-		g.Expect(err.Error()).To(Equal("กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง"))
-	} else if err.Error() == "เบอร์โทรศัพท์ต้องขึ้นต้นด้วย 06|08|09" {
-		g.Expect(err.Error()).To(Equal("เบอร์โทรศัพท์ต้องขึ้นต้นด้วย 06|08|09"))
-	}
+		// err.Error ต้องมี error message แสดงออกมา
+		if err.Error() == "กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง" {
+			g.Expect(err.Error()).To(Equal("กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง"))
+		} else if err.Error() == "เบอร์โทรศัพท์ต้องขึ้นต้นด้วย 06|08|09" {
+			g.Expect(err.Error()).To(Equal("เบอร์โทรศัพท์ต้องขึ้นต้นด้วย 06|08|09"))
+		}
 
 	}
 }
@@ -102,7 +103,7 @@ func TestBorrowtimeMustBePast(t *testing.T) {
 		Borrowtime: time.Now().Add(24 * time.Hour), //ผิด
 		Comment:    "-",
 		Quantity:   10,
-		Contact:    "0908208456",
+		Contact:    "0987654321",
 	}
 
 	// ตรวจสอบด้วย govalidator
@@ -118,6 +119,29 @@ func TestBorrowtimeMustBePast(t *testing.T) {
 	g.Expect(err.Error()).To(Equal("ไม่สามารถกรอกเวลาในอนาคต"))
 }
 
+func TestBorrowtimeNotBlank(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	borrowing := Borrowing{
+
+		// Borrowtime: time.Now(), ผิด
+		Comment:  "-",
+		Quantity: 2,
+		Contact:  "0987654321",
+	}
+
+	// ตรวจสอบด้วย govalidator
+	ok, err := govalidator.ValidateStruct(borrowing)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("กรุณากรอกวันที่-เวลา"))
+}
 
 func TestQuantityisPositiveInt(t *testing.T) {
 	g := NewGomegaWithT(t)
@@ -126,8 +150,8 @@ func TestQuantityisPositiveInt(t *testing.T) {
 
 		Borrowtime: time.Now().Add(-30 * time.Second),
 		Comment:    "-",
-		Quantity:   -10,
-		Contact: "0908208456",
+		Quantity:   -10, //ผิด
+		Contact:    "0987654321",
 	}
 
 	// ตรวจสอบด้วย govalidator
@@ -150,8 +174,8 @@ func TestQuantityNotZero(t *testing.T) {
 
 		Borrowtime: time.Now().Add(-30 * time.Second),
 		Comment:    "-",
-		Quantity:   0,
-		Contact: "0908208456",
+		Quantity:   0, //ผิด
+		Contact:    "0987654321",
 	}
 
 	// ตรวจสอบด้วย govalidator
@@ -162,7 +186,7 @@ func TestQuantityNotZero(t *testing.T) {
 
 	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
 	g.Expect(err).ToNot(BeNil())
-	
+
 	// err.Error ต้องมี error message แสดงออกมา
 	g.Expect(err.Error()).To(Equal("จำนวนอุปกรณ์ไม่สามารถเป็นศูนย์"))
 }
