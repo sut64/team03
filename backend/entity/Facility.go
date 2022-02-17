@@ -20,7 +20,7 @@ type Facility struct {
 	UserID *uint
 	User   User
 
-	No          string    `valid:"matches(^[A]\\d{6}$)"`
+	No          string    `gorm:"uniqueIndex" valid:"matches(^[A]\\d{6}$)~หมายเลขรายการต้องขึ้นต้นด้วย A ตามด้วยตัวเลข 6 หลัก"`
 	PackageTime time.Time `valid:"notpast~PackageTime must not be in the past"`
 	Price       int       `valid:"uint~Price must be uint"`
 	Confirm     bool

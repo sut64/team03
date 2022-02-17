@@ -1,7 +1,6 @@
 package entity
 
 import (
-	"fmt"
 	"testing"
 	"time"
 
@@ -35,6 +34,8 @@ func TestNoMustBeInValidPattern(t *testing.T) {
 
 	fixtures := []string{
 		"A0000000",
+		"B0000000",
+		"BBS000123",
 	}
 
 	for _, fixture := range fixtures {
@@ -54,7 +55,7 @@ func TestNoMustBeInValidPattern(t *testing.T) {
 		g.Expect(err).ToNot(BeNil())
 
 		// err.Error ต้องมี error message แสดงออกมา
-		g.Expect(err.Error()).To(Equal(fmt.Sprintf(`No: %s does not validate as matches(^[A]\d{6}$)`, fixture)))
+		g.Expect(err.Error()).To(Equal("หมายเลขรายการต้องขึ้นต้นด้วย A ตามด้วยตัวเลข 6 หลัก"))
 	}
 }
 

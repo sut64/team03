@@ -18,6 +18,7 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Collapse from '@material-ui/core/Collapse';
 import { format } from 'date-fns'
 import { FacilityInterface } from "../model/FacilityUI";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 const useStyles = makeStyles((theme: Theme) => 
@@ -37,6 +38,9 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function HistoryFacility() {
     const classes = useStyles();
     const [Facility, setFacility] = useState<FacilityInterface[]>([]);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
+    const [ErrorMessage, setErrorMessage] = React.useState("");
   
     const getFacility = async() => {
       const apiUrl = "http://localhost:8080/getfacility";
@@ -62,6 +66,32 @@ export default function HistoryFacility() {
     useEffect(() => {
       getFacility();
     }, []);
+
+    const DeleteFacility = async (id: string | number | undefined) => {
+      const apiUrl = "http://localhost:8080/DeleteFacility";
+      const requestOptions = {
+        method: "DELETE",
+        headers: { 
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",},
+      };
+    
+      fetch(`${apiUrl}/${id}`, requestOptions)
+      .then((response) => response.json())
+      .then(
+        (res) => {
+          if (res.data) {
+            setSuccess(true)
+            setErrorMessage("")
+          } 
+          else { 
+            setErrorMessage(res.error)
+            setError(true)
+          }  
+          getFacility(); 
+        }
+      )
+    }
   
     return (
       <div>
@@ -101,17 +131,20 @@ export default function HistoryFacility() {
                 <TableCell align="center" width="10%">
                   หมายเลขรายการ
                 </TableCell>
-                <TableCell align="center" width="12%">
+                <TableCell align="center" width="15%">
                   Package
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="20%">
                   วันที่หมดอายุ
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="20%">
                   Trainer
                 </TableCell>
-                <TableCell align="center" width="12%">
+                <TableCell align="center" width="10%">
                   Price
+                </TableCell>
+                <TableCell align="center" width="10%">
+                  ลบอุปกรณ์
                 </TableCell>
                 
               </TableRow>
@@ -126,6 +159,11 @@ export default function HistoryFacility() {
                   <TableCell align="center">{format((new Date(item.PackageTime)), 'dd MMMM yyyy hh:mm a')}</TableCell>
                   <TableCell align="center">{item.Trainner.Name}</TableCell>
                   <TableCell align="center">{item.Price}</TableCell>
+                  <TableCell align="center">
+                  <IconButton aria-label="delete" onClick={() => DeleteFacility(item.ID)} > <DeleteIcon /> </IconButton>
+
+                  </TableCell>
+                 
                  
                 </TableRow>
               ))}

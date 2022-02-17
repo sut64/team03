@@ -79,16 +79,7 @@ export default function HistoryFacilityForMember() {
               ข้อมูลสิทธิประโยชน์สำหรับสมาชิก
             </Typography>
           </Box>
-          <Box>
-            <Button
-              component={RouterLink}
-              to="/CreateFacility"
-              variant="contained"
-              color="primary"
-            >
-              สร้างข้อมูล
-            </Button>
-          </Box>
+          
         </Box>
         <TableContainer component={Paper} className={classes.tableSpace}>
           <Table className={classes.table} aria-label="simple table">
@@ -98,19 +89,19 @@ export default function HistoryFacilityForMember() {
                 <TableCell align="center" width="10%">
                   สมาชิก
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="20%">
                   หมายเลขรายการ
                 </TableCell>
                 <TableCell align="center" width="12%">
                   Package
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="25%">
                   วันที่หมดอายุ
                 </TableCell>
-                <TableCell align="center" width="10%">
+                <TableCell align="center" width="20%">
                   Trainer
                 </TableCell>
-                <TableCell align="center" width="12%">
+                <TableCell align="center" width="8%">
                   Price
                 </TableCell>
                 

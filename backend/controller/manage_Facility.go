@@ -91,6 +91,18 @@ func ListFacilityForMember(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": Facility})
 }
 
+
+// DELETE /equipment
+func DeleteFacility(c *gin.Context) {
+	id := c.Param("id")
+	if tx := entity.DB().Exec("DELETE FROM facilities WHERE id = ?", id); tx.RowsAffected == 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "facilities not found"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": id})
+}
+
 //-----------------reserve
 func ListFacilityZone(c *gin.Context) {
 	var Facility []entity.Facility

@@ -31,6 +31,7 @@ func main() {
 			protected.POST("/facilitycreate", controller.CreateFacility)
 			protected.GET("/getfacility", controller.ListFacility)
 			protected.GET("/getfacilityformember/:UserID", controller.ListFacilityForMember)
+			protected.DELETE("/DeleteFacility/:id", controller.DeleteFacility)
 
 			protected.GET("/ListTrainner", controller.ListTrainner)
 			protected.GET("/ListTypeEvent", controller.ListTypeEvent)
