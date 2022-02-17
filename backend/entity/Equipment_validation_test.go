@@ -96,7 +96,7 @@ func TestQuantityRange(t *testing.T) {
 
 }
 
-func TestQuantityNotZeroOrBlank(t *testing.T) {
+func TestQuantityNotBeZero(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	Equipment := Equipment{
