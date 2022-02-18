@@ -7,45 +7,30 @@
     "id": "8aecf40a-4db3-4bdd-b8a8-1e8210e6d691",
     "name": "B6210236 - บันทึกข้อมูล Borrowing สำเร็จ",
     "commands": [{
-      "id": "6f316547-e296-46c6-aac6-e6a9f2de17dd",
+      "id": "8422ba2d-af81-45e9-894b-4bfd6cfa46e8",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
       "targets": [],
       "value": ""
     }, {
-      "id": "8ba3efbc-4aeb-4338-ad8a-baebbb81f78c",
+      "id": "bf259b58-1757-49d3-aa19-6e5057db3935",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1552x840",
+      "target": "1536x824",
       "targets": [],
       "value": ""
     }, {
-      "id": "b137bdcd-90b3-49a3-8a9c-8c18c466341d",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiButton-contained:nth-child(4) > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-contained:nth-child(4) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a[3]/span", "xpath:idRelative"],
-        ["xpath=//a[3]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "e206a2cc-94d4-4eb1-a581-ae16a6b6be4d",
+      "id": "e1a7ff45-01ce-45c3-9e11-db12e68736da",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiButton-contained:nth-child(4) > .MuiButton-label",
+      "target": "css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root",
       "targets": [
-        ["css=.MuiButton-contained:nth-child(4) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a[3]/span", "xpath:idRelative"],
-        ["xpath=//a[3]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
+        ["css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "e8a789d1-4549-4552-9f4f-8bd56c04141f",
+      "id": "45d587b9-1ea9-48a7-803e-d6542c7b6af0",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -57,7 +42,7 @@
       ],
       "value": ""
     }, {
-      "id": "5f14544c-5edf-4427-be65-0677854039c3",
+      "id": "c364aa02-7e3a-47e4-b2dc-1af7b97a18bb",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -69,20 +54,7 @@
       ],
       "value": ""
     }, {
-      "id": "2a589fed-513a-4497-b5bd-8f9366c75642",
-      "comment": "",
-      "command": "addSelection",
-      "target": "name=EquipmentID",
-      "targets": [
-        ["name=EquipmentID", "name"],
-        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"]
-      ],
-      "value": "label=1. ลูกบาส1"
-    }, {
-      "id": "c96bb746-b0d3-49d0-8675-f5a379a3ebe2",
+      "id": "43be0e5f-5a9a-416c-b4be-8f6e6f124d09",
       "comment": "",
       "command": "click",
       "target": "name=CustomerBorrowID",
@@ -95,60 +67,27 @@
       ],
       "value": ""
     }, {
-      "id": "bedd8775-f62a-457f-85e2-cf2e62d24310",
+      "id": "a3364588-8b49-48a0-b9b9-dc2666e6a3e1",
       "comment": "",
       "command": "select",
       "target": "name=CustomerBorrowID",
       "targets": [],
       "value": "label=Member"
     }, {
-      "id": "f70aad91-4256-49db-b06b-7e5d7b1ca37d",
+      "id": "c7b2c5cf-f518-45c5-b0bf-c9e3c6e2cea5",
       "comment": "",
-      "command": "click",
-      "target": "id=Contact",
+      "command": "addSelection",
+      "target": "name=EquipmentID",
       "targets": [
-        ["id=Contact", "id"],
-        ["css=#Contact", "css:finder"],
-        ["xpath=//input[@id='Contact']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "39a513b5-f40c-4eb7-b167-74413a104a30",
-      "comment": "",
-      "command": "type",
-      "target": "id=Contact",
-      "targets": [
-        ["id=Contact", "id"],
-        ["css=#Contact", "css:finder"],
-        ["xpath=//input[@id='Contact']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
-      ],
-      "value": "0658897412"
-    }, {
-      "id": "75bd97fb-b62c-4dcc-85bb-1f39674918f6",
-      "comment": "",
-      "command": "click",
-      "target": "name=BorrowStatusID",
-      "targets": [
-        ["name=BorrowStatusID", "name"],
+        ["name=EquipmentID", "name"],
         ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
-        ["xpath=//div[6]/form/div/select", "xpath:position"]
+        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
       ],
-      "value": ""
+      "value": "label=1. ลูกบาส1"
     }, {
-      "id": "c54b235d-1352-4274-9a5f-f1acbabfc3c8",
-      "comment": "",
-      "command": "select",
-      "target": "name=BorrowStatusID",
-      "targets": [],
-      "value": "label=กำลังยืม"
-    }, {
-      "id": "51a81714-4504-4b77-8af8-92e0a6c034a8",
+      "id": "bc9226bc-0fc0-4e86-bcbf-75364e0790be",
       "comment": "",
       "command": "type",
       "target": "id=Quantity",
@@ -161,7 +100,7 @@
       ],
       "value": "2"
     }, {
-      "id": "03964fca-e20b-4c42-a5f8-172f4916887f",
+      "id": "44fa5d02-dbf5-45ab-8633-94c0cfb30d8c",
       "comment": "",
       "command": "click",
       "target": "id=Quantity",
@@ -174,43 +113,92 @@
       ],
       "value": ""
     }, {
-      "id": "73219ee6-adfd-4487-99f8-8350d43847c9",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.makeStyles-button-45 > .MuiButton-label",
-      "targets": [
-        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "7e5157c8-b9df-408c-8762-4a51e78c1ae2",
+      "id": "f562f137-5698-4f34-9f44-63869228d119",
       "comment": "",
       "command": "click",
-      "target": "css=.makeStyles-button-45 > .MuiButton-label",
+      "target": "id=Contact",
       "targets": [
-        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+        ["id=Contact", "id"],
+        ["css=#Contact", "css:finder"],
+        ["xpath=//input[@id='Contact']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "c0eaaf36-8a34-48c4-93c8-c471199a4b4b",
+      "id": "6f858ed9-3954-4ca9-ba28-7dd3f65f35ad",
+      "comment": "",
+      "command": "type",
+      "target": "id=Contact",
+      "targets": [
+        ["id=Contact", "id"],
+        ["css=#Contact", "css:finder"],
+        ["xpath=//input[@id='Contact']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
+      ],
+      "value": "0987776543"
+    }, {
+      "id": "407fbecc-febb-464d-8e8c-640edddfa277",
+      "comment": "",
+      "command": "click",
+      "target": "name=BorrowStatusID",
+      "targets": [
+        ["name=BorrowStatusID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
+        ["xpath=//div[6]/form/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c6593e8-9553-42fb-9df9-50be00f266b9",
+      "comment": "",
+      "command": "select",
+      "target": "name=BorrowStatusID",
+      "targets": [],
+      "value": "label=กำลังยืม"
+    }, {
+      "id": "4a464995-ef89-492d-a40c-f371d30fe40e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.makeStyles-button-45",
+      "targets": [
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7871809c-dd0e-4f59-8f33-8fbbefbe8786",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-button-45",
+      "targets": [
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "186c8740-aa7b-469f-85b1-4dabf5f425bb",
       "comment": "",
       "command": "mouseOut",
-      "target": "css=.makeStyles-button-45 > .MuiButton-label",
+      "target": "css=.makeStyles-button-45",
       "targets": [
-        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "762ddcac-911d-4cf7-aa7b-064ebe92fa13",
+      "id": "f8ac7cce-b795-41aa-a3db-20bf47ed4bc8",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -221,7 +209,7 @@
       ],
       "value": ""
     }, {
-      "id": "86b74453-f92b-46bf-9ba7-01a5ce03e412",
+      "id": "555df24d-0984-496f-a484-ffe280c82388",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -236,45 +224,30 @@
     "id": "a6acfb09-b590-4fb4-86ac-e9e691399883",
     "name": "B6210236 - ตรวจสอบข้อมูลContact เบอร์โทรศัพท์เป็นเลข10หลัก",
     "commands": [{
-      "id": "0e8f194f-644e-424f-ad03-bd57866b6c34",
+      "id": "45cb407b-6add-48c6-ae92-8275c3d50fe0",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
       "targets": [],
       "value": ""
     }, {
-      "id": "a0a1a699-b022-43d7-8d5d-7d617e0433cb",
+      "id": "73a8cdce-d90a-4a7d-a985-d79e361c6ba0",
       "comment": "",
       "command": "setWindowSize",
       "target": "1552x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "05098ac7-2274-4f02-9afc-4c745ad84996",
+      "id": "03c54e3a-2110-4f7c-ae0a-91f0fe6a14e2",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiButton-contained:nth-child(4) > .MuiButton-label",
+      "target": "css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root",
       "targets": [
-        ["css=.MuiButton-contained:nth-child(4) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a[3]/span", "xpath:idRelative"],
-        ["xpath=//a[3]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
+        ["css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "0467ca3a-b204-4362-9fb1-2d93dfc97fd7",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiButton-contained > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[4]/a/span", "xpath:idRelative"],
-        ["xpath=//a/span", "xpath:position"],
-        ["xpath=//span[contains(.,'ยืมอุปกรณ์')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "444abdad-a82a-4c85-93f5-8f14ca2cdb03",
+      "id": "c9994c0c-6933-453e-9911-5d3355e59f12",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -286,20 +259,7 @@
       ],
       "value": ""
     }, {
-      "id": "8f01a513-79fe-4710-8430-334e7170f72a",
-      "comment": "",
-      "command": "addSelection",
-      "target": "name=EquipmentID",
-      "targets": [
-        ["name=EquipmentID", "name"],
-        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"]
-      ],
-      "value": "label=2. ลูกขนไก่1"
-    }, {
-      "id": "1b7e8f31-2495-44b0-8595-82b81238e718",
+      "id": "2ddb5760-adcf-4a11-80a2-f7b3a6483e6b",
       "comment": "",
       "command": "click",
       "target": "name=CustomerBorrowID",
@@ -312,14 +272,53 @@
       ],
       "value": ""
     }, {
-      "id": "7ad88b38-eb1f-499c-8b8e-95ae1334cb58",
+      "id": "fcab8d7c-eef6-4dc5-8b19-52dab50996fb",
       "comment": "",
       "command": "select",
       "target": "name=CustomerBorrowID",
       "targets": [],
       "value": "label=Member"
     }, {
-      "id": "31e80466-9f07-4ba2-b68e-b9ec73d40f49",
+      "id": "a8ca1b9c-477d-45bd-9650-d61be3fb6d3b",
+      "comment": "",
+      "command": "addSelection",
+      "target": "name=EquipmentID",
+      "targets": [
+        ["name=EquipmentID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "label=1. ลูกบาส1"
+    }, {
+      "id": "68354892-0cca-4000-928c-7de5466e2158",
+      "comment": "",
+      "command": "type",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "8697c4be-f040-4000-82f3-0ee1649d4c93",
+      "comment": "",
+      "command": "click",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1cc20f5-659f-4bbb-bbb7-8cfaa84042be",
       "comment": "",
       "command": "click",
       "target": "id=Contact",
@@ -332,7 +331,7 @@
       ],
       "value": ""
     }, {
-      "id": "e34e1857-6718-43ad-b2c3-ae6f70536547",
+      "id": "c95cf06e-9167-4c3b-bd69-964e46b81e69",
       "comment": "",
       "command": "type",
       "target": "id=Contact",
@@ -343,9 +342,9 @@
         ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
       ],
-      "value": "09588746"
+      "value": "0887665"
     }, {
-      "id": "cbbf184d-ca14-403c-8413-d06893d7648d",
+      "id": "000d39aa-a3a3-4a4b-a5b3-bff5956b8ea7",
       "comment": "",
       "command": "click",
       "target": "name=BorrowStatusID",
@@ -358,14 +357,14 @@
       ],
       "value": ""
     }, {
-      "id": "638b1c55-3215-42a3-8a55-c230bf522441",
+      "id": "6ad7ec01-27cf-4a76-8aae-8f80b6ccc6be",
       "comment": "",
       "command": "select",
       "target": "name=BorrowStatusID",
       "targets": [],
       "value": "label=กำลังยืม"
     }, {
-      "id": "9e15592e-ed63-450d-ae88-2a36ce19353c",
+      "id": "931f2198-b6b2-4079-9406-1444c05a0c01",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -377,7 +376,7 @@
       ],
       "value": ""
     }, {
-      "id": "d2df49a3-bc64-47eb-9c80-d5352e3853b2",
+      "id": "cabafd9e-891d-457f-bcfe-62311968f8b4",
       "comment": "",
       "command": "click",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -389,7 +388,7 @@
       ],
       "value": ""
     }, {
-      "id": "782779f1-4afc-46df-9259-2f27b31d29e4",
+      "id": "482c34f4-fd73-4c7a-8c10-2decbde9bf50",
       "comment": "",
       "command": "mouseOut",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -401,7 +400,7 @@
       ],
       "value": ""
     }, {
-      "id": "6f5eed73-ab24-418b-95f8-44f97878b11d",
+      "id": "a902cb95-9988-4ac9-aec9-8ed928853ed8",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -412,7 +411,7 @@
       ],
       "value": ""
     }, {
-      "id": "7ec7d2c3-503e-4ded-8d8a-0a38dace87c6",
+      "id": "bd23dfb9-3f48-412d-b2fa-e3f39996547c",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -427,33 +426,47 @@
     "id": "77a166de-b4d7-4376-b87d-49ecf51a9418",
     "name": "B6210236 - ตรวจสอบข้อมูลContact ต้องขึ้นต้นด้วย 06หรือ08หรือ09",
     "commands": [{
-      "id": "2bb6d003-0563-4821-a78a-0e9c60445f8a",
+      "id": "b28d4d24-ff16-4717-8dd8-a3a5cb50017e",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
       "targets": [],
       "value": ""
     }, {
-      "id": "2bc9d4a4-7874-4af8-a10d-de384c4c6a0d",
+      "id": "6fa556bd-537c-4506-b6b9-9dce6e0e8c3d",
       "comment": "",
       "command": "setWindowSize",
       "target": "1552x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "7062751b-596c-4733-a180-d49102f0abea",
+      "id": "9a42bde9-3fd3-45ab-9e98-cbd13683c40a",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiButtonBase-root:nth-child(4) .MuiTypography-root",
+      "target": "linkText=ประวัติการยืมอุปกรณ์",
       "targets": [
-        ["css=.MuiButtonBase-root:nth-child(4) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a[3]/span/p", "xpath:idRelative"],
-        ["xpath=//a[3]/span/p", "xpath:position"],
-        ["xpath=//p[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
+        ["linkText=ประวัติการยืมอุปกรณ์", "linkText"],
+        ["css=.MuiButton-contained:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Borrowing')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "996ca949-bbc3-4685-860b-9fe1ac7c59af",
+      "id": "28375f91-9363-4dfc-90b2-cbdacbb876f4",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[4]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'ยืมอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "20e97183-2f7e-455f-b324-a1dac7059556",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -465,20 +478,7 @@
       ],
       "value": ""
     }, {
-      "id": "999e214f-b79c-4203-a4d8-95a7b352a38b",
-      "comment": "",
-      "command": "addSelection",
-      "target": "name=EquipmentID",
-      "targets": [
-        ["name=EquipmentID", "name"],
-        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"]
-      ],
-      "value": "label=2. ลูกขนไก่1"
-    }, {
-      "id": "9cb39baa-f080-47a6-a4dc-d43ff83c4472",
+      "id": "bf179ba7-7ed9-4965-b7ab-2841f6692096",
       "comment": "",
       "command": "click",
       "target": "name=CustomerBorrowID",
@@ -491,14 +491,53 @@
       ],
       "value": ""
     }, {
-      "id": "20f529f7-4532-4397-af1a-d62d5e598ed4",
+      "id": "fa2227f2-e744-490b-9eb8-f39ef7113bdb",
       "comment": "",
       "command": "select",
       "target": "name=CustomerBorrowID",
       "targets": [],
       "value": "label=Member"
     }, {
-      "id": "b510f4cf-9bb6-419b-ba36-92a44e750609",
+      "id": "181d78b6-2c2d-4331-bcdd-eec558316f2b",
+      "comment": "",
+      "command": "addSelection",
+      "target": "name=EquipmentID",
+      "targets": [
+        ["name=EquipmentID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "label=1. ลูกบาส1"
+    }, {
+      "id": "99aec756-5586-4ca8-8092-cc91753e0312",
+      "comment": "",
+      "command": "type",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "c82f31b6-0667-4415-9f87-f9fa54b3cc90",
+      "comment": "",
+      "command": "click",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d349108f-97cc-44ca-9243-fccb549bf826",
       "comment": "",
       "command": "click",
       "target": "id=Contact",
@@ -511,7 +550,7 @@
       ],
       "value": ""
     }, {
-      "id": "23a1fe19-ff15-4b53-8f97-d9a4e48fe81e",
+      "id": "05624af7-5bd2-4645-975f-4ab3443608cd",
       "comment": "",
       "command": "type",
       "target": "id=Contact",
@@ -522,9 +561,31 @@
         ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
       ],
-      "value": "0085697741"
+      "value": "0087776543"
     }, {
-      "id": "ab63eacb-a13e-4cc9-af5a-c7d3ddd796fe",
+      "id": "02028be4-8d70-4e74-9e4d-d63f9e839004",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-grid-xs-12:nth-child(6)",
+      "targets": [
+        ["css=.MuiGrid-grid-xs-12:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]", "xpath:idRelative"],
+        ["xpath=//div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b3a96c1-b404-4184-9492-f05710bc1926",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-root:nth-child(6) .MuiInputBase-root",
+      "targets": [
+        ["css=.MuiGrid-root:nth-child(6) .MuiInputBase-root", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div", "xpath:idRelative"],
+        ["xpath=//div[6]/form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e126e3d4-aa19-4991-a351-18e59a4a4f3a",
       "comment": "",
       "command": "click",
       "target": "name=BorrowStatusID",
@@ -537,14 +598,14 @@
       ],
       "value": ""
     }, {
-      "id": "6b3bc6fd-6864-4066-ab23-cbdc53601059",
+      "id": "6b0d541e-9895-47f4-ad63-652b06a4880a",
       "comment": "",
       "command": "select",
       "target": "name=BorrowStatusID",
       "targets": [],
       "value": "label=กำลังยืม"
     }, {
-      "id": "c153c40b-08e9-4cfb-a34b-1c87df267c2d",
+      "id": "a8a72ee4-1584-4742-8fd9-be7640250363",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -556,7 +617,7 @@
       ],
       "value": ""
     }, {
-      "id": "bb43d04f-9f71-4ac5-bef1-2cd5a81afba0",
+      "id": "d5ad593e-69bc-4fd6-b615-fb4d6c439e1e",
       "comment": "",
       "command": "click",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -568,7 +629,7 @@
       ],
       "value": ""
     }, {
-      "id": "4787fb60-5c4a-449a-9198-e950b58d2844",
+      "id": "d168edbb-a39c-4b8d-8890-69c9ff5707b4",
       "comment": "",
       "command": "mouseOut",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -580,7 +641,7 @@
       ],
       "value": ""
     }, {
-      "id": "50786f85-a28c-4618-b53d-65db9b7e2cad",
+      "id": "356fa929-55ff-4323-91aa-da0f73c4e0bb",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -591,7 +652,7 @@
       ],
       "value": ""
     }, {
-      "id": "c8d094ba-8dfc-4769-b88c-8caa75c03ff9",
+      "id": "b1e2cd11-b806-45d2-bfc8-04ae54bc52d9",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -606,45 +667,33 @@
     "id": "4f3f3a53-a24a-45bd-8b24-adcc8d7966e9",
     "name": "B6210236 - ตรวจสอบข้อมูลBorrowtime ไม่เป็นอนาคต",
     "commands": [{
-      "id": "28bb703b-99ac-41ca-a2ec-7768553e7c54",
+      "id": "4d08e9d9-0895-4f7a-8405-e0d29a113279",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
       "targets": [],
       "value": ""
     }, {
-      "id": "0350d6e8-4802-4dde-8c6f-b83fd09ee529",
+      "id": "36eaeb73-6399-413a-8a3a-91930b671d52",
       "comment": "",
       "command": "setWindowSize",
       "target": "1552x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "e66c47db-fa2c-4e75-9afb-4834e2e4fd5f",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiButton-contained:nth-child(4) > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-contained:nth-child(4) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a[3]/span", "xpath:idRelative"],
-        ["xpath=//a[3]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "26c41e01-9b5d-4afc-983b-2be513578b73",
+      "id": "347ee8f9-30ac-4585-b7ee-63fc91fa25df",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiButton-contained:nth-child(4) > .MuiButton-label",
+      "target": "css=.MuiButtonBase-root:nth-child(4) .MuiTypography-root",
       "targets": [
-        ["css=.MuiButton-contained:nth-child(4) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a[3]/span", "xpath:idRelative"],
-        ["xpath=//a[3]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
+        ["css=.MuiButtonBase-root:nth-child(4) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/a[3]/span/p", "xpath:idRelative"],
+        ["xpath=//a[3]/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "f92bba56-4169-4b49-8923-177d247a54cc",
+      "id": "d7fa03c6-f316-4d16-86d9-49018c1508fe",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -656,7 +705,7 @@
       ],
       "value": ""
     }, {
-      "id": "bb512144-4bbd-4262-a824-f9083469fe7e",
+      "id": "29c3e7d5-f89b-4893-9078-1a4acba0e66f",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -668,20 +717,7 @@
       ],
       "value": ""
     }, {
-      "id": "61c539e1-83d2-430c-8476-f136c5a11e44",
-      "comment": "",
-      "command": "addSelection",
-      "target": "name=EquipmentID",
-      "targets": [
-        ["name=EquipmentID", "name"],
-        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"]
-      ],
-      "value": "label=1. ลูกบาส1"
-    }, {
-      "id": "09254994-d7b1-4ca7-998c-4f18f0880c00",
+      "id": "dd419fa0-a63d-4aee-8dce-929130f177e1",
       "comment": "",
       "command": "click",
       "target": "name=CustomerBorrowID",
@@ -694,14 +730,53 @@
       ],
       "value": ""
     }, {
-      "id": "67764dec-161a-4ee3-ad86-6d350c887f07",
+      "id": "3e11e30d-b99b-473f-8970-3d8bb632915e",
       "comment": "",
       "command": "select",
       "target": "name=CustomerBorrowID",
       "targets": [],
-      "value": "label=Faii"
+      "value": "label=Member"
     }, {
-      "id": "d5f72b0e-2bff-488f-b5be-6acdfc621f9b",
+      "id": "87c46178-0ebb-45af-a3bc-35449fcae055",
+      "comment": "",
+      "command": "addSelection",
+      "target": "name=EquipmentID",
+      "targets": [
+        ["name=EquipmentID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "label=1. ลูกบาส1"
+    }, {
+      "id": "776360d3-9c77-4ebf-bb2a-94dc30ae527b",
+      "comment": "",
+      "command": "type",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "5cb78a03-9773-4d2e-9604-2155f0c4db55",
+      "comment": "",
+      "command": "click",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "350240ac-4dd8-41b7-8d31-ebaff59c0fa3",
       "comment": "",
       "command": "click",
       "target": "id=Contact",
@@ -714,7 +789,16 @@
       ],
       "value": ""
     }, {
-      "id": "a4ce3d04-ecee-471a-881b-517deca2082d",
+      "id": "0711aecf-1b9a-4cde-bac8-a6b6d3912f0b",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d09bf52-8383-4fa3-8a47-62b9aca3dded",
       "comment": "",
       "command": "type",
       "target": "id=Contact",
@@ -725,9 +809,92 @@
         ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
       ],
-      "value": "0998887456"
+      "value": "0987776543"
     }, {
-      "id": "6c0a7ca4-2751-43c8-91b3-0cbaed826e51",
+      "id": "c603ea38-1739-40ff-b7c7-bad0619963da",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbed30f4-9386-4199-8866-fe6148330f8c",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiInputAdornment-root path:nth-child(1)",
+      "targets": [
+        ["css=.MuiInputAdornment-root path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b49668d-263e-4c78-b68f-4e88dc069cab",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=div:nth-child(1) > .MuiButtonBase-root > .MuiButton-label > .MuiTypography-root",
+      "targets": [
+        ["css=div:nth-child(1) > .MuiButtonBase-root > .MuiButton-label > .MuiTypography-root", "css:finder"],
+        ["xpath=//h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'2022')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6661e81f-f476-4348-9b4a-cdcc93a236f9",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(1) > .MuiButtonBase-root > .MuiButton-label > .MuiTypography-root",
+      "targets": [
+        ["css=div:nth-child(1) > .MuiButtonBase-root > .MuiButton-label > .MuiTypography-root", "css:finder"],
+        ["xpath=//h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'2022')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0587e65a-9ea0-4c01-bd3b-5405918adf81",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.MuiButtonBase-root:nth-child(1) .MuiPickersToolbarText-toolbarBtnSelected",
+      "targets": [
+        ["css=.MuiButtonBase-root:nth-child(1) .MuiPickersToolbarText-toolbarBtnSelected", "css:finder"],
+        ["xpath=//h6", "xpath:position"],
+        ["xpath=//h6[contains(.,'2022')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f26c57f-6376-4982-86fc-c976750740cc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiTypography-root:nth-child(16)",
+      "targets": [
+        ["css=.MuiTypography-root:nth-child(16)", "css:finder"],
+        ["xpath=//div[16]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9feda16f-4464-4c12-bafd-1721a03444fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
+        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9c8fbde-b32a-4ace-929d-603a6813018f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-rightalign-47",
+      "targets": [
+        ["css=.makeStyles-rightalign-47", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]", "xpath:idRelative"],
+        ["xpath=//div[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f248dfb-950a-4b6c-a0ad-968edf53168c",
       "comment": "",
       "command": "click",
       "target": "name=BorrowStatusID",
@@ -740,85 +907,53 @@
       ],
       "value": ""
     }, {
-      "id": "24c95cc4-510e-4afe-b53f-025b93941707",
+      "id": "b14337eb-5a8c-4f9b-9c3a-176f113a5e5f",
       "comment": "",
       "command": "select",
       "target": "name=BorrowStatusID",
       "targets": [],
       "value": "label=กำลังยืม"
     }, {
-      "id": "377c5a35-bff5-40a0-bdf9-3b136d94e5e6",
+      "id": "6bb38eda-a88a-4560-b8ce-5624b7706035",
       "comment": "",
       "command": "mouseOver",
-      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "target": "css=.makeStyles-button-45",
       "targets": [
-        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "60901bcd-a6b8-4bd4-9fb1-bfe31cd0b7e7",
+      "id": "6468b36c-d2c7-486f-a616-20ddc274fabc",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "target": "css=.makeStyles-button-45",
       "targets": [
-        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "0daa6146-2b38-4b6b-9df6-2dd9c8f09a28",
+      "id": "74e63311-fda6-45b0-a346-fb9a435c2e11",
       "comment": "",
       "command": "mouseOut",
-      "target": "css=.MuiInputAdornment-root .MuiSvgIcon-root",
+      "target": "css=.makeStyles-button-45",
       "targets": [
-        ["css=.MuiInputAdornment-root .MuiSvgIcon-root", "css:finder"]
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "f26fde90-9d88-407d-95a0-25ec0bfc540e",
-      "comment": "",
-      "command": "click",
-      "target": "css=div:nth-child(1) > .MuiButtonBase-root > .MuiButton-label > .MuiTypography-root",
-      "targets": [
-        ["css=div:nth-child(1) > .MuiButtonBase-root > .MuiButton-label > .MuiTypography-root", "css:finder"],
-        ["xpath=//h6", "xpath:position"],
-        ["xpath=//h6[contains(.,'2022')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "06259523-56f5-4ef8-87fe-b725918442fe",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiTypography-root:nth-child(27)",
-      "targets": [
-        ["css=.MuiTypography-root:nth-child(27)", "css:finder"],
-        ["xpath=//div[27]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "d5049cc8-e1ef-46b8-8887-6a550c3c2564",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-textPrimary:nth-child(2) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[3]/div/div[2]/button[2]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'OK')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "c492596a-9143-489d-84e2-01ee646cce97",
-      "comment": "",
-      "command": "click",
-      "target": "css=.makeStyles-button-45 > .MuiButton-label",
-      "targets": [
-        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "fa20b291-46e9-4380-a00f-d64e4a8bad07",
+      "id": "5c4620c1-f51a-4530-a34e-0cbc0bd864ca",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -829,7 +964,7 @@
       ],
       "value": ""
     }, {
-      "id": "85bd78b9-ab92-4d77-9955-6a2d84354ba7",
+      "id": "af5968f8-775d-442d-9373-7a16418d6009",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -844,33 +979,33 @@
     "id": "388a86f4-2a01-46c6-96f1-667dc8263528",
     "name": "B6210236 - ตรวจสอบข้อมูลBorrowtime ไม่เป็นค่าว่าง",
     "commands": [{
-      "id": "cfafcce4-a7ca-467d-b00b-a381d346852e",
+      "id": "e6c1f11f-6ccc-4bf6-a853-bf60d0c515d2",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
       "targets": [],
       "value": ""
     }, {
-      "id": "93dad83d-9dd4-4773-ba42-e2d391c42e21",
+      "id": "4a3e39e7-e639-497b-99a8-5bd4d29fb9e6",
       "comment": "",
       "command": "setWindowSize",
       "target": "1552x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "3f5f4c96-d8c1-4fa1-934a-f8bbe9f30c8e",
+      "id": "8b1e795d-e1d4-4639-ae65-fa0be4e1ce62",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButtonBase-root:nth-child(4) .MuiTypography-root",
       "targets": [
         ["css=.MuiButtonBase-root:nth-child(4) .MuiTypography-root", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a[3]/span/p", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/a[3]/span/p", "xpath:idRelative"],
         ["xpath=//a[3]/span/p", "xpath:position"],
         ["xpath=//p[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "e6adb1f5-02e3-41f0-b98b-68f0000461e2",
+      "id": "e814bb82-3669-4bbf-99eb-d563bde09ef3",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -882,7 +1017,7 @@
       ],
       "value": ""
     }, {
-      "id": "1e55e073-f354-443e-9083-0b93daeff034",
+      "id": "edc528e1-8ae6-40ed-833e-77f4aa55dde7",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -894,42 +1029,7 @@
       ],
       "value": ""
     }, {
-      "id": "093acd5d-6086-4793-a481-94ae0b6a4207",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiContainer-root",
-      "targets": [
-        ["css=.MuiContainer-root", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div", "xpath:idRelative"],
-        ["xpath=//div[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "2bf73845-8444-4a2e-af22-0a6be2a24bf6",
-      "comment": "",
-      "command": "addSelection",
-      "target": "name=EquipmentID",
-      "targets": [
-        ["name=EquipmentID", "name"],
-        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"]
-      ],
-      "value": "label=2. ลูกขนไก่1"
-    }, {
-      "id": "884c1263-f6f8-4a0b-b99e-a6e253b0ee27",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiGrid-grid-xs-12:nth-child(1)",
-      "targets": [
-        ["css=.MuiGrid-grid-xs-12:nth-child(1)", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div", "xpath:idRelative"],
-        ["xpath=//div/div/div[2]/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "0aecfebf-b30e-4d77-a3d6-0d9083caf34b",
+      "id": "eb54738c-47c3-41ce-bc1c-1ba06cda7e52",
       "comment": "",
       "command": "click",
       "target": "name=CustomerBorrowID",
@@ -942,14 +1042,53 @@
       ],
       "value": ""
     }, {
-      "id": "72846084-d595-4d63-a415-b1c34344697d",
+      "id": "c6722dbe-a86f-4d5d-a4a9-002ef8a6e3e1",
       "comment": "",
       "command": "select",
       "target": "name=CustomerBorrowID",
       "targets": [],
       "value": "label=Member"
     }, {
-      "id": "49f059da-8b79-4193-a115-795de9d28140",
+      "id": "d1c46654-e703-43a5-92fe-acad04e5aefc",
+      "comment": "",
+      "command": "addSelection",
+      "target": "name=EquipmentID",
+      "targets": [
+        ["name=EquipmentID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "label=1. ลูกบาส1"
+    }, {
+      "id": "a446b03b-c10c-49c4-8b42-44c8bc041812",
+      "comment": "",
+      "command": "type",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "b9054074-4819-4661-858d-284c042035bb",
+      "comment": "",
+      "command": "click",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6037084c-a0b6-4663-9f3e-611cfa26c049",
       "comment": "",
       "command": "click",
       "target": "id=Contact",
@@ -962,7 +1101,7 @@
       ],
       "value": ""
     }, {
-      "id": "07e1e965-d865-420b-a939-ef1ecef4d0bf",
+      "id": "0100f1fe-293a-47f4-8b0a-216d1145141b",
       "comment": "",
       "command": "type",
       "target": "id=Contact",
@@ -973,29 +1112,9 @@
         ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
       ],
-      "value": "0658897451"
+      "value": "0987776543"
     }, {
-      "id": "298bbfe1-92e0-463e-b645-8e36eb688f9c",
-      "comment": "",
-      "command": "click",
-      "target": "name=BorrowStatusID",
-      "targets": [
-        ["name=BorrowStatusID", "name"],
-        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
-        ["xpath=//div[6]/form/div/select", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "13558210-d13e-4243-9d49-dfc71506e38a",
-      "comment": "",
-      "command": "select",
-      "target": "name=BorrowStatusID",
-      "targets": [],
-      "value": "label=กำลังยืม"
-    }, {
-      "id": "deb754a6-65f6-4175-99ca-9729d64cc641",
+      "id": "17c19cb7-b584-4008-8787-4c2d0611c7ad",
       "comment": "",
       "command": "click",
       "target": "css=.MuiGrid-spacing-xs-2",
@@ -1006,7 +1125,7 @@
       ],
       "value": ""
     }, {
-      "id": "76277784-886f-4dfa-aa76-bab598ecd25c",
+      "id": "fe818be2-2846-4762-be86-996d7bba2ada",
       "comment": "",
       "command": "type",
       "target": "id=Borrowtime",
@@ -1020,7 +1139,39 @@
       ],
       "value": ""
     }, {
-      "id": "93497844-1903-4ec9-93bc-76bd51622af0",
+      "id": "81e2eee7-1d5b-4525-9db9-04805fe43606",
+      "comment": "",
+      "command": "click",
+      "target": "name=BorrowStatusID",
+      "targets": [
+        ["name=BorrowStatusID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
+        ["xpath=//div[6]/form/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49796eca-4404-4753-897f-18263c15e8d6",
+      "comment": "",
+      "command": "select",
+      "target": "name=BorrowStatusID",
+      "targets": [],
+      "value": "label=กำลังยืม"
+    }, {
+      "id": "5ebb32b6-f3a2-4120-b25e-4a51c8bc157e",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.makeStyles-button-45 > .MuiButton-label",
+      "targets": [
+        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a130c785-9be7-41f9-9a6f-87c2bcbe2f8f",
       "comment": "",
       "command": "click",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -1032,7 +1183,19 @@
       ],
       "value": ""
     }, {
-      "id": "f166888a-ceed-4d83-84b7-177a181ad7d7",
+      "id": "8390d39f-66cd-4ae4-98a6-b47a76516663",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.makeStyles-button-45 > .MuiButton-label",
+      "targets": [
+        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e815cdc-f296-4a9c-a95b-413385fb3fd9",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1043,7 +1206,7 @@
       ],
       "value": ""
     }, {
-      "id": "07c1a83f-81ec-4bf3-a3e7-3a6f81338c9d",
+      "id": "0f696f31-6d34-414e-8de8-1d4b990852bb",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -1058,74 +1221,57 @@
     "id": "836543cc-49ad-4424-a6bc-b4cde72e8ab5",
     "name": "B6210236 - ตรวจสอบข้อมูลQuantity ค่าเป็นเลขไม่ติดลบ",
     "commands": [{
-      "id": "a370b7e8-9bf0-4cec-9d4f-6c38585e614a",
+      "id": "8fa5fb2f-5706-4b7a-b37f-db3c7f05ecae",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
       "targets": [],
       "value": ""
     }, {
-      "id": "474a9de1-86c3-4eaa-88c0-f196e17ae2a0",
+      "id": "3e911cad-b03c-4ce0-a5a1-eca954ab295d",
       "comment": "",
       "command": "setWindowSize",
       "target": "1552x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "f3ebb0d0-e285-4407-b6e4-fcec5cedd94d",
+      "id": "87cae9fa-4a9d-41ec-a945-2fceb9621d0f",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained:nth-child(4) > .MuiButton-label",
       "targets": [
         ["css=.MuiButton-contained:nth-child(4) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a[3]/span", "xpath:idRelative"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/a[3]/span", "xpath:idRelative"],
         ["xpath=//a[3]/span", "xpath:position"],
         ["xpath=//span[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "a60001c6-6d7e-46c0-a18e-2cf63de8fb27",
+      "id": "bf6da95a-cdae-4367-b37a-dd6c7730165c",
       "comment": "",
       "command": "mouseOver",
-      "target": "linkText=ยืมอุปกรณ์",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
       "targets": [
-        ["linkText=ยืมอุปกรณ์", "linkText"],
-        ["css=.MuiButton-contained", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[4]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/BorrowingCreate')]", "xpath:href"],
-        ["xpath=//a", "xpath:position"],
-        ["xpath=//a[contains(.,'ยืมอุปกรณ์')]", "xpath:innerText"]
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[4]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'ยืมอุปกรณ์')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "5c403ec9-7796-473f-b568-b7a98060a568",
+      "id": "d16bd447-6a7b-4b68-9276-ff038e55ee57",
       "comment": "",
       "command": "click",
-      "target": "linkText=ยืมอุปกรณ์",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
       "targets": [
-        ["linkText=ยืมอุปกรณ์", "linkText"],
-        ["css=.MuiButton-contained", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[4]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, '/BorrowingCreate')]", "xpath:href"],
-        ["xpath=//a", "xpath:position"],
-        ["xpath=//a[contains(.,'ยืมอุปกรณ์')]", "xpath:innerText"]
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[4]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'ยืมอุปกรณ์')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "3d068d78-6838-412b-8cad-e7a2c531b8b7",
-      "comment": "",
-      "command": "addSelection",
-      "target": "name=EquipmentID",
-      "targets": [
-        ["name=EquipmentID", "name"],
-        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"]
-      ],
-      "value": "label=3. ชุดว่ายน้ำ ชาย1"
-    }, {
-      "id": "856b683b-279d-44f4-92b7-6ea2620063cd",
+      "id": "dc73bbc3-93c5-479b-b674-51badc158250",
       "comment": "",
       "command": "click",
       "target": "name=CustomerBorrowID",
@@ -1138,60 +1284,27 @@
       ],
       "value": ""
     }, {
-      "id": "531426b1-f692-452e-9a1e-e4b7f0c8e771",
+      "id": "9fde3440-e35e-4d38-9a3c-56f2939c6481",
       "comment": "",
       "command": "select",
       "target": "name=CustomerBorrowID",
       "targets": [],
-      "value": "label=Faii"
+      "value": "label=Member"
     }, {
-      "id": "6c3ea110-167b-42ee-b4de-a7346dae105f",
+      "id": "084c8138-ba51-4b96-b06a-a00ce293dfee",
       "comment": "",
-      "command": "click",
-      "target": "id=Contact",
+      "command": "addSelection",
+      "target": "name=EquipmentID",
       "targets": [
-        ["id=Contact", "id"],
-        ["css=#Contact", "css:finder"],
-        ["xpath=//input[@id='Contact']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "6794c8eb-8b37-477e-8e75-2719310cf486",
-      "comment": "",
-      "command": "type",
-      "target": "id=Contact",
-      "targets": [
-        ["id=Contact", "id"],
-        ["css=#Contact", "css:finder"],
-        ["xpath=//input[@id='Contact']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
-      ],
-      "value": "0987774563"
-    }, {
-      "id": "d070d506-4203-4f92-bcc5-a2f88da20ca3",
-      "comment": "",
-      "command": "click",
-      "target": "name=BorrowStatusID",
-      "targets": [
-        ["name=BorrowStatusID", "name"],
+        ["name=EquipmentID", "name"],
         ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
-        ["xpath=//div[6]/form/div/select", "xpath:position"]
+        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
       ],
-      "value": ""
+      "value": "label=1. ลูกบาส1"
     }, {
-      "id": "01f76344-e3d5-4f25-a67f-7f28a3093a57",
-      "comment": "",
-      "command": "select",
-      "target": "name=BorrowStatusID",
-      "targets": [],
-      "value": "label=กำลังยืม"
-    }, {
-      "id": "06a06c19-937c-41fb-a67e-58e0044f2297",
+      "id": "9d6a7151-fe5a-42a0-848f-fd568dcc0e81",
       "comment": "",
       "command": "click",
       "target": "id=Quantity",
@@ -1204,19 +1317,7 @@
       ],
       "value": ""
     }, {
-      "id": "dc1abffe-c057-4e11-b95f-436f789e1424",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.makeStyles-button-45 > .MuiButton-label",
-      "targets": [
-        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "5f84a8a0-11c5-488e-a034-07ff5bc17a70",
+      "id": "cafa9daa-62ea-48fb-ab3c-bc9d825fccda",
       "comment": "",
       "command": "type",
       "target": "id=Quantity",
@@ -1229,7 +1330,65 @@
       ],
       "value": "-1"
     }, {
-      "id": "3dda8731-2754-4a5a-9512-182a7aff3229",
+      "id": "a81c6e92-3e09-4e63-86f5-a08686953b37",
+      "comment": "",
+      "command": "click",
+      "target": "id=Contact",
+      "targets": [
+        ["id=Contact", "id"],
+        ["css=#Contact", "css:finder"],
+        ["xpath=//input[@id='Contact']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "12115904-35f6-4384-85c3-b9e1c2515939",
+      "comment": "",
+      "command": "type",
+      "target": "id=Contact",
+      "targets": [
+        ["id=Contact", "id"],
+        ["css=#Contact", "css:finder"],
+        ["xpath=//input[@id='Contact']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
+      ],
+      "value": "0987776543"
+    }, {
+      "id": "480eae88-9a14-40a9-a271-0553f982bc3d",
+      "comment": "",
+      "command": "click",
+      "target": "name=BorrowStatusID",
+      "targets": [
+        ["name=BorrowStatusID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
+        ["xpath=//div[6]/form/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "595ecc8a-c68a-4e1b-8489-45e85943b067",
+      "comment": "",
+      "command": "select",
+      "target": "name=BorrowStatusID",
+      "targets": [],
+      "value": "label=กำลังยืม"
+    }, {
+      "id": "fc1619c2-061c-45ac-82fd-fbaf7c865476",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.makeStyles-button-45 > .MuiButton-label",
+      "targets": [
+        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3dec50e3-640e-4d6f-9c4a-1b47a086db83",
       "comment": "",
       "command": "click",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -1241,7 +1400,7 @@
       ],
       "value": ""
     }, {
-      "id": "5409af3e-3a36-4c41-b228-f7a63921dfce",
+      "id": "500deb34-805a-4d87-a27c-6e37bf71b800",
       "comment": "",
       "command": "mouseOut",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -1253,7 +1412,7 @@
       ],
       "value": ""
     }, {
-      "id": "1fc29f58-5a63-4d41-a62c-cec060b2b465",
+      "id": "a8ee8d78-5b78-4abb-bee0-f2cb1b508067",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1264,7 +1423,7 @@
       ],
       "value": ""
     }, {
-      "id": "6c98a313-0e78-4240-80c1-574268781df9",
+      "id": "7f727415-1591-4533-a726-45b9d55b54f1",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -1279,30 +1438,35 @@
     "id": "79f807ae-27b4-4d7d-86f3-8048390dd288",
     "name": "B6210236 - ตรวจสอบข้อมูลQuantity ค่าเป็นเลขไม่มีทศนิยม (frontend)",
     "commands": [{
-      "id": "a53afec3-d7a3-4ee8-a7d5-b18506b728fd",
+      "id": "30824c6b-7269-4ed0-8943-532a8ca0f096",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
       "targets": [],
       "value": ""
     }, {
-      "id": "85b6583d-7408-4c5b-85a7-eec46f0e5d3d",
+      "id": "79340a43-f480-45ec-99b3-17e1d3b31b3d",
       "comment": "",
       "command": "setWindowSize",
       "target": "1552x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "967b79a3-e1cb-4eee-bc47-8a8132d70263",
+      "id": "efdb1eea-bafc-431f-83d0-49199133cecf",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root",
+      "target": "linkText=ประวัติการยืมอุปกรณ์",
       "targets": [
-        ["css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root", "css:finder"]
+        ["linkText=ประวัติการยืมอุปกรณ์", "linkText"],
+        ["css=.MuiButton-contained:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/a[3]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Borrowing')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "633c1de7-a557-4a61-a84b-652862bfd87b",
+      "id": "fc0cc0cf-000b-4a68-a8f0-94fe12cb670a",
       "comment": "",
       "command": "mouseOver",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -1314,7 +1478,7 @@
       ],
       "value": ""
     }, {
-      "id": "b0713d1c-431c-4b3c-a9d7-a68a60dee893",
+      "id": "a0a3f722-b908-4296-9052-2d952b2dad44",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -1326,31 +1490,7 @@
       ],
       "value": ""
     }, {
-      "id": "82aba3c1-c17f-4f38-9119-87aab1177053",
-      "comment": "",
-      "command": "addSelection",
-      "target": "name=EquipmentID",
-      "targets": [
-        ["name=EquipmentID", "name"],
-        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"]
-      ],
-      "value": "label=3. ชุดว่ายน้ำ ชาย1"
-    }, {
-      "id": "ce13d6ab-0d78-49b5-8e28-ffea55b54674",
-      "comment": "",
-      "command": "click",
-      "target": "css=.MuiGrid-grid-xs-12:nth-child(1) .MuiInputBase-root",
-      "targets": [
-        ["css=.MuiGrid-grid-xs-12:nth-child(1) .MuiInputBase-root", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div/form/div", "xpath:idRelative"],
-        ["xpath=//div[2]/div/form/div", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "c1604e69-cb4f-45b5-9502-e0fa358e3d4d",
+      "id": "3320d658-5617-42ef-b7cf-e9164fc89779",
       "comment": "",
       "command": "click",
       "target": "name=CustomerBorrowID",
@@ -1363,60 +1503,27 @@
       ],
       "value": ""
     }, {
-      "id": "6772b790-9ecf-4ed1-923f-3f45f2e47ddb",
+      "id": "71e2edb7-57e0-429c-966c-ac6d74498171",
       "comment": "",
       "command": "select",
       "target": "name=CustomerBorrowID",
       "targets": [],
-      "value": "label=Faii"
+      "value": "label=Member"
     }, {
-      "id": "2bb1209e-f048-431d-afd3-f1afe8317dc3",
+      "id": "9ef8fb26-dc7b-4d36-a2c6-e0219567fd23",
       "comment": "",
-      "command": "click",
-      "target": "id=Contact",
+      "command": "addSelection",
+      "target": "name=EquipmentID",
       "targets": [
-        ["id=Contact", "id"],
-        ["css=#Contact", "css:finder"],
-        ["xpath=//input[@id='Contact']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "e8afdcf5-0a4f-47c1-9fcd-477337c762f3",
-      "comment": "",
-      "command": "type",
-      "target": "id=Contact",
-      "targets": [
-        ["id=Contact", "id"],
-        ["css=#Contact", "css:finder"],
-        ["xpath=//input[@id='Contact']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
-      ],
-      "value": "0955555555"
-    }, {
-      "id": "2af18776-6d4d-4dda-a4d3-b9b9cf71b1d2",
-      "comment": "",
-      "command": "click",
-      "target": "name=BorrowStatusID",
-      "targets": [
-        ["name=BorrowStatusID", "name"],
+        ["name=EquipmentID", "name"],
         ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
-        ["xpath=//div[6]/form/div/select", "xpath:position"]
+        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
       ],
-      "value": ""
+      "value": "label=1. ลูกบาส1"
     }, {
-      "id": "89f24c49-14c1-41de-860a-9f4cb1952e35",
-      "comment": "",
-      "command": "select",
-      "target": "name=BorrowStatusID",
-      "targets": [],
-      "value": "label=กำลังยืม"
-    }, {
-      "id": "24f9f35e-a249-4c9a-8e8a-2d423f45e6d7",
+      "id": "8c216685-57ec-458d-a3cd-25a0d0fdf6f6",
       "comment": "",
       "command": "click",
       "target": "id=Quantity",
@@ -1429,19 +1536,7 @@
       ],
       "value": ""
     }, {
-      "id": "438e4a59-2ff8-4a29-9a02-fee3265ec01d",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.makeStyles-button-45 > .MuiButton-label",
-      "targets": [
-        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "90a579c2-0d96-4061-a908-85447f9e6066",
+      "id": "d7092a5d-514a-43c6-bfb7-210813ec843c",
       "comment": "",
       "command": "type",
       "target": "id=Quantity",
@@ -1454,31 +1549,92 @@
       ],
       "value": "1.6"
     }, {
-      "id": "0b3f6eef-337b-4b8e-bdba-0b159170ef58",
+      "id": "19191be7-aa8b-48f3-b818-f9372e6faf9b",
       "comment": "",
       "command": "click",
-      "target": "css=.makeStyles-button-45 > .MuiButton-label",
+      "target": "id=Contact",
       "targets": [
-        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+        ["id=Contact", "id"],
+        ["css=#Contact", "css:finder"],
+        ["xpath=//input[@id='Contact']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "340736dc-a185-48ba-bca9-2914ecf4d8f0",
+      "id": "c3a0f854-ec2d-438d-8da8-f47f74727319",
+      "comment": "",
+      "command": "type",
+      "target": "id=Contact",
+      "targets": [
+        ["id=Contact", "id"],
+        ["css=#Contact", "css:finder"],
+        ["xpath=//input[@id='Contact']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
+      ],
+      "value": "0987765432"
+    }, {
+      "id": "a7f7e40c-df7d-4a23-8c76-6735037bdf93",
+      "comment": "",
+      "command": "click",
+      "target": "name=BorrowStatusID",
+      "targets": [
+        ["name=BorrowStatusID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
+        ["xpath=//div[6]/form/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96fe3106-c2b5-48f9-832c-37cb3f835ca9",
+      "comment": "",
+      "command": "select",
+      "target": "name=BorrowStatusID",
+      "targets": [],
+      "value": "label=กำลังยืม"
+    }, {
+      "id": "8d8ca2da-d0d4-43ec-871a-221342705318",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.makeStyles-button-45",
+      "targets": [
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcae42b5-73f9-4fc4-805a-c80c0a92db93",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-button-45",
+      "targets": [
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c299645-0034-43ed-8401-d27ca527f50a",
       "comment": "",
       "command": "mouseOut",
-      "target": "css=.makeStyles-button-45 > .MuiButton-label",
+      "target": "css=.makeStyles-button-45",
       "targets": [
-        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "5fe5a81b-2972-4dd2-b2ff-ddfcca78836f",
+      "id": "ee532c3b-7a92-469f-a3e3-98dabec42247",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1489,7 +1645,7 @@
       ],
       "value": ""
     }, {
-      "id": "90c8c6d9-61de-47e5-a39f-d2055f902b9e",
+      "id": "8213c643-ca6f-4d6e-9769-b57bc0e7f72b",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -1504,45 +1660,30 @@
     "id": "40072cbd-7bdd-402b-be84-35e1b4924df9",
     "name": "B6210236 - ตรวจสอบข้อมูลQuantity ค่าไม่มากกว่าจำนวนอุปกรณ์คงเหลือ (database)",
     "commands": [{
-      "id": "c9017381-4db0-465a-9478-2271bb8cceba",
+      "id": "0d16fd80-ba67-43fe-8e0f-5301cb60ca73",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
       "targets": [],
       "value": ""
     }, {
-      "id": "a5bb96ce-4267-4230-bf52-5b6c375d3e53",
+      "id": "b9552eb6-6fca-4d42-94d7-5caf7bd8a48f",
       "comment": "",
       "command": "setWindowSize",
       "target": "1552x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "f0f13975-b434-4b38-a582-7664fe32e3ec",
+      "id": "34f14bbc-42ba-4308-89f7-d80b2db23449",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiButton-contained:nth-child(4) > .MuiButton-label",
+      "target": "css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root",
       "targets": [
-        ["css=.MuiButton-contained:nth-child(4) > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[2]/a[3]/span", "xpath:idRelative"],
-        ["xpath=//a[3]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
+        ["css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "044b8ba0-28ee-438b-a699-c4feb31643c9",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.MuiButton-contained > .MuiButton-label",
-      "targets": [
-        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div[4]/a/span", "xpath:idRelative"],
-        ["xpath=//a/span", "xpath:position"],
-        ["xpath=//span[contains(.,'ยืมอุปกรณ์')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "b682856d-1ca5-4304-b086-07c32137fcc9",
+      "id": "0d238534-15eb-45ba-a7c2-60afa5fcf951",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -1554,7 +1695,7 @@
       ],
       "value": ""
     }, {
-      "id": "d80b8d09-760b-4c3c-a26a-64ce3e8d8749",
+      "id": "ad2c4d7f-896a-42f6-ab57-f19504eab5af",
       "comment": "",
       "command": "addSelection",
       "target": "name=EquipmentID",
@@ -1567,7 +1708,31 @@
       ],
       "value": "label=1. ลูกบาส1"
     }, {
-      "id": "8bb2a0f4-8a88-4fa5-a2d7-d2a3ca87c4b7",
+      "id": "9e773f0f-2617-49f6-a63c-1ee8a431075d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiGrid-grid-xs-11 form > div",
+      "targets": [
+        ["css=.MuiGrid-grid-xs-11 form > div", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77ff903a-1926-4512-9367-fa929620a2f2",
+      "comment": "",
+      "command": "type",
+      "target": "id=Quantity",
+      "targets": [
+        ["id=Quantity", "id"],
+        ["css=#Quantity", "css:finder"],
+        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "6234d6f6-8fde-486c-9653-b4da0f13be5a",
       "comment": "",
       "command": "click",
       "target": "name=CustomerBorrowID",
@@ -1580,14 +1745,14 @@
       ],
       "value": ""
     }, {
-      "id": "c537cd74-9265-4537-924d-44c64b2d7f7b",
+      "id": "7484144e-6a94-44dd-8336-63cf8913c966",
       "comment": "",
       "command": "select",
       "target": "name=CustomerBorrowID",
       "targets": [],
       "value": "label=Member"
     }, {
-      "id": "c425c66a-8a26-414d-b26d-5151aa7db731",
+      "id": "89c06a65-46ef-493a-91f3-ee9e23f6919e",
       "comment": "",
       "command": "click",
       "target": "id=Contact",
@@ -1600,7 +1765,7 @@
       ],
       "value": ""
     }, {
-      "id": "9bb498d8-bbf9-40a0-bb85-de4ad853e55a",
+      "id": "75a591b7-802f-462d-ae82-fac9e74e8de1",
       "comment": "",
       "command": "type",
       "target": "id=Contact",
@@ -1611,9 +1776,9 @@
         ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
       ],
-      "value": "0958887777"
+      "value": "0987765432"
     }, {
-      "id": "fe391bb8-02fe-46a1-ab7f-249e164e3d5c",
+      "id": "7601ec92-3705-4ab9-99e6-5f80cdb3d965",
       "comment": "",
       "command": "click",
       "target": "name=BorrowStatusID",
@@ -1626,38 +1791,26 @@
       ],
       "value": ""
     }, {
-      "id": "c96cf3e5-61b5-4ee2-9133-c71a39831a37",
+      "id": "d2a3b176-1397-42a8-9274-a24969c2a8bc",
       "comment": "",
       "command": "select",
       "target": "name=BorrowStatusID",
       "targets": [],
       "value": "label=กำลังยืม"
     }, {
-      "id": "f68e39ff-a42c-445c-9036-9243431a8f76",
+      "id": "ba9700ac-1f96-4d50-8e43-b97380a0280b",
       "comment": "",
-      "command": "click",
-      "target": "css=.MuiGrid-grid-xs-11 form > div",
+      "command": "mouseOver",
+      "target": "css=.makeStyles-button-45 > .MuiButton-label",
       "targets": [
-        ["css=.MuiGrid-grid-xs-11 form > div", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div", "xpath:idRelative"],
-        ["xpath=//div[3]/div/form/div", "xpath:position"]
+        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "0bf31bb3-1dff-490b-b836-2c3cd743ad1a",
-      "comment": "",
-      "command": "type",
-      "target": "id=Quantity",
-      "targets": [
-        ["id=Quantity", "id"],
-        ["css=#Quantity", "css:finder"],
-        ["xpath=//input[@id='Quantity']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "70"
-    }, {
-      "id": "45b95d8d-2e8d-48a4-ac22-05db9325b25b",
+      "id": "ade0bcbb-887a-405d-b4bf-467abefb5206",
       "comment": "",
       "command": "click",
       "target": "css=.makeStyles-button-45 > .MuiButton-label",
@@ -1669,7 +1822,19 @@
       ],
       "value": ""
     }, {
-      "id": "24d6543d-0112-4a71-9a77-2c339f2e2dee",
+      "id": "97a00bf7-35f1-4c46-8bb8-739a0d16f159",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.makeStyles-button-45 > .MuiButton-label",
+      "targets": [
+        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d3e9c22-3aaf-4c73-9cf0-b8af9d585444",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1680,7 +1845,7 @@
       ],
       "value": ""
     }, {
-      "id": "01d23413-d4f2-4904-a449-f994ea1cb413",
+      "id": "822bc470-f8ef-489c-9939-79295f5d0f5f",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
@@ -1695,30 +1860,45 @@
     "id": "c92fb62d-ae5f-414c-84b9-34721af5d6d5",
     "name": "B6210236 - ตรวจสอบข้อมูลQuantity ค่าไม่เป็นศูนย์",
     "commands": [{
-      "id": "4bb01d6a-6bce-4f0d-a377-074a25b2af86",
+      "id": "e3ce0edd-2dd1-4bed-9232-554b3422c8e4",
       "comment": "",
       "command": "open",
       "target": "http://localhost:3000/",
       "targets": [],
       "value": ""
     }, {
-      "id": "7f2f17e9-f986-4578-b3dd-e4890a21b5a6",
+      "id": "e95dd939-45fe-478f-a646-3af0d6b76caf",
       "comment": "",
       "command": "setWindowSize",
       "target": "1552x840",
       "targets": [],
       "value": ""
     }, {
-      "id": "4dc7dc59-519e-4dd6-b14e-74cae525117d",
+      "id": "19da72aa-2ca0-4f00-9b4b-f3fd4104f4d0",
       "comment": "",
       "command": "click",
-      "target": "css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root",
+      "target": "css=.MuiButtonBase-root:nth-child(4) .MuiTypography-root",
       "targets": [
-        ["css=.MuiButtonBase-root:nth-child(4) .MuiSvgIcon-root", "css:finder"]
+        ["css=.MuiButtonBase-root:nth-child(4) .MuiTypography-root", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/a[3]/span/p", "xpath:idRelative"],
+        ["xpath=//a[3]/span/p", "xpath:position"],
+        ["xpath=//p[contains(.,'ประวัติการยืมอุปกรณ์   ')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "4d8b8853-f94a-4ad6-bf01-d55d91498ce5",
+      "id": "1da9c9dd-e989-40bf-8882-95b99d71007a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.MuiButton-contained > .MuiButton-label",
+      "targets": [
+        ["css=.MuiButton-contained > .MuiButton-label", "css:finder"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div[4]/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'ยืมอุปกรณ์')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ceefda6-9b05-4f00-accb-7ae91e34c175",
       "comment": "",
       "command": "click",
       "target": "css=.MuiButton-contained > .MuiButton-label",
@@ -1730,20 +1910,7 @@
       ],
       "value": ""
     }, {
-      "id": "f8218a13-a019-44d4-9d42-d6d75af5027c",
-      "comment": "",
-      "command": "addSelection",
-      "target": "name=EquipmentID",
-      "targets": [
-        ["name=EquipmentID", "name"],
-        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"]
-      ],
-      "value": "label=2. ลูกขนไก่1"
-    }, {
-      "id": "cd9b94ec-c538-49a7-8c0a-73a89a24dbf3",
+      "id": "c6147742-8359-42fe-a2f3-79b0d1c2c014",
       "comment": "",
       "command": "click",
       "target": "name=CustomerBorrowID",
@@ -1756,71 +1923,27 @@
       ],
       "value": ""
     }, {
-      "id": "a4c71f20-fa70-4826-9da8-0fedcbca817e",
+      "id": "cd177876-af30-4425-ad06-11c9c391f818",
       "comment": "",
       "command": "select",
       "target": "name=CustomerBorrowID",
       "targets": [],
-      "value": "label=Faii"
+      "value": "label=Member"
     }, {
-      "id": "c74b8940-e182-496e-b29f-f7b743ff47fc",
+      "id": "9fad70dd-03c0-4760-84bb-a1ea0af23ff3",
       "comment": "",
-      "command": "click",
-      "target": "id=Contact",
+      "command": "addSelection",
+      "target": "name=EquipmentID",
       "targets": [
-        ["id=Contact", "id"],
-        ["css=#Contact", "css:finder"],
-        ["xpath=//input[@id='Contact']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "1992997c-5a72-4896-bcfe-02e2327f9e46",
-      "comment": "",
-      "command": "type",
-      "target": "id=Contact",
-      "targets": [
-        ["id=Contact", "id"],
-        ["css=#Contact", "css:finder"],
-        ["xpath=//input[@id='Contact']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
-      ],
-      "value": "0658889999"
-    }, {
-      "id": "0cd25228-4ba5-4e25-8ea5-039938438844",
-      "comment": "",
-      "command": "click",
-      "target": "css=.makeStyles-rightalign-47",
-      "targets": [
-        ["css=.makeStyles-rightalign-47", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]", "xpath:idRelative"],
-        ["xpath=//div[7]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "4baecc69-b96f-4f07-a259-112db881c70f",
-      "comment": "",
-      "command": "click",
-      "target": "name=BorrowStatusID",
-      "targets": [
-        ["name=BorrowStatusID", "name"],
+        ["name=EquipmentID", "name"],
         ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
-        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
-        ["xpath=//div[6]/form/div/select", "xpath:position"]
+        ["xpath=//select[@name='EquipmentID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div/form/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
       ],
-      "value": ""
+      "value": "label=1. ลูกบาส1"
     }, {
-      "id": "a2b61f6f-4088-4270-b759-3ab8d09b03e3",
-      "comment": "",
-      "command": "select",
-      "target": "name=BorrowStatusID",
-      "targets": [],
-      "value": "label=กำลังยืม"
-    }, {
-      "id": "54331862-73a1-491d-901d-465ba18199e6",
+      "id": "0270e26d-1b89-4882-81da-094dfc98d393",
       "comment": "",
       "command": "click",
       "target": "css=.MuiGrid-grid-xs-11 form > div",
@@ -1831,7 +1954,7 @@
       ],
       "value": ""
     }, {
-      "id": "15a9885f-87b8-4632-8a5e-d51578b9ee5a",
+      "id": "4e5b034c-1189-487b-a854-54a6bb4cccac",
       "comment": "",
       "command": "type",
       "target": "id=Quantity",
@@ -1844,19 +1967,92 @@
       ],
       "value": "0"
     }, {
-      "id": "4f5da69d-0e89-4708-9b78-d719c5126b97",
+      "id": "29c878d3-625e-4c5c-aa32-58fb9376c87a",
       "comment": "",
       "command": "click",
-      "target": "css=.makeStyles-button-45 > .MuiButton-label",
+      "target": "id=Contact",
       "targets": [
-        ["css=.makeStyles-button-45 > .MuiButton-label", "css:finder"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button/span", "xpath:idRelative"],
-        ["xpath=//div[7]/button/span", "xpath:position"],
-        ["xpath=//span[contains(.,'บันทึก')]", "xpath:innerText"]
+        ["id=Contact", "id"],
+        ["css=#Contact", "css:finder"],
+        ["xpath=//input[@id='Contact']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "b15ac615-6eae-44c8-a316-b957ed41d1a3",
+      "id": "1e7f7e85-a08c-4d53-8450-76b33f216ca1",
+      "comment": "",
+      "command": "type",
+      "target": "id=Contact",
+      "targets": [
+        ["id=Contact", "id"],
+        ["css=#Contact", "css:finder"],
+        ["xpath=//input[@id='Contact']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[3]/div/form/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div/form/div/div/div/input", "xpath:position"]
+      ],
+      "value": "0987776543"
+    }, {
+      "id": "309d6a01-e5d0-4272-bf8e-f4bb1e17d5cd",
+      "comment": "",
+      "command": "click",
+      "target": "name=BorrowStatusID",
+      "targets": [
+        ["name=BorrowStatusID", "name"],
+        ["css=.Mui-focused > .MuiSelect-root", "css:finder"],
+        ["xpath=//select[@name='BorrowStatusID']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[6]/form/div/select", "xpath:idRelative"],
+        ["xpath=//div[6]/form/div/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d2f3cbd-907e-4f54-8fb4-4d165cb622f8",
+      "comment": "",
+      "command": "select",
+      "target": "name=BorrowStatusID",
+      "targets": [],
+      "value": "label=กำลังยืม"
+    }, {
+      "id": "b8987b01-440e-4055-b1c4-530c090136d7",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.makeStyles-button-45",
+      "targets": [
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ad3f367-6cdf-44b8-87fe-7ee3f1925d66",
+      "comment": "",
+      "command": "click",
+      "target": "css=.makeStyles-button-45",
+      "targets": [
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "be3dfe49-4de8-4b2b-8106-17cb07244da4",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.makeStyles-button-45",
+      "targets": [
+        ["css=.makeStyles-button-45", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div[2]/div/div/div[2]/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'บันทึก')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f475fd41-66ac-4105-b931-fb9f95b4ccfb",
       "comment": "",
       "command": "click",
       "target": "css=.MuiAlert-root",
@@ -1867,7 +2063,7 @@
       ],
       "value": ""
     }, {
-      "id": "2118098a-13ec-4a8a-bb4e-f6fe70c0af9b",
+      "id": "889388f2-cbfb-4a17-a567-2808a23c02c8",
       "comment": "",
       "command": "assertText",
       "target": "css=.MuiAlert-message",
