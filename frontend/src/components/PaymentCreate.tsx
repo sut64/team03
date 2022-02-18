@@ -320,7 +320,7 @@ return (
       <Grid className={classes.paper2} container spacing={0} item xs={6} wrap='wrap'>
       
       <Grid item xs={12} style  = {{  textAlign : 'left' }}>
-      Staff
+      พนักงาน
           
           <form className={classes.combobox} noValidate autoComplete="off">
           
@@ -345,7 +345,7 @@ return (
 
         <Grid item xs={12} style  = {{  textAlign : 'left' }}>
 
-      Customer
+      สมาชิก
          <form className={classes.combobox} noValidate >
             
         <Select        
@@ -373,7 +373,7 @@ return (
         </Grid>
 
           <Grid item xs={9} style  = {{  textAlign : 'left' }}>
-          Bill
+          เลขที่ใบเสร็จ
         <div>
         <form noValidate autoComplete="off">
       <div>
@@ -410,7 +410,7 @@ return (
       
         <Grid item xs={12}>
 
-        Facility
+        รายการจ่าย
          <form className={classes.combobox} noValidate >
           
          
@@ -440,7 +440,7 @@ return (
         </Grid>
 
          <Grid item xs={3}>
-         Discount
+         ส่วนลด
         <div>
         <form noValidate autoComplete="off">
       <div>
@@ -464,7 +464,7 @@ return (
         
         
         <Grid item xs={6} className={classes.combobox}>
-        Total
+        ยอดรวม
         <div>
         <form noValidate autoComplete="off">
       <div>
@@ -489,7 +489,7 @@ return (
 
         <Grid item xs={12}>
 
-        Payment Method
+        ช่องทางการชำระเงิน
          <form className={classes.combobox} noValidate >
           
          <Select        
@@ -540,7 +540,7 @@ return (
 
         <Grid item xs={12}>
 
-        AddedTime
+        เวลาชำระเงิน
           <form className={classes.combobox} noValidate>
       
 
