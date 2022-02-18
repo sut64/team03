@@ -266,11 +266,13 @@ export default function EquipmentInput() {
 
 
                     <Grid item xs={6}>
-                        <p>จำนวน</p>
+                    <p>จำนวน</p>
                         <TextField 
+                        type ="number"           
+                        InputProps={{
+                          name: "Quantity", inputProps: { min: 1 }, 
+                        }}
                         id="Quantity" 
-                        type="number"
-                        inputProps={{name:"Quantity"}}
                         variant="outlined" 
                         value={equipment.Quantity ||""}
                         onChange={handleChange}                      
