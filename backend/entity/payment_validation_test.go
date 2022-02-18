@@ -88,40 +88,17 @@ func TestBillMustBeInvalidPattern(t *testing.T){
 }
 
 // ตรวจสอบค่าของ Discount แล้วต้องเจอ Error
-func TestDiscountBetweenZeroAndTenThousand(t *testing.T){
-	g := NewGomegaWithT(t)
-
-	payment := Payment{
-		Bill: "R000006",
-		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
-		Discount: 20000,
-		Total: 0,
-		Note: "-",
-	}
-	// ตรวจสอบด้วย govalidator
-	ok, err := govalidator.ValidateStruct(payment)
-
-	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
-	g.Expect(ok).ToNot(BeTrue())
-
-	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
-	g.Expect(err).ToNot(BeNil())
-
-	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("Discount is between 0 and 10000"))
-}
-
-// ตรวจสอบค่าของ Total แล้วต้องเจอ Error
-func TestTotalBetweenZeroAndTenThousand(t *testing.T){
+func TestDiscountisPositiveInt(t *testing.T) {
 	g := NewGomegaWithT(t)
 
 	payment := Payment{
 		Bill: "R000005",
 		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
-		Discount: 20,
-		Total: 90000,
+		Discount: -15,
+		Total: 500,
 		Note: "-",
 	}
+
 	// ตรวจสอบด้วย govalidator
 	ok, err := govalidator.ValidateStruct(payment)
 
@@ -132,7 +109,32 @@ func TestTotalBetweenZeroAndTenThousand(t *testing.T){
 	g.Expect(err).ToNot(BeNil())
 
 	// err.Error ต้องมี error message แสดงออกมา
-	g.Expect(err.Error()).To(Equal("Total is between 0 and 10000"))
+	g.Expect(err.Error()).To(Equal("ส่วนลดต้องไม่ติดลบ"))
+}
+
+// ตรวจสอบค่าของ Total แล้วต้องเจอ Error
+func TestTotalisPositiveInt(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	payment := Payment{
+		Bill: "R000005",
+		AddedTime:       time.Date(2021, 1, 24, 10, 29, 20, 10, time.Local),
+		Discount: 0,
+		Total: -500,
+		Note: "-",
+	}
+
+	// ตรวจสอบด้วย govalidator
+	ok, err := govalidator.ValidateStruct(payment)
+
+	// ok ต้องไม่เป็นค่า true แปลว่าต้องจับ error ได้
+	g.Expect(ok).ToNot(BeTrue())
+
+	// err ต้องไม่เป็นค่า nil แปลว่าต้องจับ error ได้
+	g.Expect(err).ToNot(BeNil())
+
+	// err.Error ต้องมี error message แสดงออกมา
+	g.Expect(err.Error()).To(Equal("ยอดรวมต้องไม่ติดลบ"))
 }
 
 // ตรวจสอบ AddedTime แล้วต้องเจอ Error
