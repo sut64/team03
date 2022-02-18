@@ -44,7 +44,7 @@ func CreateReserve(c *gin.Context) {
 		BookingTime: BookingTime,
 		Amount:      Reserve.Amount,
 		Tel:         Reserve.Tel,
-		AddedTime:   Reserve.AddedTime,
+		AddedTime:   Reserve.AddedTime.Local(),
 	}
 
 	if _, err := govalidator.ValidateStruct(Reserve); err != nil {
