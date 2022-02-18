@@ -19,6 +19,8 @@ import Collapse from '@material-ui/core/Collapse';
 import { format } from 'date-fns'
 import { FacilityInterface } from "../model/FacilityUI";
 import DeleteIcon from '@material-ui/icons/Delete';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 
 const useStyles = makeStyles((theme: Theme) => 
@@ -82,20 +84,38 @@ export default function HistoryFacility() {
         (res) => {
           if (res.data) {
             setSuccess(true)
-            setErrorMessage("")
+            setErrorMessage(res.error)
           } 
           else { 
-            setErrorMessage(res.error)
             setError(true)
+            setErrorMessage(res.error)
           }  
           getFacility(); 
         }
       )
     }
+    const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setSuccess(false);
+      setError(false);
+    };
   
     return (
       <div>
       <Container className={classes.container} maxWidth="lg">
+      <Snackbar  anchorOrigin={{ vertical:"bottom", horizontal:"center" }} open={success} autoHideDuration={2000} onClose={handleClose}  > 
+              <Alert onClose={handleClose} severity="success">
+                ลบข้อมูลสำเร็จ 
+              </Alert>
+          </Snackbar>
+          <Snackbar  anchorOrigin={{ vertical:"bottom", horizontal:"center" }} open={error} autoHideDuration={2000} onClose={handleClose}  > 
+              <Alert onClose={handleClose} severity="error">
+                ลบข้อมูลไม่สำเร็จ 
+              </Alert>
+          </Snackbar>
         <Box display="flex">
           <Box flexGrow={1}>
             <Typography
