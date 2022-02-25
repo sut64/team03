@@ -117,10 +117,7 @@ func TestAmountisPInt(t *testing.T) {
 	g.Expect(err).ToNot(BeNil())
 
 	// err.Error ต้องมี error message แสดงออกมา
-	if err.Error() == "กรุณากรอกจำนวนคน" {
-		g.Expect(err.Error()).To(Equal("กรุณากรอกจำนวนคน"))
-	} else if err.Error() == "จำนวนไม่สามารถติดลบได้" {
-		g.Expect(err.Error()).To(Equal("จำนวนไม่สามารถติดลบได้"))
-	}
+
+	g.Expect(err.Error()).To(Equal("จำนวนไม่สามารถติดลบได้"))
 
 }
