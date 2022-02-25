@@ -450,7 +450,7 @@ return (
             shrink: true,
           }}
           InputProps={{
-            inputProps: { min: 1 }
+            inputProps: { min: 0 }
           }}
           id="Discount"
           value={payment.Discount || ""}
@@ -474,7 +474,7 @@ return (
             shrink: true,
           }}
           InputProps={{
-            inputProps: { min: 1 }
+            inputProps: { min: 0 }
           }}
           id="Total"
           value={payment.Total || ""}
